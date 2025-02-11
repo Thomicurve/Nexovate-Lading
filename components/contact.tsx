@@ -4,10 +4,9 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-// import { Calendar } from "@/components/ui/calendar"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-
+import { AnimatedSection } from "@/components/animated-section"
 export default function Contact() {
   const [date, setDate] = useState<Date | undefined>(undefined)
 
@@ -20,7 +19,11 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 border-t z-20 relative">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Contactanos</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">
+          <AnimatedSection delay={100}>
+            Contactanos
+          </AnimatedSection>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Card>
             <CardHeader>
