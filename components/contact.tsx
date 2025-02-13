@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+// import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { AnimatedSection } from "@/components/animated-section"
 import Calendar from "@/components/calendar"
 export default function Contact() {
-  const [date, setDate] = useState<Date | undefined>(undefined)
+  // const [date, setDate] = useState<Date | undefined>(undefined)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()

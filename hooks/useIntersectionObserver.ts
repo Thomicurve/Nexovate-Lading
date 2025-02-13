@@ -8,13 +8,13 @@ interface UseIntersectionObserverProps {
   rootMargin?: string
 }
 
-export function useIntersectionObserver({
+export function useIntersectionObserver<T extends HTMLElement>({
   threshold = 0,
   root = null,
   rootMargin = "0%",
-}: UseIntersectionObserverProps = {}): [boolean, React.RefObject<HTMLElement>] {
+}: UseIntersectionObserverProps = {}): [boolean, React.LegacyRef<T>] {
   const [isIntersecting, setIntersecting] = useState<boolean>(false)
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<T>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(

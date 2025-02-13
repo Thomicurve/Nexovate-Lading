@@ -11,7 +11,7 @@ interface AnimatedSectionProps {
 }
 
 export function AnimatedSection({ children, className, delay = 0 }: AnimatedSectionProps) {
-  const [isIntersecting, ref] = useIntersectionObserver({ threshold: 0.1 })
+  const [isIntersecting, ref] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1 })
 
   return (
     <div

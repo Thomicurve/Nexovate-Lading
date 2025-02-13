@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [renderMenu, setRenderMenu] = useState(false);
+  // const myDivRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (sectionId: string, e?: React.MouseEvent<HTMLAnchorElement>) => {
     if (e) e.preventDefault();
