@@ -73,7 +73,7 @@ export default function Navbar() {
             <Button onClick={() => scrollToSection('contact')} variant="ghost" size="sm">
               Contacto
             </Button>
-            <Button size="sm">Agendar una llamada</Button>
+            <Button onClick={() => scrollToSection('contact')} size="sm">Agendar una llamada</Button>
           </div>
 
           {/* Botón de menú hamburguesa para móvil */}
@@ -127,7 +127,7 @@ export default function Navbar() {
                 Contacto
               </Button>
               <Button 
-                onClick={() => closeMenu()} 
+                onClick={() => { scrollToSection('calendar'); closeMenu(); }} 
                 size="sm"
               >
                 Agendar una llamada
