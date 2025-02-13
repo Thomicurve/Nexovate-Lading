@@ -52,13 +52,13 @@ export default function Navbar() {
             >
               Soluciones
             </Link>
-            <Link 
+            {/* <Link 
               href="#clients" 
               className="transition-colors hover:text-primary"
               onClick={(e) => scrollToSection('clients', e)}
             >
               Clientes
-            </Link>
+            </Link> */}
             <Link 
               href="#about" 
               className="transition-colors hover:text-primary"
@@ -105,13 +105,13 @@ export default function Navbar() {
               >
                 Soluciones
               </Link>
-              <Link 
+              {/* <Link 
                 href="#clients" 
                 className="transition-colors hover:text-primary hover:bg-gray-200/10 rounded-md pl-4 py-3 text-left"
                 onClick={(e) => handleLinkClick('clients', e)}
               >
                 Clientes
-              </Link>
+              </Link> */}
               <Link 
                 href="#about" 
                 className="transition-colors hover:text-primary hover:bg-gray-200/50 rounded-md pl-4 py-2 text-left"
