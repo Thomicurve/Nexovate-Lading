@@ -24,7 +24,7 @@ export default function Hero() {
           Revoluciona tus procesos empresariales con soluciones de <span className="text-[#1A5EFF]">inteligencia artificial</span> diseñadas para impulsar la eficiencia y la innovación.
         </p>
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 justify-center flex-wrap">
         <AnimatedSection delay={100}>
           <Button className="hover:translate-y-[-2px] transition-transform duration-200 ease-in-out" onClick={() => scrollToSection('solutions')} size="lg">
             Explorar Soluciones
