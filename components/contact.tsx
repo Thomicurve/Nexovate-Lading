@@ -50,13 +50,13 @@ export default function Contact() {
       fetch("https://primary-production-3c50.up.railway.app/webhook-test/fd281c48-9013-495a-a6e1-7d9438ff3179", {
         method: "POST",
         body: JSON.stringify({ name, email, message })
-      }).then(_ => {
+      }).then(() => {
         toast({
           title: "Mensaje enviado ✅",
           variant: "default",
           description: "Nos pondremos en contacto contigo lo antes posible."
         })
-      }).catch(err => {
+      }).catch(() => {
         toast({
           title: "Error al enviar el mensaje",
           variant: "destructive",
