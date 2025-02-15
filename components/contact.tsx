@@ -47,7 +47,7 @@ export default function Contact() {
       setIsLoading(true);
 
       setErrors({});
-      fetch("https://primary-production-3c50.up.railway.app/webhook-test/fd281c48-9013-495a-a6e1-7d9438ff3179", {
+      fetch(process.env.NEXT_PUBLIC_CONTACT_FORM_URL as string, {
         method: "POST",
         body: JSON.stringify({ name, email, message })
       }).then(() => {
