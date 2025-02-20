@@ -5,6 +5,7 @@ import CTA from "@/components/cta"
 import Footer from "@/components/footer"
 import Contact from "@/components/contact"
 import AboutUs from "@/components/about-us"
+import ChatButton from "@/components/chatButton"
 export default function Home() {
   return (
     <div className="relative min-h-screen">
@@ -23,6 +24,7 @@ export default function Home() {
         <Contact />
         <Footer />
       </div>
+      <ChatButton />
     </div>
   )
 }
