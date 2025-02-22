@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MessageCircle, X, Send, Loader } from "lucide-react"
@@ -13,6 +13,7 @@ export default function ChatButton() {
   const [messages, setMessages] = useState<{ text: string; sender: "user" | "bot" }[]>([])
   const [inputValue, setInputValue] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const messagesEndRef = useRef<HTMLDivElement | null>(null)
 
   const toggleChat = () => setIsOpen(!isOpen)
 
@@ -24,7 +25,7 @@ export default function ChatButton() {
       setIsLoading(true)
 
       try {
-        const response = await fetch("https://thomicurve09.app.n8n.cloud/webhook-test/d4e83207-2d03-4f91-8b15-9fb6c40e14f5", {
+        const response = await fetch(process.env.CHAT_BOT_URL as string || "https://thomicurve09.app.n8n.cloud/webhook-test/d4e83207-2d03-4f91-8b15-9fb6c40e14f5", {
           method: "POST",
           body: JSON.stringify({ message: inputValue }),
         })
@@ -43,6 +44,12 @@ export default function ChatButton() {
     }
   }
 
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [messages])
+
   return (
     <div className="fixed bottom-4 right-4 z-50">
       <Button className="rounded-full w-14 h-14 inset-5" onClick={toggleChat}>
@@ -57,7 +64,7 @@ export default function ChatButton() {
         <div className="p-4 border-b border-border">
           <h2 className="text-lg font-semibold">Chatea con uno de nuestros agentes</h2>
         </div>
-        <div className="h-96 overflow-y-auto p-4 space-y-4">
+        <div className="h-96 overflow-y-auto p-4 space-y-4 custom-scrollbar">
           {messages.map((message, index) => (
             <div
               key={index}
@@ -74,6 +81,7 @@ export default function ChatButton() {
               <Loader className="animate-spin" />
             </div>
           )}
+          <div ref={messagesEndRef} />
         </div>
         <form onSubmit={handleSendMessage} className="p-4 border-t border-border flex items-center">
           <Input
