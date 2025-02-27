@@ -1,5 +1,7 @@
+"use client"
 import { Brain, Cloud, Shield, Zap } from "lucide-react"
 import { AnimatedSection } from "./animated-section"
+import PixelCard from "@/components/blocks/Components/PixelCard"
 
 const features = [
   {
@@ -38,13 +40,15 @@ export default function Features() {
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
         {features.map((feature, index) => (
           <AnimatedSection delay={100 + index * 100} key={feature.name}>
-            <div className="relative overflow-hidden rounded-lg border bg-background p-8">
-              <div className="flex items-center gap-4">
-                <feature.icon className="h-8 w-8" />
-                <h3 className="font-bold">{feature.name}</h3>
+            <PixelCard className="w-full h-[210px] bg-background" colors="#1F2223,#19A7FF,#1A5EFF">
+              <div className="absolute overflow-hidden p-8 h-full w-full bg-[#09090B] bg-opacity-60">
+                <div className="flex items-center gap-4">
+                  <feature.icon className="h-8 w-8" />
+                  <h3 className="font-bold">{feature.name}</h3>
+                </div>
+                <p className="mt-2 text-muted-foreground">{feature.description}</p>
               </div>
-              <p className="mt-2 text-muted-foreground">{feature.description}</p>
-            </div>
+            </PixelCard>
           </AnimatedSection>
         ))}
       </div>
