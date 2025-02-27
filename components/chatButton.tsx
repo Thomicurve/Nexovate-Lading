@@ -14,8 +14,28 @@ export default function ChatButton() {
   const [inputValue, setInputValue] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement | null>(null)
+  const chatContainerRef = useRef<HTMLDivElement | null>(null)
 
   const toggleChat = () => setIsOpen(!isOpen)
+
+  // Manejador para cerrar el chat cuando se hace clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen && 
+        chatContainerRef.current && 
+        !chatContainerRef.current.contains(event.target as Node) &&
+        !(event.target as Element).closest('button')
+      ) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -56,6 +76,7 @@ export default function ChatButton() {
         {isOpen ? <X size={30} /> : <MessageCircle size={30} />}
       </Button>
       <div
+        ref={chatContainerRef}
         className={cn(
           "absolute bottom-16 right-0 w-96 bg-background border border-border rounded-lg shadow-xl transition-all duration-300 ease-in-out",
           isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none",
