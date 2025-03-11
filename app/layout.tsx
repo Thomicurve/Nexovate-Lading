@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   publisher: "Nexovate",
   robots: "index, follow",
   alternates: {
-    canonical: "https://nexovate.com",
+    canonical: "https://nexovate.net",
   },
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: "https://nexovate.com",
+    url: "https://nexovate.net",
     title: "Nexovate - Automatización de procesos con IA y n8n",
     description: "Soluciones de automatización con inteligencia artificial y n8n para mejorar la eficiencia y productividad de tu negocio",
     siteName: "Nexovate",
