@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Nexovate - Automatización de procesos con IA y n8n",
-  description: "Nexovate es un emprendimiento de Argentina que ofrece soluciones de automatización de procesos con inteligencia artificial y n8n para mejorar la eficiencia y aumentar la productividad en tu negocio. Desde 2024, nos dedicamos a crear soluciones personalizadas que no solo automatizan tareas repetitivas, sino que también aceleran todo el proceso de venta desde la prospección hasta el cierre de clientes.",
+  description: "Nexovate es un emprendimiento de Argentina que ofrece soluciones de automatización de procesos con IA y n8n para aumentar la productividad en tu negocio.",
   keywords: "automatización, inteligencia artificial, IA, n8n, procesos empresariales, chatbots, eficiencia, productividad, Argentina, agentes IA, optimización de procesos",
   authors: [{ name: "Nexovate" }],
   creator: "Nexovate",
