@@ -14,8 +14,12 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" className="relative container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-24 text-center md:py-32">
-      <div className="opacity-50 absolute top-32 inset-0 z-0" style={{ width: '100%', height: '600px' }}>
+    <section 
+      id="hero" 
+      className="relative container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-24 text-center md:py-32"
+      aria-labelledby="hero-heading"
+    >
+      <div className="opacity-50 absolute top-32 inset-0 z-0" style={{ width: '100%', height: '600px' }} aria-hidden="true">
         <Orb
           hoverIntensity={0.1}
           rotateOnHover={true}
@@ -24,7 +28,10 @@ export default function Hero() {
         />
       </div>
       <div className="space-y-4 relative z-30">
-        <h1 className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl pb-3">
+        <h1 
+          id="hero-heading"
+          className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl pb-3"
+        >
           Automatiza y optimiza tus procesos
           <br />
           con <strong>Agentes de inteligencia artificial</strong>
@@ -35,13 +42,24 @@ export default function Hero() {
       </div>
       <div className="flex gap-4 justify-center flex-wrap">
         <AnimatedSection delay={100}>
-          <Button className="hover:translate-y-[-2px] transition-transform duration-200 ease-in-out" onClick={() => scrollToSection('solutions')} size="lg">
+          <Button 
+            className="hover:translate-y-[-2px] transition-transform duration-200 ease-in-out" 
+            onClick={() => scrollToSection('solutions')} 
+            size="lg"
+            aria-label="Explorar nuestras soluciones de automatización"
+          >
             Explorar Soluciones
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </Button>
         </AnimatedSection>
         <AnimatedSection delay={200}>
-          <Button className="hover:translate-y-[-2px] transition-transform duration-200 ease-in-out" onClick={() => scrollToSection('contact')} variant="outline" size="lg">
+          <Button 
+            className="hover:translate-y-[-2px] transition-transform duration-200 ease-in-out" 
+            onClick={() => scrollToSection('contact')} 
+            variant="outline" 
+            size="lg"
+            aria-label="Agendar una llamada con nuestro equipo"
+          >
             Agendar una llamada
           </Button>
         </AnimatedSection>

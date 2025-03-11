@@ -40,16 +40,18 @@ export default function Navbar() {
             href="#hero" 
             onClick={(e) => scrollToSection('hero', e)} 
             className="mr-6 flex items-center space-x-2"
+            aria-label="Nexovate - Inicio"
           >
             <span className="font-bold">Nexovate</span>
           </Link>
           
           {/* Menú de navegación para escritorio */}
-          <nav className="hidden md:flex flex-1 items-center space-x-6 text-sm font-medium">
+          <nav className="hidden md:flex flex-1 items-center space-x-6 text-sm font-medium" aria-label="Navegación principal">
             <Link 
               href="#solutions" 
               className="transition-colors hover:text-primary"
               onClick={(e) => scrollToSection('solutions', e)}
+              aria-label="Ver nuestras soluciones"
             >
               Soluciones
             </Link>
@@ -64,6 +66,7 @@ export default function Navbar() {
               href="#about" 
               className="transition-colors hover:text-primary"
               onClick={(e) => scrollToSection('about', e)}
+              aria-label="Conocer más sobre nosotros"
             >
               Sobre nosotros
             </Link>
@@ -71,24 +74,37 @@ export default function Navbar() {
 
           {/* Botones para escritorio */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button onClick={() => scrollToSection('contact')} variant="ghost" size="sm">
+            <Button 
+              onClick={() => scrollToSection('contact')} 
+              variant="ghost" 
+              size="sm"
+              aria-label="Ir a la sección de contacto"
+            >
               Contacto
             </Button>
-            <Button onClick={() => scrollToSection('contact')} size="sm">Agendar una llamada</Button>
+            <Button 
+              onClick={() => scrollToSection('contact')} 
+              size="sm"
+              aria-label="Agendar una llamada con nuestro equipo"
+            >
+              Agendar una llamada
+            </Button>
           </div>
 
           {/* Botón de menú hamburguesa para móvil */}
           <button 
             onClick={() => menuOpen ? closeMenu() : openMenu()} 
             className="md:hidden ml-auto p-2 focus:outline-none" 
-            aria-label="Toggle Menu"
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             {menuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -97,12 +113,17 @@ export default function Navbar() {
 
         {/* Menú móvil */}
         {renderMenu && (
-          <div className={`absolute top-14 left-0 w-full ${menuOpen ? "animate-slideDown" : "animate-slideUp"} md:hidden bg-background border-t border-border/40`}>
-            <nav className="flex flex-col px-4 py-2 space-y-2 text-sm font-medium">
+          <div 
+            id="mobile-menu"
+            className={`absolute top-14 left-0 w-full ${menuOpen ? "animate-slideDown" : "animate-slideUp"} md:hidden bg-background border-t border-border/40`}
+            aria-hidden={!menuOpen}
+          >
+            <nav className="flex flex-col px-4 py-2 space-y-2 text-sm font-medium" aria-label="Navegación móvil">
               <Link 
                 href="#solutions" 
                 className="transition-colors hover:text-primary hover:bg-gray-200/10 rounded-md pl-4 py-3 text-left"
                 onClick={(e) => handleLinkClick('solutions', e)}
+                aria-label="Ver nuestras soluciones"
               >
                 Soluciones
               </Link>
@@ -117,6 +138,7 @@ export default function Navbar() {
                 href="#about" 
                 className="transition-colors hover:text-primary hover:bg-gray-200/50 rounded-md pl-4 py-2 text-left"
                 onClick={(e) => handleLinkClick('about', e)}
+                aria-label="Conocer más sobre nosotros"
               >
                 Sobre nosotros
               </Link>
@@ -124,12 +146,14 @@ export default function Navbar() {
                 onClick={() => { scrollToSection('contact'); closeMenu(); }} 
                 variant="ghost" 
                 size="sm"
+                aria-label="Ir a la sección de contacto"
               >
                 Contacto
               </Button>
               <Button 
                 onClick={() => { scrollToSection('calendar'); closeMenu(); }} 
                 size="sm"
+                aria-label="Agendar una llamada con nuestro equipo"
               >
                 Agendar una llamada
               </Button>

@@ -14,7 +14,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t">
+    <footer className="border-t" role="contentinfo" aria-label="Pie de página">
       <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">
         <div className="flex-1 space-y-4">
           <h2 className="font-bold">Nexovate</h2>
@@ -40,19 +40,31 @@ export default function Footer() {
             <h3 className="text-sm font-medium">Empresa</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <p onClick={() => scrollToSection('about')} className="cursor-pointer text-muted-foreground transition-colors hover:text-primary">
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="cursor-pointer text-muted-foreground transition-colors hover:text-primary"
+                  aria-label="Ir a la sección Sobre nosotros"
+                >
                   Sobre nosotros
-                </p>
+                </button>
               </li>
               <li>
-                <p onClick={() => scrollToSection('solutions')} className="cursor-pointer text-muted-foreground transition-colors hover:text-primary">
+                <button 
+                  onClick={() => scrollToSection('solutions')} 
+                  className="cursor-pointer text-muted-foreground transition-colors hover:text-primary"
+                  aria-label="Ir a la sección Soluciones"
+                >
                   Soluciones
-                </p>
+                </button>
               </li>
               <li>
-                <p onClick={() => scrollToSection('contact')} className="cursor-pointer text-muted-foreground transition-colors hover:text-primary">
+                <button 
+                  onClick={() => scrollToSection('contact')} 
+                  className="cursor-pointer text-muted-foreground transition-colors hover:text-primary"
+                  aria-label="Ir a la sección Contacto"
+                >
                   Contacto
-                </p>
+                </button>
               </li>
             </ul>
           </div>
@@ -79,7 +91,7 @@ export default function Footer() {
       </div>
       <div className="container border-t py-6">
         <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Nexovate, Inc. All rights reserved.
+          © {new Date().getFullYear()} Nexovate, Inc. Todos los derechos reservados.
         </p>
       </div>
     </footer>
