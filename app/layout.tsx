@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Nexovate",
   description: "Nexovate es una empresa que ofrece soluciones de automatización de procesos con IA para mejorar la eficiencia y la precisión en diversas industrias.",
+  icons: {
+    icon: "/LogoNexovate.ico",
+  },
 }
 
 export default function RootLayout({

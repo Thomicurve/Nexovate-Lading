@@ -14,12 +14,11 @@ const AboutUs = () => {
         />
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 h-full">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-100 sm:text-4xl">Sobre Nosotros</h2>
-          <p className="mt-4 text-lg text-gray-300">
-            Somos una empresa argentina que ofrece soluciones de automatización de procesos con IA para mejorar la eficiencia y la precisión en diversas industrias.
-            Nuestro objetivo es ayudar a las empresas a automatizar sus procesos y mejorar su eficiencia.
-            Comenzamos con la automatización de procesos de ventas y marketing, pero estamos expandiendo nuestras soluciones para incluir otras industrias.
+        <div>
+          <h2 className="text-center text-3xl font-bold text-gray-100 sm:text-4xl">Sobre Nosotros</h2>
+          <p className="text-center mt-4 font-light text-lg text-gray-200">
+            Somos un equipo de innovadores argentinos apasionados por la tecnología que transformamos negocios mediante soluciones avanzadas de <b className="text-[#1A5EFF]">automatización con n8n</b> e inteligencia artificial. Nuestra experiencia nos permite optimizar procesos críticos, reducir costos operativos y potenciar el crecimiento empresarial en diversos sectores.
+            Nos dedicamos a crear soluciones personalizadas que no solo automatizan tareas repetitivas, sino que también generan insights valiosos para la toma de decisiones estratégicas. Nuestro compromiso es ser aliados tecnológicos que impulsan la transformación digital de tu negocio hacia un futuro más eficiente y competitivo.
           </p>
         </div>
       </div>

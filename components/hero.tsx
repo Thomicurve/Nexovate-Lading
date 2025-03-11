@@ -24,13 +24,13 @@ export default function Hero() {
         />
       </div>
       <div className="space-y-4 relative z-30">
-        <h1 className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl pb-3">
           Automatiza y optimiza tus procesos
           <br />
-          con <strong>Nexovate</strong>
+          con <strong>Agentes de inteligencia artificial</strong>
         </h1>
-        <p className="mx-auto max-w-[52rem] leading-normal text-gray-400 sm:text-xl sm:leading-8">
-          Revoluciona tus procesos empresariales con soluciones de <span className="font-bold">inteligencia artificial</span> diseñadas para impulsar la eficiencia y la innovación.
+        <p className="mx-auto max-w-[52rem] font-light leading-normal text-gray-200 sm:text-lg sm:leading-8">
+          Gracias a <span className="font-bold text-[#1A5EFF]">Nexovate</span> revoluciona tus procesos empresariales con soluciones de inteligencia artificial diseñadas para impulsar la eficiencia y la innovación. Todo esto con la herramienta <strong className="text-[#1A5EFF]">n8n</strong>.
         </p>
       </div>
       <div className="flex gap-4 justify-center flex-wrap">
