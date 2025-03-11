@@ -4,6 +4,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import MouseMoveEffect from "@/components/mouse-move-effect"
 import { Toaster } from "@/components/ui/toaster"
+import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -82,6 +83,7 @@ export default function RootLayout({
         </a>
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )
