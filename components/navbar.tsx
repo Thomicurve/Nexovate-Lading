@@ -2,9 +2,27 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
+import { useLocale, useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
+import { 
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuTrigger 
+} from "@/components/ui/dropdown-menu"
+import { locales } from "@/app/i18n"
+
+const flagImages = {
+  es: "/images/flags/es.svg",
+  en: "/images/flags/gb.svg"
+};
 
 export default function Navbar() {
+  const t = useTranslations('navbar');
+  const locale = useLocale();
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [renderMenu, setRenderMenu] = useState(false);
   // const myDivRef = useRef<HTMLDivElement>(null);
@@ -32,6 +50,16 @@ export default function Navbar() {
     closeMenu();
   }
 
+  // Función para cambiar de idioma
+  const handleLanguageChange = (newLocale: string) => {
+    // Obtener la ruta sin el locale actual
+    const pathWithoutLocale = pathname.replace(/^\/[^\/]+/, '');
+    // Si no hay ruta después del locale, redireccionar a la raíz
+    const redirectPath = pathWithoutLocale || '/';
+    // Redireccionar a la misma ruta con el nuevo locale
+    window.location.href = `/${newLocale}${redirectPath}`;
+  };
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -53,7 +81,7 @@ export default function Navbar() {
               onClick={(e) => scrollToSection('solutions', e)}
               aria-label="Ver nuestras soluciones"
             >
-              Soluciones
+              {t('solutions')}
             </Link>
             {/* <Link 
               href="#clients" 
@@ -68,7 +96,7 @@ export default function Navbar() {
               onClick={(e) => scrollToSection('about', e)}
               aria-label="Conocer más sobre nosotros"
             >
-              Sobre nosotros
+              {t('about')}
             </Link>
           </nav>
 
@@ -80,14 +108,54 @@ export default function Navbar() {
               size="sm"
               aria-label="Ir a la sección de contacto"
             >
-              Contacto
+              {t('contact')}
             </Button>
+            
+            {/* Selector de idioma para escritorio */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="flex items-center gap-2"
+                  aria-label="Seleccionar idioma"
+                >
+                  <Image 
+                    src={flagImages[locale as keyof typeof flagImages]} 
+                    alt={locale === 'es' ? 'Bandera española' : 'British flag'} 
+                    width={20} 
+                    height={15} 
+                    className="rounded-sm"
+                  />
+                  <span className="hidden sm:inline-block">{t('language')}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {locales.map((l) => (
+                  <DropdownMenuItem 
+                    key={l} 
+                    onClick={() => handleLanguageChange(l)}
+                    className={`flex items-center gap-2 ${locale === l ? "font-bold" : ""}`}
+                  >
+                    <Image 
+                      src={flagImages[l as keyof typeof flagImages]} 
+                      alt={l === 'es' ? 'Bandera española' : 'British flag'} 
+                      width={20} 
+                      height={15} 
+                      className="rounded-sm"
+                    />
+                    {l === 'es' ? 'Español' : 'English'}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <Button 
               onClick={() => scrollToSection('contact')} 
               size="sm"
               aria-label="Agendar una llamada con nuestro equipo"
             >
-              Agendar una llamada
+              {t('schedule')}
             </Button>
           </div>
 
@@ -125,7 +193,7 @@ export default function Navbar() {
                 onClick={(e) => handleLinkClick('solutions', e)}
                 aria-label="Ver nuestras soluciones"
               >
-                Soluciones
+                {t('solutions')}
               </Link>
               {/* <Link 
                 href="#clients" 
@@ -140,7 +208,7 @@ export default function Navbar() {
                 onClick={(e) => handleLinkClick('about', e)}
                 aria-label="Conocer más sobre nosotros"
               >
-                Sobre nosotros
+                {t('about')}
               </Link>
               <Button 
                 onClick={() => { scrollToSection('contact'); closeMenu(); }} 
@@ -148,15 +216,42 @@ export default function Navbar() {
                 size="sm"
                 aria-label="Ir a la sección de contacto"
               >
-                Contacto
+                {t('contact')}
               </Button>
+            
               <Button 
                 onClick={() => { scrollToSection('calendar'); closeMenu(); }} 
                 size="sm"
                 aria-label="Agendar una llamada con nuestro equipo"
               >
-                Agendar una llamada
+                {t('schedule')}
               </Button>
+
+              {/* Selector de idioma para móvil */}
+              <div className="py-2 pt-5">
+                {/* <p className="pl-4 mb-2 text-sm text-gray-400">{t('language')}</p> */}
+                <div className="flex gap-2">
+                  {locales.map((l) => (
+                    <Button 
+                      key={l} 
+                      onClick={() => handleLanguageChange(l)} 
+                      variant={locale === l ? "default" : "outline"}
+                      size="sm"
+                      className="flex-1 flex items-center justify-center gap-2"
+                    >
+                      <Image 
+                        src={flagImages[l as keyof typeof flagImages]} 
+                        alt={l === 'es' ? 'Bandera española' : 'British flag'} 
+                        width={20} 
+                        height={15} 
+                        className="rounded-sm"
+                      />
+                      {l === 'es' ? 'Español' : 'English'}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+              
             </nav>
           </div>
         )}

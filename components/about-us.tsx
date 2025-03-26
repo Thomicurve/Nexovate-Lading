@@ -1,7 +1,10 @@
 "use client"
 import Squares from "./blocks/Backgrounds/Squares"
+import { useTranslations } from 'next-intl'
 
 const AboutUs = () => {
+  const t = useTranslations('about');
+  
   return (
     <section id="about" className="py-24 relative min-h-[60vh] flex items-center justify-center">
       <div className="absolute inset-0 opacity-30">
@@ -15,11 +18,10 @@ const AboutUs = () => {
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 h-full">
         <div>
-          <h2 className="text-center text-3xl font-bold text-gray-100 sm:text-4xl">Sobre Nosotros</h2>
-          <p className="text-center mt-4 font-light text-lg text-gray-200">
-            Somos un equipo de innovadores argentinos apasionados por la tecnología que transformamos negocios mediante soluciones avanzadas de <b className="text-[#1A5EFF]">automatización con n8n</b> e inteligencia artificial. Nuestra experiencia nos permite optimizar procesos críticos, reducir costos operativos y potenciar el crecimiento empresarial en diversos sectores.
-            Nos dedicamos a crear soluciones personalizadas que no solo automatizan tareas repetitivas, sino que también generan insights valiosos para la toma de decisiones estratégicas. Nuestro compromiso es ser aliados tecnológicos que impulsan la transformación digital de tu negocio hacia un futuro más eficiente y competitivo.
-          </p>
+          <h2 className="text-center text-3xl font-bold text-gray-100 sm:text-4xl">{t('title')}</h2>
+          <p className="text-center mt-4 font-light text-lg text-gray-200" dangerouslySetInnerHTML={{ __html: t('description')
+            .replace('automatización con n8n', '<b class="text-[#1A5EFF]">automatización con n8n</b>') 
+          }} />
         </div>
       </div>
     </section>

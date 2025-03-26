@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { AnimatedSection } from "./animated-section"
 import Orb from "./blocks/Backgrounds/Orb"
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
+  const t = useTranslations('hero');
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -32,12 +35,10 @@ export default function Hero() {
           id="hero-heading"
           className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl pb-3"
         >
-          Automatiza y optimiza tus procesos
-          <br />
-          con <strong>Agentes de inteligencia artificial</strong>
+          {t('title')}
         </h1>
         <p className="mx-auto max-w-[52rem] font-light leading-normal text-gray-200 sm:text-lg sm:leading-8">
-          Gracias a <span className="font-bold text-[#1A5EFF]">Nexovate</span> revoluciona tus procesos empresariales con soluciones de inteligencia artificial diseñadas para impulsar la eficiencia y la innovación. Todo esto con la herramienta <strong className="text-[#1A5EFF]">n8n</strong>.
+          {t('subtitle')}
         </p>
       </div>
       <div className="flex gap-4 justify-center flex-wrap">
@@ -48,7 +49,7 @@ export default function Hero() {
             size="lg"
             aria-label="Explorar nuestras soluciones de automatización"
           >
-            Explorar Soluciones
+            {t('cta')}
             <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </Button>
         </AnimatedSection>
@@ -60,7 +61,7 @@ export default function Hero() {
             size="lg"
             aria-label="Agendar una llamada con nuestro equipo"
           >
-            Agendar una llamada
+            {t('schedule')}
           </Button>
         </AnimatedSection>
       </div>

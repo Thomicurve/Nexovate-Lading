@@ -8,11 +8,14 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { AnimatedSection } from "@/components/animated-section"
 import Calendar from "@/components/calendar"
+import { useTranslations } from 'next-intl'
 // import { useToast } from "@/hooks/use-toast"
 // import { Loader } from "lucide-react"
 
 
 export default function Contact() {
+  const t = useTranslations('contact');
+  
   // const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
   // const [isLoading, setIsLoading] = useState(false);
   // const { toast } = useToast();
@@ -75,7 +78,7 @@ export default function Contact() {
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">
           <AnimatedSection delay={100}>
-            Contactanos
+            {t('title')}
           </AnimatedSection>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
@@ -115,9 +118,9 @@ export default function Contact() {
           </Card> */}
           <Card id="calendar" className="md:col-span-6 p-0 m-0 min-h-[80vh]">
             <CardHeader>
-              <CardTitle>Agenda una reunión</CardTitle>
+              <CardTitle>{t('calendar.title')}</CardTitle>
               <CardDescription>
-                Elige una fecha para tu reunión y nos pondremos en contacto contigo para confirmar el horario.
+                {t('calendar.description')}
               </CardDescription>
             </CardHeader>
             <CardContent>

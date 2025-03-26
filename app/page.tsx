@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation';
+import { defaultLocale } from '@/app/i18n';
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Features from "@/components/features"
@@ -6,7 +8,13 @@ import Footer from "@/components/footer"
 import Contact from "@/components/contact"
 import AboutUs from "@/components/about-us"
 import ChatButton from "@/components/chatButton"
-export default function Home() {
+
+// Redireccionar a la ruta con el locale por defecto
+export default function RootPage() {
+  redirect(`/${defaultLocale}`);
+}
+
+export function Home() {
   return (
     <div className="relative min-h-screen">
       <div className="pointer-events-none fixed inset-0">

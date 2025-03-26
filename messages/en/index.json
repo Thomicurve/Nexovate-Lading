@@ -1,0 +1,82 @@
+{
+  "navbar": {
+    "solutions": "Solutions",
+    "about": "About Us",
+    "contact": "Contact",
+    "schedule": "Schedule a Call",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Automate and optimize your processes with AI Agents",
+    "subtitle": "With Nexovate, revolutionize your business processes using artificial intelligence solutions designed to boost efficiency and innovation. All this with the n8n tool.",
+    "cta": "Explore Solutions",
+    "schedule": "Schedule a Call"
+  },
+  "solutions": {
+    "title": "AI Solutions",
+    "description": "Discover how Nexovate can help scale your business with artificial intelligence agents.",
+    "features": {
+      "sales": {
+        "title": "Sales Optimization",
+        "description": "Harness the power of artificial intelligence and n8n to automate and improve every stage of the sales process, from prospecting to closing customers."
+      },
+      "automation": {
+        "title": "Process Automation",
+        "description": "Implementation of chatbots, RAGs, and intelligent CRMs that optimize customer management and increase your business efficiency."
+      },
+      "security": {
+        "title": "Secure and Scalable Solutions",
+        "description": "Our solutions guarantee the security and scalability necessary for your business to grow without limitations, integrating with your current infrastructure."
+      },
+      "agents": {
+        "title": "High-Performance AI Agents",
+        "description": "Artificial intelligence agents designed to power your business with speed, precision, and 24/7 availability, ensuring a seamless experience for your customers."
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are a team of Argentine innovators passionate about technology who transform businesses through advanced automation solutions with n8n and artificial intelligence. Our expertise allows us to optimize critical processes, reduce operational costs, and enhance business growth across various sectors. We are dedicated to creating customized solutions that not only automate repetitive tasks but also generate valuable insights for strategic decision-making. Our commitment is to be technological allies that drive the digital transformation of your business towards a more efficient and competitive future."
+  },
+  "cta": {
+    "title": "Ready to take your business to the next level?",
+    "description": "Join the people who trust us to drive their digital transformation and stay at the forefront of the ever-evolving technological landscape.",
+    "button": "Get Started Today"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Submit",
+    "success": "Message sent successfully!",
+    "error": "An error has occurred. Please try again.",
+    "calendar": {
+      "title": "Schedule a Meeting",
+      "description": "Choose a date for your meeting and we will contact you to confirm the time."
+    }
+  },
+  "footer": {
+    "company": "Company",
+    "aboutLink": "About Us",
+    "solutionsLink": "Solutions",
+    "contactLink": "Contact",
+    "tagline": "We help grow your business and improve your processes with AI agents.",
+    "rights": "All rights reserved",
+    "copyright": "Nexovate, Inc. All rights reserved."
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "footer": "Footer",
+    "mainNavigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation",
+    "heroHeading": "Nexovate - Home",
+    "solutionsHeading": "View our solutions",
+    "aboutHeading": "Learn more about us",
+    "contactHeading": "Go to contact section",
+    "scheduleHeading": "Schedule a call with our team",
+    "languageSelector": "Select language",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  }
+} 

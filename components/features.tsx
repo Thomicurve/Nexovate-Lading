@@ -2,39 +2,42 @@
 import { Brain, Cloud, Shield, Zap } from "lucide-react"
 import { AnimatedSection } from "./animated-section"
 import PixelCard from "@/components/blocks/Components/PixelCard"
-
-const features = [
-  {
-    name: "Optimización de ventas",
-    description: "Aprovecha el poder de la inteligencia artificial y de n8n para automatizar y mejorar cada etapa del proceso de ventas, desde la prospección hasta el cierre de clientes.",
-    icon: Brain,
-  },
-  {
-    name: "Automatización de procesos",
-    description: "Implementación de chatbots, RAGs y CRMs inteligentes que optimizan la gestión de clientes e incrementan la eficiencia de tu negocio.",
-    icon: Cloud,
-  },
-  {
-    name: "Soluciones seguras y escalables",
-    description: "Nuestras soluciones garantizan la seguridad y escalabilidad necesarias para que tu negocio crezca sin limitaciones, integrándose con tu infraestructura actual.",
-    icon: Shield,
-  },
-  {
-    name: "Agentes de IA de alto rendimiento",
-    description: "Agentes de inteligencia artificial diseñados para potenciar tu negocio con velocidad, precisión y disponibilidad 24/7, asegurando una experiencia fluida para tus clientes.",
-    icon: Zap,
-  },
-]
+import { useTranslations } from 'next-intl'
 
 export default function Features() {
+  const t = useTranslations('solutions');
+  
+  const features = [
+    {
+      name: t('features.sales.title'),
+      description: t('features.sales.description'),
+      icon: Brain,
+    },
+    {
+      name: t('features.automation.title'),
+      description: t('features.automation.description'),
+      icon: Cloud,
+    },
+    {
+      name: t('features.security.title'),
+      description: t('features.security.description'),
+      icon: Shield,
+    },
+    {
+      name: t('features.agents.title'),
+      description: t('features.agents.description'),
+      icon: Zap,
+    },
+  ]
+
   return (
     <section id="solutions" className="container space-y-16 py-24 md:py-32">
       <div className="mx-auto max-w-[58rem] text-center">
         <AnimatedSection delay={100}>
-          <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Soluciones de <span className="text-[#1A5EFF]">IA</span></h2>
+          <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">{t('title')}</h2>
         </AnimatedSection>
         <p className="mt-4 text-muted-foreground sm:text-lg">
-          Descubre cómo Nexovate puede ayudar a escalar tu negocio con agentes de inteligencia artificial.
+          {t('description')}
         </p>
       </div>
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">

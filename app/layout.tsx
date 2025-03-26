@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className="dark" dir="ltr">
+    <html className="dark" dir="ltr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -79,7 +79,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-background text-foreground antialiased`}>
         <MouseMoveEffect />
         <a href="#hero" className="skip-to-content sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground">
-          Saltar al contenido principal
+          Skip to main content
         </a>
         {children}
         <Toaster />
