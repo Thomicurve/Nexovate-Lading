@@ -94,7 +94,7 @@ export default function Footer() {
       </div>
       <div className="container border-t py-6">
         <p className="text-center text-sm text-muted-foreground">
-         © {new Date().getFullYear()} {t('copyright')}
+          {t('copyright').replace('{year}', new Date().getFullYear().toString())}
         </p>
       </div>
     </footer>

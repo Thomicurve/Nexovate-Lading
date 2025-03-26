@@ -6,13 +6,8 @@ import Footer from "@/components/footer"
 import Contact from "@/components/contact"
 import AboutUs from "@/components/about-us"
 import ChatButton from "@/components/chatButton"
-import type { Locale } from '@/app/i18n';
 
-type Props = {
-  params: { locale: Locale }
-};
-
-export default function Home({ params: { locale } }: Props) {
+export default function Home() {
   return (
     <div className="relative min-h-screen">
       <div className="pointer-events-none fixed inset-0">
