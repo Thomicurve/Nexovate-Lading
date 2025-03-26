@@ -4,7 +4,8 @@
     "about": "About Us",
     "contact": "Contact",
     "schedule": "Schedule a Call",
-    "language": "Language"
+    "language": "Language",
+    "process": "Process"
   },
   "hero": {
     "title": "Automate and optimize your processes with AI Agents",
@@ -37,6 +38,28 @@
   "about": {
     "title": "About Us",
     "description": "We are a team of Argentine innovators passionate about technology who transform businesses through advanced automation solutions with n8n and artificial intelligence. Our expertise allows us to optimize critical processes, reduce operational costs, and enhance business growth across various sectors. We are dedicated to creating customized solutions that not only automate repetitive tasks but also generate valuable insights for strategic decision-making. Our commitment is to be technological allies that drive the digital transformation of your business towards a more efficient and competitive future."
+  },
+  "timeline": {
+    "title": "Our Process",
+    "description": "We follow a structured process to ensure that each project is successful and meets client expectations.",
+    "steps": {
+      "step1": {
+        "title": "Initial Conversation",
+        "description": "We start with a personalized chat to understand your specific needs and business objectives."
+      },
+      "step2": {
+        "title": "Strategic Consulting",
+        "description": "We conduct a detailed assessment and share our vision on how AI can transform your processes."
+      },
+      "step3": {
+        "title": "Back Office Analysis",
+        "description": "We thoroughly examine your internal operations to identify key opportunities for automation and improvement."
+      },
+      "step4": {
+        "title": "Action Plan",
+        "description": "We develop a customized strategy with concrete steps to implement solutions tailored to your needs."
+      }
+    }
   },
   "cta": {
     "title": "Ready to take your business to the next level?",

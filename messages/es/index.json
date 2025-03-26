@@ -4,7 +4,8 @@
     "about": "Sobre nosotros",
     "contact": "Contacto",
     "schedule": "Agendar una llamada",
-    "language": "Idioma"
+    "language": "Idioma",
+    "process": "Proceso"
   },
   "hero": {
     "title": "Automatiza y optimiza tus procesos con Agentes de inteligencia artificial",
@@ -37,6 +38,28 @@
   "about": {
     "title": "Sobre Nosotros",
     "description": "Somos un equipo de innovadores argentinos apasionados por la tecnología que transformamos negocios mediante soluciones avanzadas de automatización con n8n e inteligencia artificial. Nuestra experiencia nos permite optimizar procesos críticos, reducir costos operativos y potenciar el crecimiento empresarial en diversos sectores. Nos dedicamos a crear soluciones personalizadas que no solo automatizan tareas repetitivas, sino que también generan insights valiosos para la toma de decisiones estratégicas. Nuestro compromiso es ser aliados tecnológicos que impulsan la transformación digital de tu negocio hacia un futuro más eficiente y competitivo."
+  },
+  "timeline": {
+    "title": "Nuestro Proceso",
+    "description": "Seguimos un proceso estructurado para asegurar que cada proyecto sea exitoso y cumpla con las expectativas del cliente.",
+    "steps": {
+      "step1": {
+        "title": "Conversación Inicial",
+        "description": "Comenzamos con una charla personalizada para entender tus necesidades específicas y objetivos de negocio."
+      },
+      "step2": {
+        "title": "Consultoría Estratégica",
+        "description": "Realizamos una evaluación detallada y compartimos nuestra visión sobre cómo la IA puede transformar tus procesos."
+      },
+      "step3": {
+        "title": "Análisis de Back Office",
+        "description": "Examinamos a fondo tus operaciones internas para identificar oportunidades clave de automatización y mejora."
+      },
+      "step4": {
+        "title": "Plan de Acción",
+        "description": "Desarrollamos una estrategia personalizada con pasos concretos para implementar soluciones adaptadas a tus necesidades."
+      }
+    }
   },
   "cta": {
     "title": "¿Listo para llevar tu negocio al siguiente nivel?",

@@ -98,6 +98,14 @@ export default function Navbar() {
             >
               {t('about')}
             </Link>
+            <Link 
+              href="#process" 
+              className="transition-colors hover:text-primary"
+              onClick={(e) => scrollToSection('process', e)}
+              aria-label="Ver nuestro proceso"
+            >
+              {t('process')}
+            </Link>
           </nav>
 
           {/* Botones para escritorio */}
@@ -209,6 +217,14 @@ export default function Navbar() {
                 aria-label="Conocer más sobre nosotros"
               >
                 {t('about')}
+              </Link>
+              <Link 
+                href="#process" 
+                className="transition-colors hover:text-primary hover:bg-gray-200/10 rounded-md pl-4 py-3 text-left"
+                onClick={(e) => handleLinkClick('process', e)}
+                aria-label="Ver nuestro proceso"
+              >
+                {t('process')}
               </Link>
               <Button 
                 onClick={() => { scrollToSection('contact'); closeMenu(); }} 

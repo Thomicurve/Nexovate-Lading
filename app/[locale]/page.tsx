@@ -5,6 +5,7 @@ import CTA from "@/components/cta"
 import Footer from "@/components/footer"
 import Contact from "@/components/contact"
 import AboutUs from "@/components/about-us"
+import ProjectTimeline from "@/components/project-timeline"
 import ChatButton from "@/components/chatButton"
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <Features />
         <AboutUs />
+        <ProjectTimeline />
         <CTA />
         <Contact />
         <Footer />
