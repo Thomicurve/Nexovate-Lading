@@ -19,9 +19,8 @@ const AboutUs = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 h-full">
         <div>
           <h2 className="text-center text-3xl font-bold text-gray-100 sm:text-4xl">{t('title')}</h2>
-          <p className="text-center mt-4 font-light text-lg text-gray-200" dangerouslySetInnerHTML={{ __html: t('description')
-            .replace('automatización con n8n', '<b class="text-[#1A5EFF]">automatización con n8n</b>') 
-          }} />
+          <p className="text-center mt-4 font-light text-lg text-gray-200">{t('description')}</p>
+          <p className="text-center mt-4 font-light text-lg text-gray-200">{t('aiNote')}</p>
         </div>
       </div>
     </section>

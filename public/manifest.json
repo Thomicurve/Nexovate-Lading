@@ -1,7 +1,7 @@
 {
-  "name": "Nexovate - Automatización de procesos con IA y n8n",
+  "name": "Nexovate - Software a medida y automatización de procesos",
   "short_name": "Nexovate",
-  "description": "Nexovate es un emprendimiento de Argentina que ofrece soluciones de automatización de procesos con IA y n8n para aumentar la productividad en tu negocio.",
+  "description": "Software a medida para automatizar tareas, seguir procesos y reunir tus datos en un solo lugar.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -18,4 +18,4 @@
       "type": "image/png"
     }
   ]
-} 
+}

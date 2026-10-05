@@ -47,7 +47,7 @@ export default function Hero() {
             className="hover:translate-y-[-2px] transition-transform duration-200 ease-in-out" 
             onClick={() => scrollToSection('solutions')} 
             size="lg"
-            aria-label="Explorar nuestras soluciones de automatización"
+            aria-label={t('cta')}
           >
             {t('cta')}
             <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
@@ -59,7 +59,7 @@ export default function Hero() {
             onClick={() => scrollToSection('contact')} 
             variant="outline" 
             size="lg"
-            aria-label="Agendar una llamada con nuestro equipo"
+            aria-label={t('schedule')}
           >
             {t('schedule')}
           </Button>

@@ -1,7 +1,7 @@
 "use client"
 import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
-import { MessageCircle, GraduationCap, Search, FileSpreadsheet } from "lucide-react"
+import { MessageCircle, ListChecks, Code2, Handshake } from "lucide-react"
 
 const ProjectTimeline = () => {
   const t = useTranslations("timeline");
@@ -28,7 +28,7 @@ const ProjectTimeline = () => {
               >
                 <div className="bg-background/80 border border-blue-600/20 rounded-lg p-6 shadow-lg">
                   <div className="flex items-center mb-2">
-                    <MessageCircle size={24} className="text-blue-500 mr-3 flex-shrink-0" />
+                    <MessageCircle size={24} className="text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
                     <h3 className="text-xl font-bold text-blue-500">{t("steps.step1.title")}</h3>
                   </div>
                   <p className="text-gray-300">{t("steps.step1.description")}</p>
@@ -55,7 +55,7 @@ const ProjectTimeline = () => {
               >
                 <div className="bg-background/80 border border-blue-600/20 rounded-lg p-6 shadow-lg">
                   <div className="flex items-center mb-2">
-                    <GraduationCap size={24} className="text-blue-500 mr-3 flex-shrink-0" />
+                    <ListChecks size={24} className="text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
                     <h3 className="text-xl font-bold text-blue-500">{t("steps.step2.title")}</h3>
                   </div>
                   <p className="text-gray-300">{t("steps.step2.description")}</p>
@@ -74,7 +74,7 @@ const ProjectTimeline = () => {
               >
                 <div className="bg-background/80 border border-blue-600/20 rounded-lg p-6 shadow-lg">
                   <div className="flex items-center mb-2">
-                    <Search size={24} className="text-blue-500 mr-3 flex-shrink-0" />
+                    <Code2 size={24} className="text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
                     <h3 className="text-xl font-bold text-blue-500">{t("steps.step3.title")}</h3>
                   </div>
                   <p className="text-gray-300">{t("steps.step3.description")}</p>
@@ -101,7 +101,7 @@ const ProjectTimeline = () => {
               >
                 <div className="bg-background/80 border border-blue-600/20 rounded-lg p-6 shadow-lg">
                   <div className="flex items-center mb-2">
-                    <FileSpreadsheet size={24} className="text-blue-500 mr-3 flex-shrink-0" />
+                    <Handshake size={24} className="text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
                     <h3 className="text-xl font-bold text-blue-500">{t("steps.step4.title")}</h3>
                   </div>
                   <p className="text-gray-300">{t("steps.step4.description")}</p>

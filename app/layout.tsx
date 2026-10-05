@@ -8,9 +8,9 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Nexovate - Automatización de procesos con IA y n8n",
-  description: "Nexovate es un emprendimiento de Argentina que ofrece soluciones de automatización de procesos con IA y n8n para aumentar la productividad en tu negocio.",
-  keywords: "automatización, inteligencia artificial, IA, n8n, procesos empresariales, chatbots, eficiencia, productividad, Argentina, agentes IA, optimización de procesos",
+  title: "Nexovate - Software a medida y automatización de procesos",
+  description: "Creamos software a medida para automatizar tareas, seguir procesos y reunir tus datos en un solo lugar. Más claridad para trabajar y decidir.",
+  keywords: "software a medida, automatización de procesos, trazabilidad, datos centralizados, integraciones, sistemas internos, procesos empresariales, Argentina",
   authors: [{ name: "Nexovate" }],
   creator: "Nexovate",
   publisher: "Nexovate",
@@ -22,22 +22,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
     url: "https://nexovate.net",
-    title: "Nexovate - Automatización de procesos con IA y n8n",
-    description: "Soluciones de automatización con inteligencia artificial y n8n para mejorar la eficiencia y productividad de tu negocio",
+    title: "Nexovate - Software a medida y automatización de procesos",
+    description: "Software para automatizar tareas, dar seguimiento a tus procesos y conectar los datos de tu operación.",
     siteName: "Nexovate",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Nexovate - Automatización de procesos con IA",
+        alt: "Nexovate - Software a medida y automatización de procesos",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexovate - Automatización de procesos con IA y n8n",
-    description: "Soluciones de automatización con inteligencia artificial y n8n para mejorar la eficiencia y productividad de tu negocio",
+    title: "Nexovate - Software a medida y automatización de procesos",
+    description: "Software para automatizar tareas, dar seguimiento a tus procesos y conectar los datos de tu operación.",
     images: ["/og-image.jpg"],
   },
   icons: {

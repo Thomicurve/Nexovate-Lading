@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "solutions": "Solutions",
+    "solutions": "Services",
     "about": "About Us",
     "contact": "Contact",
     "schedule": "Schedule a Call",
@@ -8,66 +8,67 @@
     "process": "Process"
   },
   "hero": {
-    "title": "Automate and optimize your processes with AI Agents",
-    "subtitle": "With Nexovate, revolutionize your business processes using artificial intelligence solutions designed to boost efficiency and innovation. All this with the n8n tool.",
-    "cta": "Explore Solutions",
-    "schedule": "Schedule a Call"
+    "title": "Software that organizes your operations and makes every step visible",
+    "subtitle": "We build custom software to automate tasks, track each process and bring your data together. Less scattered information. More clarity for your team.",
+    "cta": "View services",
+    "schedule": "Let's talk about your process"
   },
   "solutions": {
-    "title": "AI Solutions",
-    "description": "Discover how Nexovate can help scale your business with artificial intelligence agents.",
+    "title": "Software that helps your business work better",
+    "description": "We start with how your operations work and build tools to support them.",
     "features": {
-      "sales": {
-        "title": "Sales Optimization",
-        "description": "Harness the power of artificial intelligence and n8n to automate and improve every stage of the sales process, from prospecting to closing customers."
+      "customSoftware": {
+        "title": "Custom software",
+        "description": "We build internal systems and customer platforms tailored to the way you work."
       },
       "automation": {
-        "title": "Process Automation",
-        "description": "Implementation of chatbots, RAGs, and intelligent CRMs that optimize customer management and increase your business efficiency."
+        "title": "Process automation",
+        "description": "We connect tasks and systems to reduce manual work and avoid copying and pasting."
       },
-      "security": {
-        "title": "Secure and Scalable Solutions",
-        "description": "Our solutions guarantee the security and scalability necessary for your business to grow without limitations, integrating with your current infrastructure."
+      "traceability": {
+        "title": "Tracking and traceability",
+        "description": "See the status, owners and pending tasks of each process in one place."
       },
-      "agents": {
-        "title": "High-Performance AI Agents",
-        "description": "Artificial intelligence agents designed to power your business with speed, precision, and 24/7 availability, ensuring a seamless experience for your customers."
+      "dataIntegration": {
+        "title": "Data and integrations",
+        "description": "We connect data from spreadsheets and tools to give your team a shared view of operations."
       }
     }
   },
   "about": {
-    "title": "About Us",
-    "description": "We are a team of Argentine innovators passionate about technology who transform businesses through advanced automation solutions with n8n and artificial intelligence. Our expertise allows us to optimize critical processes, reduce operational costs, and enhance business growth across various sectors. We are dedicated to creating customized solutions that not only automate repetitive tasks but also generate valuable insights for strategic decision-making. Our commitment is to be technological allies that drive the digital transformation of your business towards a more efficient and competitive future."
+    "title": "We work closely with your team",
+    "description": "We are two partners who build solutions with the people who use them. First, we understand your operations; then we decide what to organize, connect or automate.",
+    "aiNote": "We use artificial intelligence when it adds value to the solution."
   },
   "timeline": {
-    "title": "Our Process",
-    "description": "We follow a structured process to ensure that each project is successful and meets client expectations.",
+    "title": "How we work",
+    "description": "From understanding your operations to building a tool you can use every day.",
     "steps": {
       "step1": {
-        "title": "Initial Conversation",
-        "description": "We start with a personalized chat to understand your specific needs and business objectives."
+        "title": "Understand",
+        "description": "We talk with your team to understand your operations, manual tasks and where visibility is lost."
       },
       "step2": {
-        "title": "Strategic Consulting",
-        "description": "We conduct a detailed assessment and share our vision on how AI can transform your processes."
+        "title": "Define",
+        "description": "Together, we decide what to organize, connect or automate and agree on the scope of the solution."
       },
       "step3": {
-        "title": "Back Office Analysis",
-        "description": "We thoroughly examine your internal operations to identify key opportunities for automation and improvement."
+        "title": "Build",
+        "description": "We develop the software and validate it with the people who will use it, adapting it to their work."
       },
       "step4": {
-        "title": "Action Plan",
-        "description": "We develop a customized strategy with concrete steps to implement solutions tailored to your needs."
+        "title": "Support",
+        "description": "We launch the solution and support your team as they use and evolve it."
       }
     }
   },
   "cta": {
-    "title": "Ready to take your business to the next level?",
-    "description": "Join the people who trust us to drive their digital transformation and stay at the forefront of the ever-evolving technological landscape.",
-    "button": "Get Started Today"
+    "title": "Tell us which process you want to improve",
+    "description": "We can help turn scattered tasks into tools that support your operations.",
+    "button": "Schedule a call"
   },
   "contact": {
-    "title": "Contact Us",
+    "title": "Let's talk about your process",
     "name": "Name",
     "email": "Email",
     "message": "Message",
@@ -75,16 +76,16 @@
     "success": "Message sent successfully!",
     "error": "An error has occurred. Please try again.",
     "calendar": {
-      "title": "Schedule a Meeting",
-      "description": "Choose a date for your meeting and we will contact you to confirm the time."
+      "title": "Schedule a call",
+      "description": "Select an available time in the calendar."
     }
   },
   "footer": {
     "company": "Company",
     "aboutLink": "About Us",
-    "solutionsLink": "Solutions",
+    "solutionsLink": "Services",
     "contactLink": "Contact",
-    "tagline": "We help grow your business and improve your processes with AI agents.",
+    "tagline": "Custom software to automate, connect and bring clarity to your operations.",
     "rights": "All rights reserved",
     "copyright": "Nexovate, Inc. All rights reserved."
   },
@@ -94,7 +95,7 @@
     "mainNavigation": "Main navigation",
     "mobileNavigation": "Mobile navigation",
     "heroHeading": "Nexovate - Home",
-    "solutionsHeading": "View our solutions",
+    "solutionsHeading": "View our services",
     "aboutHeading": "Learn more about us",
     "contactHeading": "Go to contact section",
     "scheduleHeading": "Schedule a call with our team",
@@ -102,4 +103,4 @@
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
   }
-} 
+}

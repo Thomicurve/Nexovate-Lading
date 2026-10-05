@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "solutions": "Soluciones",
+    "solutions": "Servicios",
     "about": "Sobre nosotros",
     "contact": "Contacto",
     "schedule": "Agendar una llamada",
@@ -8,66 +8,67 @@
     "process": "Proceso"
   },
   "hero": {
-    "title": "Automatiza y optimiza tus procesos con Agentes de inteligencia artificial",
-    "subtitle": "Gracias a Nexovate revoluciona tus procesos empresariales con soluciones de inteligencia artificial diseñadas para impulsar la eficiencia y la innovación. Todo esto con la herramienta n8n.",
-    "cta": "Explorar Soluciones",
-    "schedule": "Agendar una llamada"
+    "title": "Software que ordena tu operación y hace visible lo que pasa",
+    "subtitle": "Creamos software a medida para automatizar tareas, seguir cada proceso y reunir tus datos en un solo lugar. Menos información dispersa. Más claridad para trabajar.",
+    "cta": "Ver servicios",
+    "schedule": "Hablemos de tu proceso"
   },
   "solutions": {
-    "title": "Soluciones de IA",
-    "description": "Descubre cómo Nexovate puede ayudar a escalar tu negocio con agentes de inteligencia artificial.",
+    "title": "Software para que tu empresa trabaje mejor",
+    "description": "Partimos de cómo funciona tu operación y construimos herramientas que la acompañen.",
     "features": {
-      "sales": {
-        "title": "Optimización de ventas",
-        "description": "Aprovecha el poder de la inteligencia artificial y de n8n para automatizar y mejorar cada etapa del proceso de ventas, desde la prospección hasta el cierre de clientes."
+      "customSoftware": {
+        "title": "Software a medida",
+        "description": "Construimos sistemas internos y plataformas para tus clientes, adaptados a tu forma de trabajar."
       },
       "automation": {
         "title": "Automatización de procesos",
-        "description": "Implementación de chatbots, RAGs y CRMs inteligentes que optimizan la gestión de clientes e incrementan la eficiencia de tu negocio."
+        "description": "Conectamos tareas y sistemas para reducir carga manual y evitar el copiar y pegar."
       },
-      "security": {
-        "title": "Soluciones seguras y escalables",
-        "description": "Nuestras soluciones garantizan la seguridad y escalabilidad necesarias para que tu negocio crezca sin limitaciones, integrándose con tu infraestructura actual."
+      "traceability": {
+        "title": "Seguimiento y trazabilidad",
+        "description": "Consultá el estado, los responsables y los pendientes de cada proceso en un solo lugar."
       },
-      "agents": {
-        "title": "Agentes de IA de alto rendimiento",
-        "description": "Agentes de inteligencia artificial diseñados para potenciar tu negocio con velocidad, precisión y disponibilidad 24/7, asegurando una experiencia fluida para tus clientes."
+      "dataIntegration": {
+        "title": "Datos e integraciones",
+        "description": "Conectamos datos de planillas y herramientas para dar una visión compartida de la operación."
       }
     }
   },
   "about": {
-    "title": "Sobre Nosotros",
-    "description": "Somos un equipo de innovadores argentinos apasionados por la tecnología que transformamos negocios mediante soluciones avanzadas de automatización con n8n e inteligencia artificial. Nuestra experiencia nos permite optimizar procesos críticos, reducir costos operativos y potenciar el crecimiento empresarial en diversos sectores. Nos dedicamos a crear soluciones personalizadas que no solo automatizan tareas repetitivas, sino que también generan insights valiosos para la toma de decisiones estratégicas. Nuestro compromiso es ser aliados tecnológicos que impulsan la transformación digital de tu negocio hacia un futuro más eficiente y competitivo."
+    "title": "Trabajamos cerca de tu equipo",
+    "description": "Somos dos socios que construimos soluciones junto a quienes las usan. Primero entendemos tu operación; después definimos qué conviene ordenar, conectar o automatizar.",
+    "aiNote": "Usamos inteligencia artificial cuando aporta valor a la solución."
   },
   "timeline": {
-    "title": "Nuestro Proceso",
-    "description": "Seguimos un proceso estructurado para asegurar que cada proyecto sea exitoso y cumpla con las expectativas del cliente.",
+    "title": "Cómo trabajamos",
+    "description": "De entender tu operación a construir una herramienta que puedas usar todos los días.",
     "steps": {
       "step1": {
-        "title": "Conversación Inicial",
-        "description": "Comenzamos con una charla personalizada para entender tus necesidades específicas y objetivos de negocio."
+        "title": "Entender",
+        "description": "Conversamos con tu equipo para conocer la operación, las tareas manuales y dónde se pierde visibilidad."
       },
       "step2": {
-        "title": "Consultoría Estratégica",
-        "description": "Realizamos una evaluación detallada y compartimos nuestra visión sobre cómo la IA puede transformar tus procesos."
+        "title": "Definir",
+        "description": "Definimos juntos qué ordenar, conectar o automatizar, y acordamos el alcance de la solución."
       },
       "step3": {
-        "title": "Análisis de Back Office",
-        "description": "Examinamos a fondo tus operaciones internas para identificar oportunidades clave de automatización y mejora."
+        "title": "Construir",
+        "description": "Desarrollamos el software y lo validamos con quienes lo van a usar, ajustándolo a su trabajo."
       },
       "step4": {
-        "title": "Plan de Acción",
-        "description": "Desarrollamos una estrategia personalizada con pasos concretos para implementar soluciones adaptadas a tus necesidades."
+        "title": "Acompañar",
+        "description": "Ponemos la solución en marcha y acompañamos a tu equipo en su uso y evolución."
       }
     }
   },
   "cta": {
-    "title": "¿Listo para llevar tu negocio al siguiente nivel?",
-    "description": "Unite a las personas que confían en nosotros para impulsar su transformación digital y mantenerse a la vanguardia del panorama tecnológico en constante evolución.",
-    "button": "Comienza hoy"
+    "title": "Contanos qué proceso querés mejorar",
+    "description": "Podemos ayudarte a transformar tareas dispersas en herramientas que acompañen tu operación.",
+    "button": "Agendar llamada"
   },
   "contact": {
-    "title": "Contactanos",
+    "title": "Hablemos de tu proceso",
     "name": "Nombre",
     "email": "Correo electrónico",
     "message": "Mensaje",
@@ -75,16 +76,16 @@
     "success": "¡Mensaje enviado correctamente!",
     "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
     "calendar": {
-      "title": "Agenda una reunión",
-      "description": "Elige una fecha para tu reunión y nos pondremos en contacto contigo para confirmar el horario."
+      "title": "Agendá una llamada",
+      "description": "Seleccioná un horario disponible en el calendario."
     }
   },
   "footer": {
     "company": "Empresa",
     "aboutLink": "Sobre nosotros",
-    "solutionsLink": "Soluciones",
+    "solutionsLink": "Servicios",
     "contactLink": "Contacto",
-    "tagline": "Ayudamos a hacer crecer tu negocio y a mejorar tus procesos con agentes de IA.",
+    "tagline": "Software a medida para automatizar, conectar y dar claridad a tu operación.",
     "rights": "Todos los derechos reservados",
     "copyright": "Nexovate, Inc. Todos los derechos reservados."
   },
@@ -94,7 +95,7 @@
     "mainNavigation": "Navegación principal",
     "mobileNavigation": "Navegación móvil",
     "heroHeading": "Nexovate - Inicio",
-    "solutionsHeading": "Ver nuestras soluciones",
+    "solutionsHeading": "Ver nuestros servicios",
     "aboutHeading": "Conocer más sobre nosotros",
     "contactHeading": "Ir a la sección de contacto",
     "scheduleHeading": "Agendar una llamada con nuestro equipo",
@@ -102,4 +103,4 @@
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú"
   }
-} 
+}
