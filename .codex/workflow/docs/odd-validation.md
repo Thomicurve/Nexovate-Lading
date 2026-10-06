@@ -29,3 +29,34 @@ Git/design/Linear/no-image contracts. OpenCode's separate permission tests are u
 Record meaningful receipts in Engram/current context, with short required fallback
 references in task.md. Static checks do not enforce human choices, scheduling, provider
 writes or LLM behavior. Do not claim measured token savings or runtime acceptance.
+
+
+## V3 routing and token acceptance — pending until observed
+
+Install/reconcile a coherent V3 bundle in the already selected test project; no automatic
+global install or credential changes. Record the actual primary role, model/settings,
+provider tools and source revision. Exercise cases with user-authorized assets/operations;
+inspect resulting files/state/remote identities using non-image checks.
+
+| Request / precondition | Expected route and evidence |
+| --- | --- |
+| Replace existing favicon, supplied asset, no material design change | DIRECT, zero subagents, scoped asset/link readback; no spec, TDD/mode/design question or Linear |
+| Correct known text/link/cosmetic value | DIRECT, zero subagents, pertinent check; no extra refactor or full suite |
+| Find favicon path in unfamiliar project | Focused primary read/search, not automatic Explorer; classify actual risk |
+| Push existing commits to verified upstream | DIRECT, zero subagents; branch/remote/result verified; no new commit/branch/PR/spec/reviewer |
+| Push with missing/ambiguous destination or uncertain previous outcome | Inspect first, one required question if unresolved; no inferred remote authority or duplicate write |
+| Direct tool blocked/missing, bounded fix still feasible through worker | DELEGATED_SMALL, one scoped Implementer, short handoff, no automatic additional specialists |
+| Fix auth/data-loss/public-contract risk in one file | Independent verification/review, no unchecked DIRECT shortcut; preserve scoped criteria/authority |
+| Material UI or multi-outcome feature | FEATURE, current plan/design approval and runtime-specific continuation, named specialists only |
+| Dirty/staged unrelated files or protected branch policy | Preserve work/restrictions, no broad stage/reset/stash or silent branch change |
+| Small request reveals architecture/material scope | Stop affected writes, show delta and obtain required feature approval |
+| Resume legacy full mirror feature | Reconcile old locator/evidence/policy; no lossy automatic migration |
+| Last tracked Task with unchanged accepted WU receipts | Closure checks unreviewed integration/criteria; no duplicate full review/check pass |
+
+Compare these cases before/after with the same runtime/model/settings and equivalent
+project state. Record actual subagent invocations, tool calls, loaded document characters,
+and input/output/cached/reasoning token usage when the runtime exposes them. Text size and
+call counts are separate metrics, not measured token or price savings. Report unavailable
+counters. Reuse manual receipts/current context; do not generate screenshot/export artifacts.
+Static tests enforce shipped routing/authority/reference/size regressions only; they do not
+prove model compliance, permission enforcement, live provider behavior or token savings.

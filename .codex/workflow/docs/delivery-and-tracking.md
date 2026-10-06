@@ -1,6 +1,12 @@
-# Delivery, tracking and compact specs — V2.2
+# Delivery, tracking and compact specs — V3
 
-These contracts extend the existing ODD/sequential-task policy. Orchestrator owns approval, canonical feature state, Linear synchronization and Engram. Implementer Delivery owns scoped Git/GitHub operations. Specialist handoffs are inputs, not additional persisted spec files.
+Read action-relevant sections only. DIRECT follows .codex/workflow/docs/request-routing.md;
+it does not inherit feature specs, forecasts, branches, Linear sync or Delivery delegation.
+Existing project branch restrictions and matching Git authority always apply.
+Orchestrator's direct shell/tool capability is a contract boundary, not a command/path ACL.
+No provider enablement, wildcard MCP grants or credential setup as an incidental optimization.
+
+These contracts extend the existing ODD/sequential-task policy. Orchestrator owns approval, canonical feature state, Linear synchronization and Engram. Implementer Delivery owns FEATURE Git/GitHub operations; Orchestrator may execute DIRECT operations under request-routing.md. Specialist handoffs are inputs, not additional persisted spec files.
 
 ## No generated images
 
@@ -12,9 +18,9 @@ The source workflow inspected a Pencil MCP with read_skill/execute plus browser/
 ## Native Codex configuration and boundaries
 
 Install and reconcile `AGENTS.md`, `.codex/` and `.agents/skills/` in the target project; trust it through the actual runtime. Custom role files use native TOML name/description/developer_instructions and sandbox defaults. Models inherit the user's Codex choice. Agent concurrency is limited to one child; workflow execution remains one task/writer at a time.
-Root AGENTS.md establishes Orchestrator behavior; a role filename alone does not select the primary chat. Invoke the actual available Implementer role in the same project checkout, then stop it before Reviewer/verification/Delivery. Do not launch CLI workers, change session roots or require relocation/binding tools. Orchestrator shell is limited to scoped Git reads, never application writes or mutating Git; Implementer Delivery owns mutations.
+Root AGENTS.md establishes Orchestrator behavior; a role filename alone does not select the primary chat. Invoke the actual available Implementer role in the same project checkout, then stop it before Reviewer/verification/Delivery. Do not launch CLI workers, change session roots or require relocation/binding tools. Orchestrator may execute bounded DIRECT application/Git work; FEATURE application mutations use Implementer and Git mutations use Delivery.
 Read-only sandbox defaults are not shell-read or remote-write denial. Narrow paths, modes, user gates and no-image Pencil operations are contracts, not parameter/path ACLs. Inspect actual inherited sandbox/app/MCP/tools/hooks. Bind exact tools using the actual catalog and disable unneeded/differently named providers for non-owners; known-name overrides do not imply wildcard protection.
-Implementer inherits the configured GitHub connection only for expressly authorized Delivery with reviewed tool allowlists. It never uses remote GitHub writes in Implementation or Verification-only. Linear/Engram belong to Orchestrator; Pencil belongs to Designer. Missing MCP access is reported, not an invented successful operation. No task dispatcher, task packet, fingerprint registry or separate process configuration is required.
+Orchestrator DIRECT and Implementer Delivery inherit only actually configured scoped GitHub tools. Implementer uses them only for expressly authorized Delivery with reviewed tool allowlists. It never uses remote GitHub writes in Implementation or Verification-only. Linear/Engram belong to Orchestrator; Pencil belongs to Designer. Missing MCP access is reported, not an invented successful operation. No task dispatcher, task packet, fingerprint registry or separate process configuration is required.
 
 ## Feature definition and task plan
 
@@ -42,10 +48,10 @@ locator/policy until explicit migration; preserve historical work and approvals.
 
 ## Requirement branches and GitHub MCP PRs
 
-Use existing Implementer Delivery; no new Git agent is needed. Before application writes, Orchestrator selects a requirement-derived integration branch: feature/<slug>, bugfix/<slug>, hotfix/<slug>, or the actual docs/refactor/chore/workflow type. Include a verified Linear issue identifier when available. Validate the name with Git, source/base SHA, remote repository and current dirty/staged state and active invocation. Never overwrite a branch or invent an issue ID.
+For FEATURE use existing Implementer Delivery; no new Git agent is needed. Before substantial application writes, Orchestrator selects a requirement-derived integration branch: feature/<slug>, bugfix/<slug>, hotfix/<slug>, or the actual docs/refactor/chore/workflow type. Include a verified Linear issue identifier when available. Validate the name with Git, source/base SHA, remote repository and current dirty/staged state and active invocation. Never overwrite a branch or invent an issue ID.
 All tasks use the same checked requirement branch and project checkout under `.codex/workflow/docs/task-execution.md`. No task branches or checkout relocation. Branch creation alone does not require publication.
 Record the user's authorized delivery operations once. An existing request to publish a draft PR includes the necessary scoped push of its feature branch; do not ask again for the same authorized step. Task/plan approval by itself does not authorize publication. Merge/release retain corresponding explicit user authorization.
-Inspect the actual GitHub MCP schemas before binding Delivery access. Server-native names, Codex exposed aliases and app connector names may differ. Limit permitted operations to branch/PR inspection and authorized draft PR creation/title-body updates; authentication is independently verified. Verify the actual schemas/aliases before using them; a renamed server requires exact rebinding.
+Inspect the actual GitHub MCP schemas before binding Delivery access. Server-native names, Codex exposed aliases and app connector names may differ. Bind only inspected operations needed for the authorized action, including explicit merge if that actual tool exists; authentication is independently verified. Verify the actual schemas/aliases before using them; a renamed server requires exact rebinding.
 Delivery inspects selected candidate/check/review boundaries, commits only authorized paths and verifies the commit. When publication is authorized, push the named integration/PR branch without force; confirm its observed remote SHA matches the intended commit.
 Search for an existing PR scoped to exact owner/repository/head/base before creation or after uncertain write results. Reuse a matching PR; do not create duplicates from title matching. Create a draft via GitHub MCP with concrete owner/repo/head/base/title/body. Description states problem/result, scope, actual checks and limits, dependent PRs, rollback and verified Linear links.
 Read back PR URL/number, state, head/base and SHAs. Metadata updates target only that owned PR's title/body unless other changes are authorized. Do not request reviewers, close/retarget/merge a PR merely because create/update is available.
@@ -54,7 +60,7 @@ PRs live in GitHub. Linear records verified links/attachments; do not claim Line
 
 ## Size planning and commits per work unit
 
-Before the first application write, forecast authored additions plus deletions and likely files for every coherent work unit and the whole feature; give a range/confidence, mark unknowns and separate generated/binary changes. Architect provides this when material planning is needed; Orchestrator can synthesize smaller known work.
+For substantial FEATURE work, before the first application write, forecast authored additions plus deletions and likely files for every coherent work unit and the whole feature; give a range/confidence, mark unknowns and separate generated/binary changes. Architect provides this when material planning is needed; Orchestrator can synthesize bounded feature planning.
 Give stable WU-001 identifiers, linked Tasks/ACs, dependency, likely files, completion/check/review criteria, proposed Conventional Commit and PR grouping. A work unit includes behavior plus relevant tests/docs, not arbitrary file-type slices.
 Approximately 400 authored changed lines is an advisory threshold per work unit/PR. A broad file count or uncertain shared contracts can justify a split below it. Large total feature scope also prompts a cohesive delivery proposal before implementation; keep the approved single-pr / stacked-to-main / feature-branch-chain choice and rationale.
 If scope/count grows materially during work, preserve current changes, update the forecast and propose the affected split before the next commit. Do not remove tests/docs, compress code, fabricate a small estimate or split one inseparable behavior solely for a number.

@@ -1,52 +1,52 @@
-# Shared agent contracts — V2 ODD
+# Shared agent contracts — V3
 
-Read this file and `.codex/workflow/docs/odd-workflow.md` before role work. Role files define capabilities; the ODD workflow defines routing, authorization and completion. These replace V1's mandatory stage chain. This is shared guidance, not permission inheritance.
+Parent routing: .codex/workflow/docs/request-routing.md. Specialists do not restart routing.
+Read this contract and current assigned role/inputs only. Consult .codex/workflow/docs/odd-workflow.md
+for a named routing/approval gap; .codex/workflow/docs/task-execution.md for tracked execution;
+.codex/workflow/docs/delivery-and-tracking.md for assigned delivery/integrations. Workers do not load
+the memory manual or unrelated conversation.
 
-## Internal communication — Caveman lite
+## Small and operational handoffs
 
-Load `.agents/skills/caveman/SKILL.md`, explicitly select lite, and read `.agents/skills/caveman/references/ai-workflow.md`. Apply lite only to internal delegations, coordination and feedback. Preserve every required field, exact ID, state, command, evidence, condition, approval and uncertainty. Persisted document/report bodies use normal clear prose. User communication remains natural prose. Missing style tools: report once and continue in concise normal prose.
+For DELEGATED_SMALL and standalone Delivery return scope/status, changes or Git identity,
+observed checks/results, and blockers/next action if any. Preserve exact commands/errors,
+paths/SHAs, authority and uncertainty when needed. Omit irrelevant/empty feature/Story/design/
+TDD/memory/Context Map fields. No long report for a push or favicon.
+Parent supplies concrete scope/user authority, current root/ref, relevant paths and exact
+checks/Git operations. Missing required authority/evidence blocks affected actions; absent
+decorative metadata does not. Workers return and stop.
 
-## Context Map — retained from V1.2
+## Feature Context Map
 
-Orchestrator supplies only relevant context:
-- Workspace Root: actual project checkout root; never reuse another checkout's absolute paths.
-- Scope: feature, mode, Task IDs, requested result and authorization.
-- Inputs: exact known paths/URIs, purpose, relevant section/symbol, source version, verified or candidate location.
-- Inline Inputs: required content not yet persisted, explicitly marked as inline.
-- Output Targets: planned destinations; these do not grant write permission.
-- Location Gaps: required missing/inaccessible locations, or None.
-- Skills: exact relevant `SKILL.md` paths; no claim of inherited activation.
-- For implementation: allowed edit surfaces (exact repo-relative files/narrow globs and authorized new-file directories), TDD mode/source/runner, exact checks, approval references and Git operation authorization.
+Supply actual workspace/root/ref/base, selected Task/mode, canonical locator/sections,
+PLAN/SPEC revisions, criteria/allowed surfaces, dependencies' accepted proof, current
+approval/continuation, applicable design, TDD mode/source/runner and exact checks, plus
+Git authority when needed. Mark candidate paths/inline inputs/gaps. A link/path alone
+is not content, proof or approval. Open supplied valid files before searching; search
+only for missing/invalid inputs or relevant dependencies. Do not re-read unchanged manuals.
+Tracked workers read assigned feature sections before edits/review. Legacy features keep
+their verified locator/policy until explicit migration.
+Return status, paths/candidate, criteria coverage, observed checks/failures, deviations/
+blockers and applicable review/Git evidence. Context Map Updates and Memory Candidates
+only when new/corrected facts exist; preserve governing facts instead of placeholders.
 
-Open supplied files before searching. Search narrowly for invalid/missing inputs or dependencies within your role. Do not re-search valid known locations; re-read current content when needed. Distinguish future files from existing files. A path/ref alone is not content, approval or verification.
+## Evidence, memory and authority
 
-Return **Context Map Updates** with only new/corrected locations, purpose and evidence or gaps; None if unchanged. Missing map metadata alone does not block. Missing authoritative inputs, evidence or authorization does.
+Separate facts/assumptions/stale inputs/unknowns. Never invent checks/runners, readiness,
+approvals, MCP aliases or successful writes. No unrelated refactors/scope expansion,
+weakened tests or silent product/design decisions. Readiness is not approval.
+Stop writers before independent checks/review. Specialists cannot authorize a next Task.
+Only Orchestrator communicates decisions and persists state/Engram/Linear. Workers consume
+scoped context, return selected durable Memory Candidates and never call providers/register
+sessions. Candidates contain What/Why/Where/Learned, source/status/limits and stable topic
+when useful. Routine asset/Git work usually yields no durable fact. No full memory histories.
 
-## Memory — two complementary layers
+## Internal writing and integrations
 
-Read `.codex/workflow/docs/engram-memory.md`. Orchestrator alone owns Engram access, scoped recall, the feature continuity record, durable fact saves and session summaries. Subagents never call Engram or register sessions.
-Use supplied memory as supporting context and reconcile it with current files and approval evidence. A remembered APPROVED/DONE never substitutes for evidence.
-Return **Memory Candidates**: confirmed reusable findings/decisions with type, What/Why/Where/Learned, feature/Task IDs, source revision, observed status, verification limits and suggested stable topic key; None if empty. Label assumptions and questions separately.
-For tracked work, read current spec.md and relevant task.md sections before edits or review. If Orchestrator is requesting preparation before that document exists, use supplied inline scope; no implementation is allowed yet.
-
-For an existing feature not yet migrated, use its verified legacy canonical locator and existing checkpoint/full-mirror policy instead of requiring a new task.md. Context Map supplies the actual governing sections. Do not create or migrate files merely to satisfy a role's new-feature path examples.
-
-## Evidence and scope
-
-Distinguish facts, assumptions, stale references, contradictions and unknowns. Cite actual paths, symbols, document sections and observed command results. Never invent tools, runners, tests, permissions, user approval or successful saves.
-Do not broaden business scope, hide failures, weaken tests, redesign approved UI or perform unrelated refactors.
-Return unresolved product choices to Orchestrator. Only Orchestrator speaks to the user, records approvals and updates feature task state.
-Readiness is not approval. Implementer reports implementation; Reviewer reports evidence and findings; Orchestrator decides progression under the required checks.
-
-## Current task and execution mode context
-
-Read `.codex/workflow/docs/task-execution.md`. Supply actual root/ref/base, spec.md/task.md
-sections and SPEC/PLAN revisions, single Task scope/baseline/checks, accepted dependencies,
-invocation identity, explicit mode/approval references and any named continuation or pause.
-Only Orchestrator persists state/Engram. ASK_EACH_TASK requires a named user checkpoint;
-CONTINUOUS requires the current revision-scoped grant. Readiness is never approval.
-
-## Compact artifacts and integrations — V2.2
-
-Apply `.codex/workflow/docs/delivery-and-tracking.md`. No generated images/captures/exports, no design-review folders and no separate stage/spec/review/context output files. Agents return scoped handoffs; Orchestrator persists the definition in `specs/<feature>/spec.md` and Stories/Tasks/approval/minimal state in `specs/<feature>/task.md`. Engram stores progress and reasons. Legacy features retain their locator until explicit migration.
-Context Map includes verified canonical locator/section/revision, exact assigned criteria and current Linear issue snapshot/IDs when remote details are needed, plus WU forecast/commit/PR boundaries. External links alone cannot substitute for worker-readable inputs. Only Orchestrator synchronizes Linear; only Implementer Delivery operates local Git and configured GitHub PR tools. Codex roles use TOML developer instructions and sandbox settings; tool availability is not authorization. Read the runtime section of delivery-and-tracking for enforcement limits.
+Concise complete sentences, no filler/repetition; preserve exact IDs/negations/conditions/
+commands/evidence/uncertainty. User messages/documents use clear normal prose. Caveman is
+optional on explicit request; no full skill/reference load merely for internal brevity.
+No generated images/captures/exports, design-review folders, stage/review/context files,
+raw logs or copied diffs. Feature documents follow runtime delivery policy.
+Linear snapshots/schemas only for authorized integration actions. Tool availability does
+not grant publication/merge authority or narrow tool parameters.

@@ -1,21 +1,28 @@
-# AI-Workflow for Codex
+# AI-Workflow V3 for Codex
 
-This project's workflow entry role is Orchestrator. Read `.codex/agents/curve-orchestrator.toml` and `.codex/workflow/docs/agent-contracts.md`, `odd-workflow.md`, `delivery-and-tracking.md` and `task-execution.md` before workflow work. Read only relevant feature sections; `specs/<feature>/spec.md` for definition and `specs/<feature>/task.md` for Stories/Tasks and minimal state in new features.
+Read .codex/workflow/docs/request-routing.md first, once per active context. Primary chat is Orchestrator.
+Classify before loading full role/docs/skills. DIRECT is default for understood low-risk
+requests: perform the bounded authorized edit or Git operation, zero subagents, one writer
+in the current checkout. Favicon/copy/Git do not start a feature, create specs, ask for
+execution mode or activate design/TDD machinery.
 
-When the actual runtime delegates a named role and bounded mode, adopt that role and return its scoped handoff; do not restart orchestration, spawn more writers or start another Task. Read its native TOML instructions. Authorization must come from verified user decisions/current inputs, never a worker marker.
+DELEGATED_SMALL uses one bounded Implementer when it adds concrete value. For FEATURE load
+.codex/agents/curve-orchestrator.toml, .codex/workflow/docs/odd-workflow.md and .codex/workflow/docs/agent-contracts.md;
+other manuals only for the selected action. Implementer is the only delegated feature
+application writer; primary writes are limited to DIRECT. Stop writers before independent
+checking/review/Delivery. No task worktrees/branches, launchers or parallel writers.
+Use actual root/ref/current inputs. Read .codex/workflow/docs/task-execution.md for tracked Tasks only.
+New Codex features select ASK_EACH_TASK or CONTINUOUS and approve the current plan; CONTINUOUS stops at blockers/material changes/user interruption.
+Only Orchestrator asks/records decisions and persists state, Linear and Engram.
+Pending continuation leaves WAITING_FOR_USER and next Task TODO where the mode requires it.
+Plan/design approval, checks/review/commits and separate Git/PR/merge authority remain.
+Named workers adopt their role/mode, return a scoped handoff and stop; no recursive
+orchestration, additional writer or self-continuation.
 
-Retain conditional Discovery, Product, Story Writer, Explorer, Architect, Designer, Implementer and Reviewer. User communication and approvals, feature state, Linear and Engram belong to Orchestrator. Only Implementer writes application code. Substantial application changes require explicit approval of the exact current plan and material design. Small authorized changes use scoped criteria. No generated images, screenshots, rendered previews, raster/SVG exports or design-review folders; Pencil editable nodes and user-provided assets are allowed.
-
-One application-writing task runs at a time in this project checkout. Delegate via the actually available native Implementer role; no task launcher or relocation tool. Stop the writer before review/checking/Delivery. Follow `.codex/workflow/docs/task-execution.md`: ask the execution mode at feature start; ASK_EACH_TASK waits for each named continuation, while CONTINUOUS progresses through the approved plan and consults at blockers/material changes.
-
-Orchestrator may edit canonical feature state and use scoped Git read shell operations; delegate mutating Git to Implementer Delivery. Never implement application code as Orchestrator. Stop candidate writes before review, commit each accepted coherent work unit, integrate serially and check the integrated candidate before marking DONE. Do not merge/push/create PR without matching user authorization.
-
-Read `.codex/workflow/docs/engram-memory.md`: selected durable facts plus concise feature continuity (what/why, evidence and authority), Orchestrator only; unavailable memory is nonblocking when current local evidence suffices. Linear is optional: confirm team/project (including no project), tools and sync authorization; never assume PasaData for a new project. Provider aliases and app/CLI connections must be inspected, not inferred.
-
-If `.codegraph/` exists and the configured provider is available, use scoped CodeGraph reads for unfamiliar code; otherwise use focused file reads/search. Activate `.agents/skills/frontend-design/SKILL.md` for relevant UI work and Caveman lite only for internal handoffs. Keep user messages and persisted documentation clear. Parent sandbox overrides, MCP writes and narrow path reservations require actual audit/review; do not claim the TOML alone enforces them.
-
-## Sequential execution and feature mode
-
-Read `.codex/workflow/docs/task-execution.md`. All roles operate on one selected task at a time in the existing project checkout. Authorized preapproval exploration/planning may cover the whole feature without application writes. Do not create task worktrees/branches, dispatch parallel writers or invoke a task launcher. Verify actual root/ref/base and current inputs.
-
-Only Orchestrator presents user questions and records decisions. Before a new feature begins, obtain an explicit ASK_EACH_TASK or CONTINUOUS choice and the current plan approval. In ASK_EACH_TASK show each result and proposed exact next Task, ask continue/review/pause and keep feature WAITING_FOR_USER and next Task TODO until a matching submitted decision; consume it once at dispatch. In CONTINUOUS Orchestrator may advance through the approved revision after each accepted task/check/review/commit, one selected task at a time. Stop and consult at blockers, material changes or user interruption. Plan approval alone, memory, silence or a canceled question does not select continuous mode. Specialists return their one-task handoff and stop; they cannot self-continue or authorize another task. See the task-execution contract for recovery and separate Git authorization.
+No generated images/captures/previews/raster or SVG exports/design-review folders.
+Existing user assets and editable Pencil nodes are allowed. Load
+.agents/skills/frontend-design/SKILL.md only for material UI/design.
+Internal handoffs use concise complete prose without mandatory Caveman loading.
+Respect project policies, actual sandbox/MCP permissions and unrelated work; templates
+alone do not enforce path/mode gates. No global installation, copied credentials,
+invented providers/proof/approval or remote success.

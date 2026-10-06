@@ -1,5 +1,8 @@
 # Engram: decisions and feature continuity
 
+V3: load only for meaningful recall/persistence, never routine favicon/copy/Git plumbing.
+No feature record for DIRECT/DELEGATED_SMALL; new tracked features use compact continuity.
+
 Codex uses Engram for meaningful progress, what was done and why, approvals and
 recovery context. Local spec.md defines the feature; task.md contains Stories,
 the approved plan, execution choice and minimum task status. Do not maintain

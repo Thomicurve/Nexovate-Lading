@@ -1,5 +1,9 @@
 # Sequential tasks with a feature execution choice
 
+V3 scope: this lifecycle governs tracked FEATURE Tasks only. DIRECT and DELEGATED_SMALL
+follow .codex/workflow/docs/request-routing.md without task artifacts or per-task checkpoints.
+Critical small changes retain required independent checks/review with scoped inline criteria.
+
 This contract governs Codex only. OpenCode retains its mandatory per-task checkpoint.
 Use the existing project checkout and one dedicated requirement branch. No task
 worktrees, task branches, parallel writers, launcher or per-task cherry-pick lifecycle.
@@ -42,7 +46,7 @@ dialog. If it becomes a feature/task set, obtain the execution choice before adv
    TDD/checks, design and accepted dependencies. There is at most one application-writing
    invocation. Do not batch Tasks into a worker or prepare the next one in the background.
 4. Implementer performs this task and in-scope tests/docs/corrections, reports exact
-   results and stops. Reviewer inspects the stopped candidate. High/unknown risk uses
+   results and stops. Reviewer inspects the stopped candidate. High or unresolved high-consequence risk uses
    a fresh verification-only invocation after the writer stops; temporal separation
    provides independent evidence, not filesystem isolation.
 5. Delivery commits each accepted coherent work unit on the same feature branch using
