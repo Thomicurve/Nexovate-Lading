@@ -41,7 +41,10 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   icons: {
-    icon: "/LogoNexovate.ico",
+    icon: [
+      { url: "/LogoNexovate.ico?v=d8d4a0de", type: "image/x-icon", sizes: "16x16 32x32 48x48" },
+      { url: "/images/brand/nexovate-mark.svg?v=d8d4a0de", type: "image/svg+xml", sizes: "any" },
+    ],
     apple: "/apple-icon.png",
   },
   manifest: "/manifest.json",

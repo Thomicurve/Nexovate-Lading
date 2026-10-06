@@ -56,3 +56,9 @@ Crear el símbolo inline con las piezas y coordenadas de TASK-001. Aplicar traza
 - **Continuación:** plan aprobado completado; revisión integrada y commits verificados.
 - **Decisión del usuario:** «perfecto, todo aprobado, hagamoslo en modo continuous» cubre SPEC-1/PLAN-1, LOGO-DESIGN-1 y las dos tareas.
 - **Resultado integrado:** 221 líneas autorales de aplicación, dentro del forecast; ambos commits conservan el candidato comprobado. Preview local de producción disponible en `http://localhost:3000/es`. Sin publicación remota ni merge autorizados.
+
+## Ajuste posterior: favicon
+
+Después de completar PLAN-1, el usuario pidió «Antes de hacer push, vas a ponerle el nuevo logotipo en el favicon de la web». Esa solicitud autoriza un ajuste pequeño con la N ya aprobada. Se actualizaron `app/favicon.ico` y `public/LogoNexovate.ico` con tamaños 16, 32 y 48 px derivados del SVG, y los metadatos de `app/layout.tsx` con referencias versionadas al ICO y al SVG. No cambia el diseño de la marca ni la animación.
+
+Verificación aceptada: formato ICO y dimensiones, equivalencia con la rasterización del SVG, lint acotado, tipos, build y diff-check. Las rutas ES/EN declaran iconos que responden HTTP 200 con MIME y bytes correctos; el favicon automático también contiene la nueva N. El preview de producción fue restaurado. El push permanece pendiente. Engram no pudo actualizarse porque el hook no confirmó la sesión del host; este registro conserva la autoridad y el resultado local.
