@@ -40,7 +40,7 @@ Copiar el logo aprobado a assets públicos, crear un componente de marca con enc
 
 ### TASK-002 — Animar el ensamblado de la N en el inicio
 
-**Estado:** IN_PROGRESS · **Responsable:** Implementer · **Criterios:** AC-002, AC-003, AC-004, AC-005, AC-006.
+**Estado:** DONE · **Responsable:** Implementer · **Criterios:** AC-002, AC-003, AC-004, AC-005, AC-006.
 
 Crear el símbolo inline con las piezas y coordenadas de TASK-001. Aplicar trazado, interpolación de posiciones y final estático del diseño aprobado. Integrarlo sobre el título del hero con espacio reservado y completar las condiciones de accesibilidad y ciclo de vida.
 
@@ -48,11 +48,11 @@ Crear el símbolo inline con las piezas y coordenadas de TASK-001. Aplicar traza
 - **Archivos permitidos:** nuevo `components/animated-brand-mark.tsx`; `components/hero.tsx`; estilos exclusivos en `app/globals.css`; ajustes acotados de `lib/brand-geometry.ts` conservando la equivalencia con el SVG estático.
 - **Termina cuando:** animación y estado estático cumplen el diseño aprobado, controles 1–6 pertinentes aceptados, revisión independiente de la unidad y cobertura integrada APPROVED, commit verificado.
 - **WU-002:** movimiento y composición final; forecast 150–220 líneas en tres o cuatro archivos; confianza media. Commit propuesto `feat: animate the Nexovate mark assembly`.
-- **Resultado:** TASK-002 y revisión integrada APPROVED; commit pendiente. Fuente +132 líneas en AnimatedBrandMark y hero. Lint/tipos/build/diff-check, DOM ES/EN a 375/768/1440, gap 24 px, equivalencia geométrica, fases reales y fallback sin JS pasan. El componente real probó pausa fuera de viewport, reduced-motion inicial/dinámico, fin y unmount sin callbacks/listeners/observadores pendientes. La señal de pestaña oculta se verificó sintéticamente; Edge headless no acreditó la transición nativa. Reviewer consideró suficiente el handler real y su lógica compartida comprobada para este cambio acotado, sin findings.
+- **Resultado:** TASK-002 y revisión integrada APPROVED; commit `bd23a078a919da647d9b374a4c262a8b6e86392e`, parent `b969cc6`, verificado con fuentes iguales al candidato revisado. Fuente +132 líneas en AnimatedBrandMark y hero. Lint/tipos/build/diff-check, DOM ES/EN a 375/768/1440, gap 24 px, equivalencia geométrica, fases reales y fallback sin JS pasan. El componente real probó pausa fuera de viewport, reduced-motion inicial/dinámico, fin y unmount sin callbacks/listeners/observadores pendientes. La señal de pestaña oculta se verificó sintéticamente; Edge headless no acreditó la transición nativa. Reviewer consideró suficiente el handler real y su lógica compartida comprobada para este cambio acotado, sin findings.
 
 ## Próximo paso
 
-- **Tarea seleccionada:** TASK-002, IN_PROGRESS sobre `codex/animated-brand-logo`, base de unidad `b969cc64ec1cfd5b34f088cb0be4a0b7ea72aa90`.
-- **Continuación:** COVERED_BY_CONTINUOUS_PLAN.
+- **Próxima tarea:** ninguna; TASK-001 y TASK-002 DONE sobre `codex/animated-brand-logo`.
+- **Continuación:** plan aprobado completado; revisión integrada y commits verificados.
 - **Decisión del usuario:** «perfecto, todo aprobado, hagamoslo en modo continuous» cubre SPEC-1/PLAN-1, LOGO-DESIGN-1 y las dos tareas.
-- **Invocación actual:** Implementer en modo Implementation para TASK-002; autorización continua circunscrita a PLAN-1.
+- **Resultado integrado:** 221 líneas autorales de aplicación, dentro del forecast; ambos commits conservan el candidato comprobado. Preview local de producción disponible en `http://localhost:3000/es`. Sin publicación remota ni merge autorizados.
