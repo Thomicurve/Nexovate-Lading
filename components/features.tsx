@@ -43,13 +43,13 @@ export default function Features() {
       <div className="mx-auto grid max-w-[1080px] grid-cols-1 gap-6 md:grid-cols-2">
         {features.map((feature, index) => (
           <AnimatedSection delay={100 + index * 100} key={feature.name}>
-            <PixelCard noFocus className="!h-auto min-h-[280px] md:min-h-[224px] !w-full !aspect-auto bg-background [&>canvas]:absolute [&>canvas]:inset-0" colors="#1F2223,#19A7FF,#1A5EFF">
-              <div className="relative z-10 p-6 h-full w-full bg-[#09090B] bg-opacity-60">
+            <PixelCard noFocus className="!h-auto !w-full !aspect-auto bg-background [&>canvas]:absolute [&>canvas]:inset-0" colors="#1F2223,#19A7FF,#1A5EFF">
+              <div className="relative z-10 p-5 md:p-6 h-full w-full bg-[#09090B] bg-opacity-60">
                 <div className="flex items-center gap-4">
-                  <feature.icon className="h-8 w-8 flex-shrink-0 text-blue-400" aria-hidden="true" />
+                  <feature.icon className="h-7 w-7 flex-shrink-0 text-blue-400" aria-hidden="true" />
                   <h3 className="text-lg font-bold">{feature.name}</h3>
                 </div>
-                <p className="mt-4 leading-7 text-muted-foreground">{feature.description}</p>
+                <p className="mt-3 text-base leading-[1.6] text-muted-foreground">{feature.description}</p>
               </div>
             </PixelCard>
           </AnimatedSection>
