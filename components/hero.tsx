@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { AnimatedSection } from "./animated-section"
 import Orb from "./blocks/Backgrounds/Orb"
+import ProcessMotion from "./process-motion"
 import { useTranslations } from 'next-intl'
 
 export default function Hero() {
@@ -65,6 +66,7 @@ export default function Hero() {
           </Button>
         </AnimatedSection>
       </div>
+      <ProcessMotion />
     </section>
   )
 }

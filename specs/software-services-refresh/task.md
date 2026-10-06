@@ -5,7 +5,7 @@
 
 ## Forma de trabajo
 
-- **Estado:** CHECKING; TASK-002 implementada y revisión WU-002 APPROVED. TASK-001 DONE; Delivery del commit pendiente.
+- **Estado:** CHECKING; TASK-001 y TASK-002 DONE. TASK-003 y cobertura integrada final APPROVED; commit pendiente.
 - **Modo:** CONTINUOUS. El usuario eligió «completar el plan aprobado, consultándote ante bloqueos o cambios importantes» en la respuesta a la pregunta inicial del 5 de octubre de 2026.
 - **Aprobación del plan:** APPROVE_CURRENT_PLAN. El usuario respondió «Aprobar PLAN-2 y comenzar la implementación» el 5 de octubre de 2026 a la pregunta que enumera textos/SEO, dos socios/fotos, flujo animado, controles y tres commits locales. Cubre SPEC-2/PLAN-2, TASK-001/002/003 y orden secuencial en CONTINUOUS.
 - **Diseño:** DESIGN-2 aprobado explícitamente por el usuario el 5 de octubre de 2026: «perfecto, apruebo el design-2». Documento nexovateLandingDesign.pen; escritorio eojTE y móvil s60AE; flujo rMopj / twdXH, pausa S7XW9m / MUqH3, fotos GffwM/EpLeq y thvo4/u95pBR. Designer revalidó DESIGN_APPROVED sin cambios y se detuvo: lectura textual sin clipping visible, solo navegación desktop oculta. No afirma prueba visual o funcional. El frame vacío inicial bi8Au ya no aparece: origen desconocido, Designer no ejecutó Delete ni lo recreó.
@@ -49,7 +49,7 @@ Actualizar contenido bilingüe de la landing hacia software a medida, automatiza
 
 ### TASK-002 — Presentar los socios y afinar la composición
 
-**Estado:** IN_PROGRESS · **Responsable:** Implementer · **Criterios:** AC-003, AC-004, AC-005, AC-007, AC-008.
+**Estado:** DONE · **Responsable:** Implementer · **Criterios:** AC-003, AC-004, AC-005, AC-007, AC-008.
 
 Incorporar los dos perfiles en AboutUs, sus espacios de foto 4:5 y textos provisionales de cada idioma. Fuentes de foto opcionales centralizadas; placeholder neutro hasta recibir fotos reales. Aplicar ajustes moderados de legibilidad, ancho y espaciado del diseño aprobado a hero/servicios/equipo, conservando orden, fondos y efectos existentes. El hero prioriza contacto y ofrece servicios como segundo botón. La navegación «Sobre nosotros» llega al equipo.
 
@@ -58,11 +58,11 @@ Incorporar los dos perfiles en AboutUs, sus espacios de foto 4:5 y textos provis
 - **Termina cuando:** existen dos perfiles y espacios de foto reemplazables sin datos reales inventados; composición conforme a DESIGN-2 en desktop/móvil; no hay textos cortados; rutas y navegación se conservan; controles relevantes, revisión independiente y commit local aceptados. El movimiento final corresponde a TASK-003.
 - **Controles:** todos los controles compartidos en el candidato final; repetir solo lo afectado tras una corrección.
 - **WU-002:** presentación de equipo, fotos provisionales y composición; forecast 140–240 líneas añadidas más eliminadas en cinco o seis archivos, confianza media; commit propuesto feat: introduce founders and refine landing layout. Misma rama y agrupación de WU-001.
-- **Resultado:** WU-002 detenido, seis fuentes con 110 inserciones/43 eliminaciones. Lint/tipos/build, JSON con 74 claves y 83 consumidores pasan; seis variantes ES/EN a 375/768/1440 sin overflow, recortes ni errores, con teclado, navegación e idioma correctos. Reviewer APPROVED sin findings sobre las fuentes actuales; commit pendiente.
+- **Resultado:** commit 0bedd0d3f4c82835c02dc536f3b2da783a57dedb, parent 045663a; 153 líneas de fuente y 167 incluyendo el plan. Lint/tipos/build, JSON con 74 claves y 83 consumidores pasan; seis variantes ES/EN a 375/768/1440 sin overflow, recortes ni errores, con teclado, navegación e idioma correctos. Reviewer APPROVED sin findings; Delivery verificó selección, hashes, parent y candidato sin cambios.
 
 ### TASK-003 — Dar movimiento al flujo de procesos
 
-**Estado:** TODO · **Responsable:** Implementer · **Criterios:** AC-004, AC-005, AC-007, AC-008, AC-009.
+**Estado:** IN_PROGRESS · **Responsable:** Implementer · **Criterios:** AC-004, AC-005, AC-007, AC-008, AC-009.
 
 Construir el gráfico ilustrativo nativo debajo del hero conforme a DESIGN-2. Cuatro etapas conectadas, señal azul y resaltado secuencial, con pausa/reanudación, versión estática reduced-motion y suspensión cuando no se ve. Mantener Orb en segundo plano. No agregar paquetes, video ni recursos de imagen.
 
@@ -71,11 +71,12 @@ Construir el gráfico ilustrativo nativo debajo del hero conforme a DESIGN-2. Cu
 - **Termina cuando:** animación y controles cumplen AC-009, composición bilingüe/responsive y accesibilidad verificadas funcionalmente; controles completos del candidato integrado, revisión independiente APPROVED y commit verificado.
 - **Controles:** todos los controles compartidos, incluyendo comportamiento real del movimiento sin imágenes. Repetir solo lo afectado después de correcciones.
 - **WU-003:** motion graphic completo y accesible; forecast 180–280 líneas añadidas más eliminadas en cuatro o cinco archivos, confianza media; commit propuesto feat: animate the operational process flow. Misma rama/agrupación, cierre de feature tras prueba integrada.
-- **Resultado:** pendiente.
+- **Resultado:** WU-003 detenido, cinco fuentes con 237 inserciones y una eliminación, incluyendo el componente nuevo. Lint/tipos/build, JSON con 81 claves y 90 consumidores, diff-check y seis variantes ES/EN a 375/768/1440 pasan. Ciclo, teclado, progreso preservado, reduced-motion, viewport, eventos nativos de pestaña oculta y limpieza tras dos desmontajes React comprobados. Gráfico final 327×388, 704×188 y 1080×188. Reviewer APPROVED sin findings para WU-003 y cobertura integrada; commit pendiente.
 
 ## Próximo paso
 
-- **Siguiente tarea:** TASK-002, dependencia TASK-001 aceptada.
+- **Siguiente tarea:** TASK-003, dependencias TASK-001 y TASK-002 aceptadas.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN, SPEC-2/PLAN-2 aprobado y DESIGN-2 revalidado sin cambios el 5 de octubre de 2026.
 - **Decisión del usuario:** CONTINUOUS, DESIGN-2 («perfecto, apruebo el design-2») y PLAN-2 («Aprobar PLAN-2 y comenzar la implementación») confirmados por decisiones separadas.
-- **Acción actual:** Delivery del WU-002 aprobado sobre HEAD 045663a428e413e4f4d64e41d9d7884d702e747b; verificar commit antes de TASK-003.
+- **Acción actual:** Delivery del WU-003 aprobado sobre HEAD 0bedd0d3f4c82835c02dc536f3b2da783a57dedb; verificar candidato integrado antes de cerrar.
+- **Memoria pendiente:** no se actualiza Engram después de la compactación porque el hook no confirmó la identidad de runtime. La autoridad, los resultados y los siguientes pasos quedan reconciliados en el contexto actual y este plan; no bloquea el trabajo local autorizado.
