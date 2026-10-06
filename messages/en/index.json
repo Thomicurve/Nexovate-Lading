@@ -13,15 +13,6 @@
     "cta": "View services",
     "schedule": "Let's talk about your process"
   },
-  "motion": {
-    "description": "Illustrative process flow: input, validation, tracking and visible data.",
-    "input": "Input",
-    "validation": "Validation",
-    "tracking": "Tracking",
-    "data": "Visible data",
-    "pause": "Pause animation",
-    "resume": "Resume animation"
-  },
   "solutions": {
     "title": "Software that helps your business work better",
     "description": "We start with how your operations work and build tools to support them.",

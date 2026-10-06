@@ -13,15 +13,6 @@
     "cta": "Ver servicios",
     "schedule": "Hablemos de tu proceso"
   },
-  "motion": {
-    "description": "Flujo ilustrativo de un proceso: entrada, validación, seguimiento y datos visibles.",
-    "input": "Entrada",
-    "validation": "Validación",
-    "tracking": "Seguimiento",
-    "data": "Datos visibles",
-    "pause": "Pausar animación",
-    "resume": "Reanudar animación"
-  },
   "solutions": {
     "title": "Software para que tu empresa trabaje mejor",
     "description": "Partimos de cómo funciona tu operación y construimos herramientas que la acompañen.",

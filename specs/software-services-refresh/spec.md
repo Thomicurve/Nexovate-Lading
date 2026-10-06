@@ -2,8 +2,10 @@
 
 > Renovar la landing existente para explicar cómo Nexovate ayuda a automatizar tareas, seguir procesos y reunir datos útiles para trabajar y decidir.
 
-**Feature:** software-services-refresh · **Definición:** SPEC-2
+**Feature:** software-services-refresh · **Definición:** SPEC-3
 **Plan y tareas:** [task.md](task.md)
+
+SPEC-3 conserva la renovación aceptada y aplica la decisión explícita posterior del usuario del 5 de octubre de 2026: retirar el componente del flujo animado del hero. Es una retirada acotada; no agrega otra funcionalidad ni modifica el proceso de trabajo de la landing.
 
 ## Objetivo
 
@@ -18,7 +20,7 @@ La landing actual presenta agentes de inteligencia artificial y n8n como oferta 
 - Ampliar «Sobre nosotros» con una presentación de los dos socios. Nombres, roles y biografías serán contenido provisional fácil de reemplazar. Cada perfil reserva un espacio de foto 4:5 con placeholder «Foto por agregar», reemplazable por una imagen propia más adelante.
 - Mantener fondo oscuro, tipografía Inter, acentos azules, hero centrado, tarjetas de servicios, proceso y contacto. Ajustar legibilidad y espaciado, y adaptar los perfiles a móvil.
 - Conservar la IA como herramienta secundaria cuando aporte valor, sin protagonismo en la oferta ni en los metadatos.
-- Dar más presencia al hero con un motion graphic de procesos, conservando el resto de la composición.
+- Presentar el hero con su texto, botones y fondo existente, sin el gráfico adicional de procesos que el usuario pidió retirar.
 
 La renovación no incluye nuevas funcionalidades de negocio, paneles reales, backend, cambios de proveedor de contacto ni publicación del sitio. Se reutilizan los recursos actuales; no se generan retratos, imágenes ni nuevos logos.
 
@@ -32,15 +34,11 @@ La presentación se titula «Trabajamos cerca de tu equipo» y explica: «Somos 
 
 Cada perfil contiene «Nombre del socio 1/2», «Socio · rol por completar» y «Biografía de ejemplo: acá vamos a contar su recorrido, su forma de trabajar y qué aporta a cada proyecto». Un aviso indica «Contenido provisional para reemplazar». No se inventan títulos, experiencia, clientes, testimonios ni enlaces personales.
 
-### Movimiento y fotos — ajuste solicitado por el usuario
-
-Debajo del texto y los botones del hero aparece un flujo ilustrativo: «Entrada», «Validación», «Seguimiento», «Datos visibles». Una señal azul recorre los conectores y resalta una etapa a la vez en un ciclo lento de aproximadamente ocho segundos. El Orb existente queda en segundo plano para que el movimiento tenga un único foco. En escritorio el flujo es horizontal; en móvil usa una composición vertical compacta sin desplazamiento horizontal.
-
-Un control discreto permite pausar y reanudar la animación desde el teclado. Con prefers-reduced-motion se muestra el flujo estático y completo, sin reproducción automática ni necesidad del control. Fuera del área visible o con la pestaña oculta se detiene el movimiento; al volver se respeta cualquier pausa elegida por el usuario. El gráfico no representa un panel operativo real ni comunica métricas inventadas. Tiene una descripción accesible breve; sus formas decorativas no añaden focos de teclado ni anuncios repetidos.
+### Fotos de los socios
 
 Los espacios de foto son placeholders neutros, no retratos ficticios. Mantienen proporción 4:5 al colocar fotos reales, con recorte object-fit cover. Las fuentes opcionales se centralizan en los datos de los perfiles para sustituirlas sin rehacer la sección. Las fotografías reales se incorporarán cuando el usuario las proporcione.
 
-Pencil representa un estado editable del flujo, conectores y espacios de foto. La animación real se implementará en la landing después de aprobar el candidato revisado; no se afirma que Pencil reproduzca el movimiento.
+Pencil conserva la referencia editable de los espacios de foto. El flujo de DESIGN-2 queda excluido del diseño actual por la solicitud expresa del usuario; no se sustituye por otro gráfico.
 
 El proceso de trabajo mantiene cuatro etapas y la composición existente: entender la operación; definir una solución y su alcance; construir y validar con el equipo; poner en marcha y acompañar. No se agregan plazos ni condiciones comerciales.
 
@@ -56,17 +54,17 @@ El contacto conserva el calendario Cal.com actual. Su texto debe describir la se
 - **AC-006 — Descubrimiento coherente:** título, descripción, keywords, Open Graph, Twitter y manifest reflejan el nuevo enfoque manteniendo marca, dominio, integraciones y recursos existentes.
 - **AC-007 — Accesibilidad del cambio:** jerarquía de títulos, contraste y foco de controles modificados son correctos; contenido nuevo se lee con teclado y lector de pantalla. Las etiquetas modificadas corresponden a su idioma.
 - **AC-008 — Validación y entrega:** cambios pasan los controles definidos en task.md y revisión independiente, con commits locales por unidad aceptada antes de marcar las tareas terminadas.
-- **AC-009 — Proceso animado:** el hero presenta las cuatro etapas y la señal azul secuencial del diseño aprobado, en ambos idiomas y sin desbordamiento en los tamaños definidos. Pausar detiene el movimiento y reanudar lo continúa. Reduced-motion muestra el flujo estático completo; no se anima fuera de viewport o en una pestaña oculta. No se inventan datos ni se agregan focos decorativos.
+- **AC-009 — Retirada del gráfico:** el hero no importa ni presenta ProcessMotion. Se eliminan el archivo del componente, sus estilos exclusivos y las claves motion de ambos idiomas. Permanecen el texto, los botones y el Orb existente del hero, junto con la sección #process de cómo trabajamos. Este criterio sustituye al proceso animado de SPEC-2 por decisión expresa del usuario.
 
 ## Enfoque aprobado
 
-Reutilizar Next.js 14, React, next-intl, Tailwind y los componentes existentes. El contenido vive en messages/es/index.json y messages/en/index.json. Cambiar las claves de servicios y sus consumidores de manera conjunta. AboutUs incorporará los perfiles con texto seguro en lugar del reemplazo HTML específico de n8n. El gráfico se construye como UI nativa con DOM, CSS y/o framer-motion ya instalado, sin video ni assets generados. No hacen falta dependencias nuevas ni una migración.
+Reutilizar Next.js 14, React, next-intl, Tailwind y los componentes existentes. El contenido vive en messages/es/index.json y messages/en/index.json. Cambiar las claves de servicios y sus consumidores de manera conjunta. AboutUs incorpora los perfiles con texto seguro en lugar del reemplazo HTML específico de n8n. No hacen falta dependencias nuevas ni una migración. La retirada elimina únicamente el gráfico adicional y sus recursos exclusivos.
 
-- **Código relevante:** app/layout.tsx; components/hero.tsx; components/features.tsx; components/about-us.tsx; components/project-timeline.tsx; components/navbar.tsx; components/cta.tsx; components/footer.tsx; mensajes y public/manifest.json. Nuevo archivo propuesto, aún inexistente: components/process-motion.tsx.
-- **Diseño:** DESIGN-2 aprobado por el usuario y revalidado DESIGN_APPROVED por Designer el 5 de octubre de 2026, en nexovateLandingDesign.pen sobre escritorio eojTE (1440×4166) y móvil s60AE (375×6244). Flujo rMopj (1080×188) / twdXH (327×388), controles S7XW9m / MUqH3, fotos GffwM/EpLeq (208×260) y thvo4/u95pBR (192×240). Orb secundario con opacidad 0.35. Conserva la base DESIGN-1 y agrega flujo y fotos. Designer leyó escritorio y delta móvil sin flags de recorte visible; solo quedan flags en navegación desktop deshabilitada dentro del móvil. No es prueba visual ni animación reproducida. Notas de representación no se publican. Sin capturas ni revisión por imágenes.
-- **Riesgos:** texto más extenso en tarjetas con altura fija; incoherencia entre idiomas o metadatos; diferencias de composición móvil; rendimiento y pausa del nuevo movimiento. Los controles deben comprobar estos puntos. La construcción aún no fue ejecutada y no hay runner de tests declarado.
+- **Código relevante:** app/layout.tsx; components/hero.tsx; components/features.tsx; components/about-us.tsx; components/project-timeline.tsx; components/navbar.tsx; components/cta.tsx; components/footer.tsx; mensajes y public/manifest.json. La retirada afecta además app/globals.css y elimina components/process-motion.tsx.
+- **Diseño:** base de DESIGN-2 aprobada en nexovateLandingDesign.pen sobre escritorio eojTE y móvil s60AE; fotos GffwM/EpLeq (208×260) y thvo4/u95pBR (192×240), Orb con opacidad 0.35. La solicitud posterior del usuario excluye el flujo rMopj / twdXH y sus controles S7XW9m / MUqH3 de la landing. Los frames Pencil conservan el diseño histórico y no representan la retirada actual. No se requieren nuevos assets, capturas ni exports para esta eliminación precisa.
+- **Riesgos:** texto más extenso en tarjetas; incoherencia entre idiomas o metadatos; diferencias de composición móvil. La retirada requiere comprobar referencias, claves y estilos huérfanos, build y continuidad del hero/proceso. No hay runner de tests declarado.
 - **Reversión:** revertir los commits específicos de la renovación, conservando el trabajo previo y las configuraciones del usuario.
 
 ## Decisiones pendientes
 
-Ninguna decisión bloqueante. El usuario aprobó DESIGN-2 («perfecto, apruebo el design-2») y SPEC-2/PLAN-2 («Aprobar PLAN-2 y comenzar la implementación») el 5 de octubre de 2026. Designer revalidó el candidato sin cambios. El modo CONTINUOUS, la marca y el papel secundario de IA están confirmados. Las fotos reales se incorporarán cuando el usuario las proporcione.
+Ninguna decisión bloqueante. El usuario aprobó DESIGN-2 («perfecto, apruebo el design-2») y SPEC-2/PLAN-2 («Aprobar PLAN-2 y comenzar la implementación») el 5 de octubre de 2026. Luego solicitó explícitamente «Directamente remove ese componente» para el flujo animado del inicio; esa solicitud autoriza la retirada precisa de SPEC-3. El modo CONTINUOUS, la marca y el papel secundario de IA están confirmados. Las fotos reales se incorporarán cuando el usuario las proporcione.

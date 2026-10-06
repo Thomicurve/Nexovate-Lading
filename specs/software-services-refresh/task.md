@@ -3,9 +3,11 @@
 **Definición:** [spec.md](spec.md) · **Feature:** software-services-refresh
 **Plan:** PLAN-2 · **Definición cubierta:** SPEC-2
 
+**Ajuste posterior:** SPEC-3 retira el gráfico animado por solicitud expresa del usuario. PLAN-2 y sus tres tareas conservan el resultado histórico; la retirada es un cambio pequeño con criterios acotados, sin una nueva secuencia de tareas.
+
 ## Forma de trabajo
 
-- **Estado:** DONE; las tres tareas y la cobertura integrada final están aceptadas, con controles y commits locales verificados.
+- **Estado:** CHECKING; las tres tareas de PLAN-2 quedaron aceptadas con commits locales. La retirada posterior está aplicada y verificada funcionalmente; el chequeo global de layout tiene el hallazgo inicial del timeline descrito abajo.
 - **Modo:** CONTINUOUS. El usuario eligió «completar el plan aprobado, consultándote ante bloqueos o cambios importantes» en la respuesta a la pregunta inicial del 5 de octubre de 2026.
 - **Aprobación del plan:** APPROVE_CURRENT_PLAN. El usuario respondió «Aprobar PLAN-2 y comenzar la implementación» el 5 de octubre de 2026 a la pregunta que enumera textos/SEO, dos socios/fotos, flujo animado, controles y tres commits locales. Cubre SPEC-2/PLAN-2, TASK-001/002/003 y orden secuencial en CONTINUOUS.
 - **Diseño:** DESIGN-2 aprobado explícitamente por el usuario el 5 de octubre de 2026: «perfecto, apruebo el design-2». Documento nexovateLandingDesign.pen; escritorio eojTE y móvil s60AE; flujo rMopj / twdXH, pausa S7XW9m / MUqH3, fotos GffwM/EpLeq y thvo4/u95pBR. Designer revalidó DESIGN_APPROVED sin cambios y se detuvo: lectura textual sin clipping visible, solo navegación desktop oculta. No afirma prueba visual o funcional. El frame vacío inicial bi8Au ya no aparece: origen desconocido, Designer no ejecutó Delete ni lo recreó.
@@ -75,8 +77,20 @@ Construir el gráfico ilustrativo nativo debajo del hero conforme a DESIGN-2. Cu
 
 ## Cierre
 
+### Retirada posterior del flujo animado
+
+El usuario cambió su decisión y solicitó el 5 de octubre de 2026 «Directamente remove ese componente», porque no le gustó la implementación. Autoriza eliminar ProcessMotion del hero, su archivo, los estilos exclusivos y el namespace motion de ES/EN. Se conservan el hero, su Orb, los botones y la sección #process. No se reemplaza la animación ni se inicia otra feature.
+
+Controles acotados: ausencia de referencias y recursos huérfanos, JSON válido y paridad de claves, lint, tipos, build y DOM/layout bilingüe con navegación preservada. TDD OFF; sin tests permanentes que reproduzcan la retirada.
+
+Resultado: retirada exacta en cinco fuentes, 236 eliminaciones. Lint, tipos, JSON con 74 claves y 83 consumidores, ausencia de referencias y diff-check pasan. El primer build falló en prerender y una repetición terminó con exit 0; el runtime de producción temporal no quedó acreditado. La concurrencia con dev sobre .next dejó HTTP500 y bundles404; se restauró únicamente Next dev de este checkout, sin cambios de configuración ni dependencias. El preview queda disponible en localhost:3000, npm29216 / listener29652.
+
+La verificación fresca del preview restaurado comprobó seis variantes ES/EN a 375/768/1440: HTTP y JavaScript200, hidratación/Orb, ausencia del gráfico/controles, cuatro servicios, dos socios, cuatro pasos, CTA y anchors correctos, sin pageerrors ni recortes de texto. El layout estricto no pasa completo: antes de revelar el timeline mide 409 px en viewport375 y 802 px en viewport768; después queda ajustado. El timeline conserva el mismo hash de HEAD y sus entradas x:±50, sin una prueba independiente de baseline inicial. Este hallazgo se registra separado de la retirada, sin ampliación de código autorizada.
+
+El usuario fue informado del hallazgo y luego solicitó explícitamente «hagamos el commit y el merge de estos cambios a la rama main». Esa decisión autoriza el commit de la retirada y los documentos actualizados, junto con la integración local de la rama completa en main. No se incluye una corrección adicional del timeline ni publicación remota.
+
 - **Tareas pendientes:** ninguna dentro de SPEC-2/PLAN-2. Fotos y datos reales de los socios se incorporarán cuando el usuario los proporcione.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN, SPEC-2/PLAN-2 aprobado y DESIGN-2 revalidado sin cambios el 5 de octubre de 2026.
 - **Decisión del usuario:** CONTINUOUS, DESIGN-2 («perfecto, apruebo el design-2») y PLAN-2 («Aprobar PLAN-2 y comenzar la implementación») confirmados por decisiones separadas.
-- **Entrega local:** tres commits de implementación en codex/software-services-refresh, candidato integrado cbcc7d48c4877c6ba37a218a9f19f3fb171c3b0d. Fuente total: 618 líneas añadidas más eliminadas, dentro del forecast. Sin push, PR, merge ni despliegue. El cierre documental conserva esta evidencia sin alterar aplicación.
+- **Entrega inicial:** tres commits de implementación en codex/software-services-refresh, candidato original cbcc7d48c4877c6ba37a218a9f19f3fb171c3b0d, con cierre documental bb8edcc. Fuente inicial total: 618 líneas añadidas más eliminadas, dentro del forecast. La retirada posterior se entrega mediante un commit sobre bb8edcc y merge local a main, autorizados expresamente por el usuario. Sin push, PR ni despliegue.
 - **Memoria pendiente:** no se actualiza Engram después de la compactación porque el hook no confirmó la identidad de runtime. La autoridad, los resultados y los siguientes pasos quedan reconciliados en el contexto actual y este plan; no bloquea el trabajo local autorizado.
