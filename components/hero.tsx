@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react"
 import { AnimatedSection } from "./animated-section"
 import Orb from "./blocks/Backgrounds/Orb"
 import { useTranslations } from 'next-intl'
+import AnimatedBrandMark from "./animated-brand-mark"
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -31,6 +32,7 @@ export default function Hero() {
         />
       </div>
       <div className="mx-auto max-w-[1000px] space-y-6 relative z-30">
+        <AnimatedBrandMark />
         <h1 
           id="hero-heading"
           className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold leading-[1.08] tracking-tight text-transparent md:text-5xl lg:text-[64px] pb-3"
