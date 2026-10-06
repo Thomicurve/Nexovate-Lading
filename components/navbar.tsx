@@ -21,6 +21,7 @@ const flagImages = {
 
 export default function Navbar() {
   const t = useTranslations('navbar');
+  const a11y = useTranslations('accessibility');
   const locale = useLocale();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,18 +69,18 @@ export default function Navbar() {
             href="#hero" 
             onClick={(e) => scrollToSection('hero', e)} 
             className="mr-6 flex items-center space-x-2"
-            aria-label="Nexovate - Inicio"
+            aria-label={a11y('heroHeading')}
           >
             <span className="font-bold">Nexovate</span>
           </Link>
           
           {/* Menú de navegación para escritorio */}
-          <nav className="hidden md:flex flex-1 items-center space-x-6 text-sm font-medium" aria-label="Navegación principal">
+          <nav className="hidden md:flex flex-1 items-center space-x-6 text-sm font-medium" aria-label={a11y('mainNavigation')}>
             <Link 
               href="#solutions" 
               className="transition-colors hover:text-primary"
               onClick={(e) => scrollToSection('solutions', e)}
-              aria-label="Ver nuestras soluciones"
+              aria-label={a11y('solutionsHeading')}
             >
               {t('solutions')}
             </Link>
@@ -94,7 +95,7 @@ export default function Navbar() {
               href="#about" 
               className="transition-colors hover:text-primary"
               onClick={(e) => scrollToSection('about', e)}
-              aria-label="Conocer más sobre nosotros"
+              aria-label={a11y('aboutHeading')}
             >
               {t('about')}
             </Link>
@@ -102,7 +103,7 @@ export default function Navbar() {
               href="#process" 
               className="transition-colors hover:text-primary"
               onClick={(e) => scrollToSection('process', e)}
-              aria-label="Ver nuestro proceso"
+              aria-label={a11y('processHeading')}
             >
               {t('process')}
             </Link>
@@ -114,7 +115,7 @@ export default function Navbar() {
               onClick={() => scrollToSection('contact')} 
               variant="ghost" 
               size="sm"
-              aria-label="Ir a la sección de contacto"
+              aria-label={a11y('contactHeading')}
             >
               {t('contact')}
             </Button>
@@ -126,11 +127,11 @@ export default function Navbar() {
                   variant="ghost" 
                   size="sm"
                   className="flex items-center gap-2"
-                  aria-label="Seleccionar idioma"
+                  aria-label={a11y('languageSelector')}
                 >
                   <Image 
                     src={flagImages[locale as keyof typeof flagImages]} 
-                    alt={locale === 'es' ? 'Bandera española' : 'British flag'} 
+                    alt=""
                     width={20} 
                     height={15} 
                     className="rounded-sm"
@@ -147,7 +148,7 @@ export default function Navbar() {
                   >
                     <Image 
                       src={flagImages[l as keyof typeof flagImages]} 
-                      alt={l === 'es' ? 'Bandera española' : 'British flag'} 
+                      alt=""
                       width={20} 
                       height={15} 
                       className="rounded-sm"
@@ -161,7 +162,7 @@ export default function Navbar() {
             <Button 
               onClick={() => scrollToSection('contact')} 
               size="sm"
-              aria-label="Agendar una llamada con nuestro equipo"
+              aria-label={a11y('scheduleHeading')}
             >
               {t('schedule')}
             </Button>
@@ -170,8 +171,8 @@ export default function Navbar() {
           {/* Botón de menú hamburguesa para móvil */}
           <button 
             onClick={() => menuOpen ? closeMenu() : openMenu()} 
-            className="md:hidden ml-auto p-2 focus:outline-none" 
-            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            className="md:hidden ml-auto rounded-md p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            aria-label={menuOpen ? a11y('menuClose') : a11y('menuOpen')}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
@@ -194,12 +195,12 @@ export default function Navbar() {
             className={`absolute top-14 left-0 w-full ${menuOpen ? "animate-slideDown" : "animate-slideUp"} md:hidden bg-background border-t border-border/40`}
             aria-hidden={!menuOpen}
           >
-            <nav className="flex flex-col px-4 py-2 space-y-2 text-sm font-medium" aria-label="Navegación móvil">
+            <nav className="flex flex-col px-4 py-2 space-y-2 text-sm font-medium" aria-label={a11y('mobileNavigation')}>
               <Link 
                 href="#solutions" 
                 className="transition-colors hover:text-primary hover:bg-gray-200/10 rounded-md pl-4 py-3 text-left"
                 onClick={(e) => handleLinkClick('solutions', e)}
-                aria-label="Ver nuestras soluciones"
+                aria-label={a11y('solutionsHeading')}
               >
                 {t('solutions')}
               </Link>
@@ -214,7 +215,7 @@ export default function Navbar() {
                 href="#about" 
                 className="transition-colors hover:text-primary hover:bg-gray-200/50 rounded-md pl-4 py-2 text-left"
                 onClick={(e) => handleLinkClick('about', e)}
-                aria-label="Conocer más sobre nosotros"
+                aria-label={a11y('aboutHeading')}
               >
                 {t('about')}
               </Link>
@@ -222,7 +223,7 @@ export default function Navbar() {
                 href="#process" 
                 className="transition-colors hover:text-primary hover:bg-gray-200/10 rounded-md pl-4 py-3 text-left"
                 onClick={(e) => handleLinkClick('process', e)}
-                aria-label="Ver nuestro proceso"
+                aria-label={a11y('processHeading')}
               >
                 {t('process')}
               </Link>
@@ -230,7 +231,7 @@ export default function Navbar() {
                 onClick={() => { scrollToSection('contact'); closeMenu(); }} 
                 variant="ghost" 
                 size="sm"
-                aria-label="Ir a la sección de contacto"
+                aria-label={a11y('contactHeading')}
               >
                 {t('contact')}
               </Button>
@@ -238,7 +239,7 @@ export default function Navbar() {
               <Button 
                 onClick={() => { scrollToSection('calendar'); closeMenu(); }} 
                 size="sm"
-                aria-label="Agendar una llamada con nuestro equipo"
+                aria-label={a11y('scheduleHeading')}
               >
                 {t('schedule')}
               </Button>
@@ -257,7 +258,7 @@ export default function Navbar() {
                     >
                       <Image 
                         src={flagImages[l as keyof typeof flagImages]} 
-                        alt={l === 'es' ? 'Bandera española' : 'British flag'} 
+                        alt=""
                         width={20} 
                         height={15} 
                         className="rounded-sm"

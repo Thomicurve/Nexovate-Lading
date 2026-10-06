@@ -5,7 +5,7 @@
 
 ## Forma de trabajo
 
-- **Estado:** CHECKING; TASK-001 implementada, escritor detenido para revisión; PLAN-2/DESIGN-2 aprobados y rama verificada.
+- **Estado:** CHECKING; TASK-002 implementada y revisión WU-002 APPROVED. TASK-001 DONE; Delivery del commit pendiente.
 - **Modo:** CONTINUOUS. El usuario eligió «completar el plan aprobado, consultándote ante bloqueos o cambios importantes» en la respuesta a la pregunta inicial del 5 de octubre de 2026.
 - **Aprobación del plan:** APPROVE_CURRENT_PLAN. El usuario respondió «Aprobar PLAN-2 y comenzar la implementación» el 5 de octubre de 2026 a la pregunta que enumera textos/SEO, dos socios/fotos, flujo animado, controles y tres commits locales. Cubre SPEC-2/PLAN-2, TASK-001/002/003 y orden secuencial en CONTINUOUS.
 - **Diseño:** DESIGN-2 aprobado explícitamente por el usuario el 5 de octubre de 2026: «perfecto, apruebo el design-2». Documento nexovateLandingDesign.pen; escritorio eojTE y móvil s60AE; flujo rMopj / twdXH, pausa S7XW9m / MUqH3, fotos GffwM/EpLeq y thvo4/u95pBR. Designer revalidó DESIGN_APPROVED sin cambios y se detuvo: lectura textual sin clipping visible, solo navegación desktop oculta. No afirma prueba visual o funcional. El frame vacío inicial bi8Au ya no aparece: origen desconocido, Designer no ejecutó Delete ni lo recreó.
@@ -36,7 +36,7 @@ Si se requiere preparación del entorno o existe un fallo ajeno al cambio, comun
 
 ### TASK-001 — Reorientar oferta, proceso y metadatos
 
-**Estado:** IN_PROGRESS · **Responsable:** Implementer · **Criterios:** AC-001, AC-002, AC-005, AC-006, AC-007, AC-008.
+**Estado:** DONE · **Responsable:** Implementer · **Criterios:** AC-001, AC-002, AC-005, AC-006, AC-007, AC-008.
 
 Actualizar contenido bilingüe de la landing hacia software a medida, automatización, trazabilidad y datos. Sin agregar los perfiles todavía, ajustar presentación y proceso, iconos de servicios/proceso y textos SEO. Sustituir el tratamiento HTML específico de n8n por texto seguro. La IA queda secundaria en la presentación, sin condicionar la oferta.
 
@@ -45,11 +45,11 @@ Actualizar contenido bilingüe de la landing hacia software a medida, automatiza
 - **Termina cuando:** contenido y consumidores coherentes en ambos idiomas; contacto describe la agenda existente; metadatos consistentes; controles relevantes aceptados, revisión APPROVED y commit verificado.
 - **Controles:** controles compartidos 1–4, destinos y contenido de 5, 6–7. La comprobación de perfiles y layout final se completa en TASK-002.
 - **WU-001:** oferta y descubrimiento coherentes; forecast 200–320 líneas añadidas más eliminadas en ocho archivos, confianza media; commit propuesto feat: reposition landing around software services. Una única agrupación futura con WU-002/WU-003 si se autoriza PR.
-- **Resultado:** candidato detenido WU-001, 114 inserciones/113 eliminaciones en ocho archivos. Lint, tipos, build, paridad JSON y HTTP ES/EN pasan; review/commit pendientes. HEAD/base 5fb762136a3247e2c2d84b305c91ae15d365514b.
+- **Resultado:** commit 045663a428e413e4f4d64e41d9d7884d702e747b; WU-001 227 líneas de fuente, 380 incluyendo definición/plan. Lint/tipos/build, JSON64claves/57consumidores, HTTP ES/EN200 y diff-check pasan; Reviewer APPROVED sin findings. Delivery verificó hashes/parent y candidato integrado sin cambios.
 
 ### TASK-002 — Presentar los socios y afinar la composición
 
-**Estado:** TODO · **Responsable:** Implementer · **Criterios:** AC-003, AC-004, AC-005, AC-007, AC-008.
+**Estado:** IN_PROGRESS · **Responsable:** Implementer · **Criterios:** AC-003, AC-004, AC-005, AC-007, AC-008.
 
 Incorporar los dos perfiles en AboutUs, sus espacios de foto 4:5 y textos provisionales de cada idioma. Fuentes de foto opcionales centralizadas; placeholder neutro hasta recibir fotos reales. Aplicar ajustes moderados de legibilidad, ancho y espaciado del diseño aprobado a hero/servicios/equipo, conservando orden, fondos y efectos existentes. El hero prioriza contacto y ofrece servicios como segundo botón. La navegación «Sobre nosotros» llega al equipo.
 
@@ -58,7 +58,7 @@ Incorporar los dos perfiles en AboutUs, sus espacios de foto 4:5 y textos provis
 - **Termina cuando:** existen dos perfiles y espacios de foto reemplazables sin datos reales inventados; composición conforme a DESIGN-2 en desktop/móvil; no hay textos cortados; rutas y navegación se conservan; controles relevantes, revisión independiente y commit local aceptados. El movimiento final corresponde a TASK-003.
 - **Controles:** todos los controles compartidos en el candidato final; repetir solo lo afectado tras una corrección.
 - **WU-002:** presentación de equipo, fotos provisionales y composición; forecast 140–240 líneas añadidas más eliminadas en cinco o seis archivos, confianza media; commit propuesto feat: introduce founders and refine landing layout. Misma rama y agrupación de WU-001.
-- **Resultado:** pendiente.
+- **Resultado:** WU-002 detenido, seis fuentes con 110 inserciones/43 eliminaciones. Lint/tipos/build, JSON con 74 claves y 83 consumidores pasan; seis variantes ES/EN a 375/768/1440 sin overflow, recortes ni errores, con teclado, navegación e idioma correctos. Reviewer APPROVED sin findings sobre las fuentes actuales; commit pendiente.
 
 ### TASK-003 — Dar movimiento al flujo de procesos
 
@@ -75,7 +75,7 @@ Construir el gráfico ilustrativo nativo debajo del hero conforme a DESIGN-2. Cu
 
 ## Próximo paso
 
-- **Siguiente tarea:** TASK-001.
+- **Siguiente tarea:** TASK-002, dependencia TASK-001 aceptada.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN, SPEC-2/PLAN-2 aprobado y DESIGN-2 revalidado sin cambios el 5 de octubre de 2026.
 - **Decisión del usuario:** CONTINUOUS, DESIGN-2 («perfecto, apruebo el design-2») y PLAN-2 («Aprobar PLAN-2 y comenzar la implementación») confirmados por decisiones separadas.
-- **Acción actual:** revisar WU-001 con escritor detenido; si APPROVED, Delivery hace commit solo de los ocho archivos verificados antes de TASK-002.
+- **Acción actual:** Delivery del WU-002 aprobado sobre HEAD 045663a428e413e4f4d64e41d9d7884d702e747b; verificar commit antes de TASK-003.

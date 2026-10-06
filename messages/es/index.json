@@ -38,7 +38,22 @@
   "about": {
     "title": "Trabajamos cerca de tu equipo",
     "description": "Somos dos socios que construimos soluciones junto a quienes las usan. Primero entendemos tu operación; después definimos qué conviene ordenar, conectar o automatizar.",
-    "aiNote": "Usamos inteligencia artificial cuando aporta valor a la solución."
+    "aiNote": "Usamos inteligencia artificial cuando aporta valor a la solución.",
+    "placeholderNotice": "Contenido provisional para reemplazar",
+    "photoPlaceholder": "Foto por agregar",
+    "photoAlt": "Foto de {name}",
+    "members": {
+      "first": {
+        "name": "Nombre del socio 1",
+        "role": "Socio · rol por completar",
+        "biography": "Biografía de ejemplo: acá vamos a contar su recorrido, su forma de trabajar y qué aporta a cada proyecto."
+      },
+      "second": {
+        "name": "Nombre del socio 2",
+        "role": "Socio · rol por completar",
+        "biography": "Biografía de ejemplo: acá vamos a contar su recorrido, su forma de trabajar y qué aporta a cada proyecto."
+      }
+    }
   },
   "timeline": {
     "title": "Cómo trabajamos",
@@ -93,6 +108,7 @@
     "skipToContent": "Saltar al contenido principal",
     "footer": "Pie de página",
     "mainNavigation": "Navegación principal",
+    "processHeading": "Ver cómo trabajamos",
     "mobileNavigation": "Navegación móvil",
     "heroHeading": "Nexovate - Inicio",
     "solutionsHeading": "Ver nuestros servicios",
