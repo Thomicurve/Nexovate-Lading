@@ -3,6 +3,7 @@
 // import Link from "next/link"
 // import { Linkedin, Instagram } from "lucide-react"
 import { useTranslations } from 'next-intl'
+import BrandLogo from "@/components/brand-logo"
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -20,7 +21,7 @@ export default function Footer() {
     <footer className="border-t" role="contentinfo" aria-label={a11y('footer')}>
       <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">
         <div className="flex-1 space-y-4">
-          <h2 className="font-bold">Nexovate</h2>
+          <h2><BrandLogo placement="footer" /></h2>
           <p className="text-sm text-muted-foreground">{t('tagline')}</p>
         </div>
         <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">

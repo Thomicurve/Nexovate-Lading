@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import BrandLogo from "@/components/brand-logo"
 import { usePathname } from "next/navigation"
 import { useLocale, useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
@@ -68,14 +69,14 @@ export default function Navbar() {
           <Link 
             href="#hero" 
             onClick={(e) => scrollToSection('hero', e)} 
-            className="mr-6 flex items-center space-x-2"
+            className="mr-3 lg:mr-6 flex shrink-0 items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             aria-label={a11y('heroHeading')}
           >
-            <span className="font-bold">Nexovate</span>
+            <BrandLogo />
           </Link>
           
           {/* Menú de navegación para escritorio */}
-          <nav className="hidden md:flex flex-1 items-center space-x-6 text-sm font-medium" aria-label={a11y('mainNavigation')}>
+          <nav className="hidden md:flex flex-1 items-center space-x-3 lg:space-x-6 whitespace-nowrap text-sm font-medium" aria-label={a11y('mainNavigation')}>
             <Link 
               href="#solutions" 
               className="transition-colors hover:text-primary"
@@ -110,7 +111,7 @@ export default function Navbar() {
           </nav>
 
           {/* Botones para escritorio */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-4 [&>button]:px-2 lg:[&>button]:px-3">
             <Button 
               onClick={() => scrollToSection('contact')} 
               variant="ghost" 
