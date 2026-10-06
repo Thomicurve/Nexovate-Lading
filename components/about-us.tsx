@@ -4,10 +4,9 @@ import { UserRound } from "lucide-react"
 import Squares from "./blocks/Backgrounds/Squares"
 import { useTranslations } from 'next-intl'
 
-// Replace null with a local photo path, such as /images/team/partner-1.jpg.
 const profilePhotos: Record<"first" | "second", string | null> = {
-  first: null,
-  second: null,
+  first: "/images/members/member1.webp",
+  second: "/images/members/member2.webp",
 }
 
 const AboutUs = () => {
@@ -34,8 +33,7 @@ const AboutUs = () => {
           <p className="text-center mt-4 font-light text-lg leading-8 text-gray-200">{t('description')}</p>
           <p className="text-center mt-4 text-sm leading-6 text-gray-300">{t('aiNote')}</p>
         </div>
-        <p className="mt-10 text-center text-sm text-gray-300">{t('placeholderNotice')}</p>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {profiles.map((profile) => (
             <article key={profile.id} className="flex min-w-0 flex-col items-center gap-6 rounded-2xl border border-blue-600/20 bg-background/90 p-6 lg:flex-row lg:items-start" aria-labelledby={`partner-${profile.id}`}>
               <div className="relative aspect-[4/5] w-48 flex-shrink-0 overflow-hidden rounded-xl border border-blue-600/20 bg-[#111827] lg:w-52">
@@ -51,7 +49,7 @@ const AboutUs = () => {
               <div className="min-w-0 flex-1 text-center lg:text-left">
                 <h3 id={`partner-${profile.id}`} className="text-xl font-semibold text-gray-100">{profile.name}</h3>
                 <p className="mt-2 text-sm leading-6 text-blue-300">{profile.role}</p>
-                <p className="mt-4 text-base leading-7 text-gray-300">{profile.biography}</p>
+                <p className="mt-3 text-sm leading-6 text-gray-300">{profile.biography}</p>
               </div>
             </article>
           ))}

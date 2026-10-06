@@ -39,19 +39,18 @@
     "title": "We work closely with your team",
     "description": "We are two partners who build solutions with the people who use them. First, we understand your operations; then we decide what to organize, connect or automate.",
     "aiNote": "We use artificial intelligence when it adds value to the solution.",
-    "placeholderNotice": "Placeholder content to replace",
     "photoPlaceholder": "Photo to be added",
     "photoAlt": "Photo of {name}",
     "members": {
       "first": {
-        "name": "Partner 1 name",
-        "role": "Partner · role to be added",
-        "biography": "Example biography: we will share their background, how they work and what they bring to each project here."
+        "name": "Thomas Curvelo Ferrer",
+        "role": "Partner",
+        "biography": "Full stack developer with over three years of experience. Trained at Universidad Austral, he builds web applications with Angular and .NET."
       },
       "second": {
-        "name": "Partner 2 name",
-        "role": "Partner · role to be added",
-        "biography": "Example biography: we will share their background, how they work and what they bring to each project here."
+        "name": "Juan Lucas Cuenca",
+        "role": "Partner",
+        "biography": "Backend developer at Valkimia with a programming degree from Universidad Austral. He builds services, automations and AI agents with Python."
       }
     }
   },

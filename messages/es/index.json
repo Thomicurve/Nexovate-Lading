@@ -39,19 +39,18 @@
     "title": "Trabajamos cerca de tu equipo",
     "description": "Somos dos socios que construimos soluciones junto a quienes las usan. Primero entendemos tu operación; después definimos qué conviene ordenar, conectar o automatizar.",
     "aiNote": "Usamos inteligencia artificial cuando aporta valor a la solución.",
-    "placeholderNotice": "Contenido provisional para reemplazar",
     "photoPlaceholder": "Foto por agregar",
     "photoAlt": "Foto de {name}",
     "members": {
       "first": {
-        "name": "Nombre del socio 1",
-        "role": "Socio · rol por completar",
-        "biography": "Biografía de ejemplo: acá vamos a contar su recorrido, su forma de trabajar y qué aporta a cada proyecto."
+        "name": "Thomas Curvelo Ferrer",
+        "role": "Socio",
+        "biography": "Desarrollador full stack con más de tres años de experiencia. Formado en la Universidad Austral, trabaja con Angular y .NET en aplicaciones web."
       },
       "second": {
-        "name": "Nombre del socio 2",
-        "role": "Socio · rol por completar",
-        "biography": "Biografía de ejemplo: acá vamos a contar su recorrido, su forma de trabajar y qué aporta a cada proyecto."
+        "name": "Juan Lucas Cuenca",
+        "role": "Socio",
+        "biography": "Desarrollador backend en Valkimia y técnico en Programación por la Universidad Austral. Crea servicios, automatizaciones y agentes de IA con Python."
       }
     }
   },
