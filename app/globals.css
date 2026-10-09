@@ -194,3 +194,12 @@
 @media (prefers-reduced-motion: reduce) {
   .process-enter .process-progress, .process-enter .process-marker { animation: none; }
 }
+
+.whatsapp-floating {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 40;
+}
+
+.calendar-embed iframe { max-width: 100%; }

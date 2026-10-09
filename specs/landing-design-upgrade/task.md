@@ -61,7 +61,7 @@ Construir ejemplos nativos de interfaz específicos para los cuatro servicios y 
 
 ### TASK-004 — Equipo y proceso
 
-**Estado:** IN_PROGRESS · **Criterios:** AC-005, AC-006, AC-009, AC-010, AC-011
+**Estado:** DONE · **Criterios:** AC-005, AC-006, AC-009, AC-010, AC-011
 
 Implementar composición editorial de socios y avance discreto del proceso. Preservar datos/fotos y secuencia desktop/mobile; no inventar entregables o compromisos.
 
@@ -69,19 +69,19 @@ Implementar composición editorial de socios y avance discreto del proceso. Pres
 - **Archivos:** components/about-us.tsx, components/project-timeline.tsx, components/blocks/Backgrounds/Squares.tsx, messages/{es,en}/index.json, app/globals.css.
 - **Termina:** dos perfiles reales y secuencia de cuatro pasos conectados, sin ruido de fondos, movimiento reducido y responsive comprobados; revisión aprobada.
 - **WU-004:** 200–340 líneas, 4–6 archivos; commit propuesto feat: refine team and project process sections.
-- **Resultado:** WU-004 implementada, 210 líneas/3 archivos. tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, dos fotos cargadas/bios preservadas, cuatro pasos/orden/tres conectores sin overflow/errores PASS. Animación finita sin reinicio, reduced-motion y lectura sin JS/IntersectionObserver PASS. Reviewer APPROVED; pendiente commit local.
+- **Resultado:** commit 4000141a19f6f3eaecadef55074f9e4f1b7cf44b. WU-004 210 líneas/3 archivos; tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, dos fotos cargadas/bios preservadas, cuatro pasos/orden/tres conectores sin overflow/errores PASS. Animación finita sin reinicio, reduced-motion y lectura sin JS/IntersectionObserver PASS. Reviewer APPROVED.
 
 ### TASK-005 — Contacto, reserva y cierre
 
-**Estado:** TODO · **Criterios:** AC-007, AC-008, AC-009, AC-010, AC-011
+**Estado:** IN_PROGRESS · **Criterios:** AC-007, AC-008, AC-009, AC-010, AC-011
 
 Integrar CTA/contacto, presentación y estados del calendario, fallback directo, footer compacto y enlace WhatsApp único accesible. Usar la denominación Nexovate por decisión explícita del usuario del 9 de octubre de 2026: «Usar Nexovate; documentos legales pendientes». No crear textos/enlaces legales; quedan fuera de la entrega actual por esa decisión.
 
 - **Dependencia:** TASK-001, TASK-004.
 - **Archivos:** components/cta.tsx, components/contact.tsx, components/calendar.tsx, components/footer.tsx, components/chatButton.tsx, app/[locale]/page.tsx, messages/{es,en}/index.json, app/globals.css.
 - **Termina:** sin CTA duplicado, estados de carga/fallo comprobados con salida funcional sin reserva real, WhatsApp no obstruye controles, footer coherente; revisión aprobada.
-- **WU-005:** 240–430 líneas, 7–10 archivos; commit propuesto feat: simplify contact and booking experience.
-- **Resultado:** pendiente.
+- **WU-005:** pronóstico revisado 500–600 líneas, 7–10 archivos; candidato de 523 líneas/9 archivos (174 altas +349 bajas comprobadas en staging; corrige suma del handoff previo). El crecimiento corresponde a eliminar formularios/chat comentados y estructuras duplicadas de contacto/pie, ya incluidos en el alcance. Se conserva la unidad cohesiva y los mismos criterios, diseño, arquitectura y entrega local. Commit propuesto feat: simplify contact and booking experience.
+- **Resultado:** WU-005 implementada, 523 líneas/9 archivos. tsc/lint/build/diffcheck y JSON único PASS. DOM ES/EN ×375/768/1440 live Cal ready, contacto/WhatsApp único48px adaptativo/enlaces/foco sin overflow/errores PASS. Estados simulados loading/timeout/ready/error, aborto de script y seis variantes reduced/noJS PASS; ninguna reserva enviada. Reviewer APPROVED; pendiente commit local.
 
 ### TASK-006 — Recursos, movimiento global e integración
 
@@ -97,6 +97,6 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 
 ## Siguiente paso
 
-- **Próxima tarea:** TASK-004 sobre commits aceptados TASK-001–TASK-003.
+- **Próxima tarea:** TASK-005 sobre commits aceptados TASK-001–TASK-004.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN; PLAN-1/SPEC-1/AUDIT-REDESIGN-1 aprobados explícitamente el 9 de octubre de 2026.
-- **Siguiente acción:** TASK-004 en ejecución sobre codex/landing-design-upgrade, base b53e424cf107d61837eeca2f54321d4cad33eb8d. Plan/diseño/modo aprobados y persistencia/revalidación completadas.
+- **Siguiente acción:** TASK-005 en ejecución sobre codex/landing-design-upgrade, base 4000141a19f6f3eaecadef55074f9e4f1b7cf44b. Plan/diseño/modo aprobados y persistencia/revalidación completadas.

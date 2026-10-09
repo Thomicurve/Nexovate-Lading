@@ -1,104 +1,29 @@
-'use client'
+"use client"
 
-// import Link from "next/link"
-// import { Linkedin, Instagram } from "lucide-react"
-import { useTranslations } from 'next-intl'
+import { useTranslations } from "next-intl"
 import BrandLogo from "@/components/brand-logo"
 
 export default function Footer() {
-  const t = useTranslations('footer');
-  const a11y = useTranslations('accessibility');
-
-  const scrollToSection = (sectionId: string, e?: React.MouseEvent<HTMLAnchorElement>) => {
-    if (e) e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-
+  const t = useTranslations("footer")
+  const a11y = useTranslations("accessibility")
   return (
-    <footer className="border-t" role="contentinfo" aria-label={a11y('footer')}>
-      <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">
-        <div className="flex-1 space-y-4">
-          <h2><BrandLogo placement="footer" /></h2>
-          <p className="text-sm text-muted-foreground">{t('tagline')}</p>
+    <footer className="border-t" aria-label={a11y("footer")}>
+      <div className="landing-container flex flex-col gap-8 py-8 md:flex-row md:items-start md:justify-between md:py-12">
+        <div className="max-w-sm space-y-4">
+          <a href="#main-content" className="inline-block"><BrandLogo placement="footer" /></a>
+          <p className="text-sm leading-6 text-muted-foreground">{t("tagline")}</p>
         </div>
-        <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">
-          {/* <div className="space-y-4">
-            <h3 className="text-sm font-medium">Soluciones</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/ai-analytics" className="text-muted-foreground transition-colors hover:text-primary">
-                  Chatbots
-                </Link>
-              </li>
-              <li>
-                <Link href="/cloud-services" className="text-muted-foreground transition-colors hover:text-primary">
-                  Automatización de procesos
-                </Link>
-              </li>
-            </ul>
-          </div> */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium">{t('company')}</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <button 
-                  onClick={() => scrollToSection('about')} 
-                  className="cursor-pointer text-muted-foreground transition-colors hover:text-primary"
-                  aria-label={a11y('aboutHeading')}
-                >
-                  {t('aboutLink')}
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('solutions')} 
-                  className="cursor-pointer text-muted-foreground transition-colors hover:text-primary"
-                  aria-label={a11y('solutionsHeading')}
-                >
-                  {t('solutionsLink')}
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('contact')} 
-                  className="cursor-pointer text-muted-foreground transition-colors hover:text-primary"
-                  aria-label={a11y('contactHeading')}
-                >
-                  {t('contactLink')}
-                </button>
-              </li>
-            </ul>
-          </div>
-          {/* <div className="space-y-4">
-            <h3 className="text-sm font-medium">Connect</h3>
-            <div className="flex space-x-4">
-              <Link
-                href="https://www.linkedin.com/company/nexovate"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link
-                href="https://www.instagram.com/nexovate"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-            </div>
-          </div> */}
-        </div>
+        <nav aria-label={t("company")}>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <li><a href="#solutions" className="inline-flex min-h-12 items-center hover:underline underline-offset-4">{t("solutionsLink")}</a></li>
+            <li><a href="#about" className="inline-flex min-h-12 items-center hover:underline underline-offset-4">{t("aboutLink")}</a></li>
+            <li><a href="#contact" className="inline-flex min-h-12 items-center hover:underline underline-offset-4">{t("contactLink")}</a></li>
+          </ul>
+        </nav>
       </div>
-      <div className="container border-t py-6">
-        <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} {t('copyright')}
-        </p>
+      <div className="landing-container border-t py-6">
+        <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} {t("copyright")}</p>
       </div>
     </footer>
   )
 }
-

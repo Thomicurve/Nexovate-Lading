@@ -137,8 +137,16 @@
     "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
     "calendar": {
       "title": "Agendá una llamada",
-      "description": "Seleccioná un horario disponible en el calendario."
-    }
+      "description": "Seleccioná un horario disponible en el calendario.",
+      "loading": "Cargando los horarios disponibles…",
+      "ready": "El calendario está listo. Elegí un horario disponible.",
+      "error": "No pudimos cargar el calendario. Podés abrirlo directamente en Cal.com.",
+      "timeout": "El calendario está tardando más de lo esperado. Podés abrirlo directamente en Cal.com.",
+      "direct": "Abrir en Cal.com",
+      "noScript": "Activá JavaScript para ver el calendario aquí o abrilo directamente en Cal.com."
+    },
+    "whatsappDescription": "¿Preferís escribirnos? También podemos conversar por WhatsApp.",
+    "whatsapp": "Escribinos por WhatsApp"
   },
   "footer": {
     "company": "Empresa",
@@ -147,7 +155,7 @@
     "contactLink": "Contacto",
     "tagline": "Software a medida para automatizar, conectar y dar claridad a tu operación.",
     "rights": "Todos los derechos reservados",
-    "copyright": "Nexovate, Inc. Todos los derechos reservados."
+    "copyright": "Nexovate. Todos los derechos reservados."
   },
   "accessibility": {
     "skipToContent": "Saltar al contenido principal",
