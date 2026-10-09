@@ -4,57 +4,103 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --audit1-background: 0 0% 0%;
+    --audit1-panel: 0 0% 9.41%;
+    --audit1-divider: 0 0% 19.22%;
+    --audit1-text: 0 0% 100%;
+    --audit1-secondary: 0 0% 60.78%;
+    --audit1-brand: 218.57 100% 58.82%;
+    --audit1-motion-ease: cubic-bezier(0.32, 0.72, 0, 1);
+    --background: var(--audit1-background);
+    --foreground: var(--audit1-text);
+    --card: var(--audit1-panel);
+    --card-foreground: var(--audit1-text);
+    --popover: var(--audit1-panel);
+    --popover-foreground: var(--audit1-text);
+    --primary: var(--audit1-brand);
+    --primary-foreground: var(--audit1-background);
+    --secondary: var(--audit1-panel);
+    --secondary-foreground: var(--audit1-text);
+    --muted: var(--audit1-panel);
+    --muted-foreground: var(--audit1-secondary);
+    --accent: var(--audit1-divider);
+    --accent-foreground: var(--audit1-text);
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --destructive-foreground: var(--audit1-text);
+    --border: var(--audit1-divider);
+    --input: var(--audit1-divider);
+    --ring: var(--audit1-text);
+    --radius: 0.75rem;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 4px;
+  }
+
+  main:focus {
+    outline: none;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  .skip-to-content {
+    @apply fixed left-4 top-4 z-50 rounded-lg bg-foreground px-4 py-2 text-sm font-semibold text-background;
+    transform: translateY(calc(-100% - 2rem));
+  }
+
+  .skip-to-content:focus {
+    transform: translateY(0);
+  }
+
+  .landing-container {
+    @apply mx-auto w-full max-w-7xl px-4 md:px-8;
+  }
+
+  .landing-section {
+    @apply py-16 md:py-24;
+  }
+
+  .landing-copy {
+    @apply max-w-prose text-base leading-6 text-muted-foreground;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

@@ -17,7 +17,16 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-manrope)", "sans-serif"],
+      },
+      transitionTimingFunction: {
+        landing: "var(--audit1-motion-ease)",
+      },
       colors: {
+        brand: {
+          DEFAULT: "hsl(var(--audit1-brand))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -19,15 +19,17 @@ export default function Home() {
 
       <div className="relative z-10">
         <Navbar />
-        <Hero />
-        <Features />
-        <AboutUs />
-        <ProjectTimeline />
-        <CTA />
-        <Contact />
+        <main id="main-content" tabIndex={-1}>
+          <Hero />
+          <Features />
+          <AboutUs />
+          <ProjectTimeline />
+          <CTA />
+          <Contact />
+        </main>
         <Footer />
       </div>
       <ChatButton />
     </div>
   )
-} 
+}

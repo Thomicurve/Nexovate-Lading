@@ -1,0 +1,102 @@
+# Mejora integral de diseño — plan y tareas
+
+**Definición:** [spec.md](spec.md) · **Feature:** landing-design-upgrade
+**Plan:** PLAN-1 · **Definición cubierta:** SPEC-1
+
+## Forma de trabajo
+
+- **Modo:** CONTINUOUS.
+- **Decisión del usuario:** «Continuo: completar el plan aprobado», respuesta del 9 de octubre de 2026 a la selección del modo para esta feature.
+- **Aprobación del plan:** APPROVE_CURRENT_PLAN; usuario el 9 de octubre de 2026: «Sí, me encanta el diseño, así que apruebo el plan y la propuesta. seguí nomás con la implementación.» Cubre PLAN-1/SPEC-1/AUDIT-REDESIGN-1 y entrega local del plan.
+- **Diseño:** DESIGN_APPROVED: AUDIT-REDESIGN-1 aprobado explícitamente por el usuario el 9 de octubre de 2026; JnjQ0 (desktop), anRvV (mobile), DFSEc (estados) en nexovateLandingDesign.pen. Usuario «listo guardado» y archivo de 417267 bytes modificado el 9/10/2026 17:04:48 confirman persistencia. Designer revalidó IDs/tokens/estado sin cambios ni defecto nuevo. Avisos geométricos del proveedor no prueban un defecto visible ni invalidan aprobación.
+- **Primera tarea de implementación:** TASK-001, una vez aprobado plan/diseño y preparada la rama.
+- **TDD:** OFF propuesto para este rediseño, sin runner de tests declarado; comprobaciones funcionales siguen siendo obligatorias. La aprobación del plan incluye esta estrategia.
+- **Entrega:** una rama de requerimiento codex/landing-design-upgrade en el checkout actual, commits locales por unidad revisada. Sin push, PR, merge o despliegue autorizados. Cada tarea para el escritor antes de Reviewer y Delivery.
+- **Base observada:** main, HEAD 1fc8cf789328424eee92781ea0951a0e1a1894f7. Cambios previos a preservar: .codex/config.toml y .agents/skills/redesign-existing-projects/. No incluirlos en commits de aplicación.
+- **Pronóstico:** 1.250–2.250 líneas autorales agregadas/eliminadas, 22–32 archivos, confianza media; diseño Pencil y lockfile se contabilizan aparte. Una sola integración cohesiva con seis commits de unidades; el umbral de 400 líneas es orientativo. Ajustes materiales se presentan antes de extender alcance.
+
+## Controles comunes
+
+Por cada unidad: diff acotado y git diff --check, TypeScript mediante node node_modules/typescript/bin/tsc --noEmit --incremental false, comprobaciones funcionales afectadas y revisión independiente. Build de Next mediante npm run build al cambiar superficies compartidas y al cierre; npm run lint usa .eslintrc.json existente. Usar runtime/dependencias existentes, sin instalación global. Fallos previos se distinguen de regresiones, no se ocultan.
+
+Verificación DOM/comportamiento sin capturas de /es y /en a 375, 768 y 1440 px: desbordamiento, orden, tamaños y estados; teclado, foco, Escape, anclas, cambio de idioma, movimiento reducido, pestaña oculta y visibilidad cuando corresponda. Verificar reserva y fallback sin enviar una reserva real. Contraste medido de combinaciones relevantes, sin declarar aceptación visual desde estructura solamente. Ningún control genera imágenes. El cierre reutiliza pruebas/revisiones válidas y cubre únicamente integración restante.
+
+## Tareas
+
+### TASK-001 — Sistema visual y base accesible
+
+**Estado:** IN_PROGRESS · **Criterios:** AC-001, AC-009, AC-010, AC-011
+
+Definir tokens del diseño aprobado, Manrope, botones y base semántica/idioma/zoom. Unificar foco, hover y pressed. Incorporar el set de iconos aprobado verificando el paquete; no actualizar dependencias ajenas.
+
+- **Dependencia:** plan/diseño aprobados y rama preparada por Delivery.
+- **Archivos:** app/layout.tsx, app/[locale]/layout.tsx, app/[locale]/page.tsx, app/i18n/request.ts, app/globals.css, tailwind.config.js, components/ui/button.tsx, components/ui/card.tsx, messages/{es,en}/index.json, package.json y lockfile existente. Adaptar requestLocale para AC-009/AC-010; mantener ruta ../../messages, que ya era correcta. Sin cambio de idiomas ni arquitectura.
+- **Termina:** tokens y controles coherentes, idioma/main/salto/zoom funcionales; typecheck/build, DOM/contraste afectados y revisión aprobados.
+- **WU-001:** 220–380 líneas, 8–12 archivos; commit propuesto feat: establish landing visual system.
+- **Resultado:** candidato WU-001 de 253 líneas fuente + lock14; tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, idioma/main/salto/zoom/Manrope/contraste/reduced-motion PASS. Mensajes finales sin diff y claves únicas. Reviewer APPROVED sobre diff final suministrado; commit local pendiente. Advertencia Orb previa y recursos/metadata restantes se resuelven en tareas posteriores.
+
+### TASK-002 — Navegación y portada
+
+**Estado:** TODO · **Criterios:** AC-002, AC-003, AC-009, AC-010, AC-011
+
+Implementar barra flotante y menú, sección activa, cortes del título y CTA jerarquizados. Coordinar entrada con logo sin reintroducir gráfico de procesos; retirar o atenuar Orb según diseño aprobado.
+
+- **Dependencia:** TASK-001.
+- **Archivos:** components/navbar.tsx, components/hero.tsx, components/animated-brand-mark.tsx, components/animated-section.tsx, hooks/useIntersectionObserver.ts, components/blocks/Backgrounds/Orb.tsx, messages/{es,en}/index.json, app/globals.css.
+- **Termina:** menú completa cierre, Escape/foco/scroll correcto, sección activa y anclas funcionales; portada coincide con Pencil; reduced-motion comprobado; revisión aprobada.
+- **WU-002:** 280–480 líneas, 6–9 archivos; commit propuesto feat: refine landing navigation and hero.
+- **Resultado:** pendiente.
+
+### TASK-003 — Servicios diferenciados
+
+**Estado:** TODO · **Criterios:** AC-004, AC-009, AC-010, AC-011
+
+Construir ejemplos nativos de interfaz específicos para los cuatro servicios y movimiento relacionado con sus estados. Conservar legibilidad y altura compacta; ejemplos ilustrativos, no resultados reales.
+
+- **Dependencia:** TASK-001, TASK-002.
+- **Archivos:** components/features.tsx, components/service-illustrations.tsx (nuevo si necesario), components/blocks/Components/PixelCard.tsx, messages/{es,en}/index.json, app/globals.css.
+- **Termina:** cuatro servicios identificables, acceso toque/teclado, ejemplos etiquetados, sin recorte ES/EN; pruebas funcionales y revisión aprobadas.
+- **WU-003:** 240–420 líneas, 4–6 archivos; commit propuesto feat: illustrate custom software services.
+- **Resultado:** pendiente.
+
+### TASK-004 — Equipo y proceso
+
+**Estado:** TODO · **Criterios:** AC-005, AC-006, AC-009, AC-010, AC-011
+
+Implementar composición editorial de socios y avance discreto del proceso. Preservar datos/fotos y secuencia desktop/mobile; no inventar entregables o compromisos.
+
+- **Dependencia:** TASK-001, TASK-003.
+- **Archivos:** components/about-us.tsx, components/project-timeline.tsx, components/blocks/Backgrounds/Squares.tsx, messages/{es,en}/index.json, app/globals.css.
+- **Termina:** dos perfiles reales y secuencia de cuatro pasos conectados, sin ruido de fondos, movimiento reducido y responsive comprobados; revisión aprobada.
+- **WU-004:** 200–340 líneas, 4–6 archivos; commit propuesto feat: refine team and project process sections.
+- **Resultado:** pendiente.
+
+### TASK-005 — Contacto, reserva y cierre
+
+**Estado:** TODO · **Criterios:** AC-007, AC-008, AC-009, AC-010, AC-011
+
+Integrar CTA/contacto, presentación y estados del calendario, fallback directo, footer compacto y enlace WhatsApp único accesible. Usar la denominación Nexovate por decisión explícita del usuario del 9 de octubre de 2026: «Usar Nexovate; documentos legales pendientes». No crear textos/enlaces legales; quedan fuera de la entrega actual por esa decisión.
+
+- **Dependencia:** TASK-001, TASK-004.
+- **Archivos:** components/cta.tsx, components/contact.tsx, components/calendar.tsx, components/footer.tsx, components/chatButton.tsx, app/[locale]/page.tsx, messages/{es,en}/index.json, app/globals.css.
+- **Termina:** sin CTA duplicado, estados de carga/fallo comprobados con salida funcional sin reserva real, WhatsApp no obstruye controles, footer coherente; revisión aprobada.
+- **WU-005:** 240–430 líneas, 7–10 archivos; commit propuesto feat: simplify contact and booking experience.
+- **Resultado:** pendiente.
+
+### TASK-006 — Recursos, movimiento global e integración
+
+**Estado:** TODO · **Criterios:** AC-008, AC-009, AC-010, AC-011
+
+Resolver metadatos y referencias faltantes con assets existentes, manifest de formato/tamaños reales y sitemap de idiomas. Eliminar efectos globales redundantes o pausarlos correctamente. Comprobar integración completa y corregir defectos del alcance aprobado.
+
+- **Dependencia:** TASK-001–TASK-005.
+- **Archivos:** app/layout.tsx, app/[locale]/layout.tsx, app/[locale]/page.tsx, components/mouse-move-effect.tsx, components/animated-section.tsx, hooks/useIntersectionObserver.ts, componentes de animación afectados, public/manifest.json, public/sitemap.xml, messages/{es,en}/index.json, app/globals.css. Corregir otros archivos anteriores solo por defectos concretos de integración.
+- **Termina:** referencias reales y ES/EN coherentes, pausa/reduced-motion verificadas, typecheck/build y comprobaciones globales pertinentes observadas; revisión de integración y commits aceptados. Documentos legales continúan pendientes por decisión del usuario, sin declararlos implementados.
+- **WU-006:** 70–200 líneas, 5–9 archivos; commit propuesto fix: complete landing accessibility and metadata.
+- **Resultado:** pendiente.
+
+## Siguiente paso
+
+- **Próxima tarea:** TASK-001 después de aprobación y revalidación de AUDIT-REDESIGN-1.
+- **Continuación:** COVERED_BY_CONTINUOUS_PLAN; PLAN-1/SPEC-1/AUDIT-REDESIGN-1 aprobados explícitamente el 9 de octubre de 2026.
+- **Siguiente acción:** TASK-001 en ejecución sobre codex/landing-design-upgrade, base 1fc8cf789328424eee92781ea0951a0e1a1894f7. Plan/diseño/modo aprobados y persistencia/revalidación completadas.

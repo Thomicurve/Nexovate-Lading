@@ -1,11 +1,12 @@
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Manrope } from "next/font/google"
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
+import { getLocale, getTranslations } from "next-intl/server"
 import MouseMoveEffect from "@/components/mouse-move-effect"
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from "@vercel/analytics/react"
-const inter = Inter({ subsets: ["latin"] })
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" })
 
 export const metadata: Metadata = {
   title: "Nexovate - Software a medida y automatización de procesos",
@@ -48,17 +49,11 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   manifest: "/manifest.json",
-  themeColor: "#1A5EFF",
   applicationName: "Nexovate",
   appleWebApp: {
     capable: true,
     title: "Nexovate",
     statusBarStyle: "black-translucent",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
   },
   formatDetection: {
     telephone: false,
@@ -66,23 +61,31 @@ export const metadata: Metadata = {
   category: "technology",
 }
 
-export default function RootLayout({
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#000000",
+}
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const locale = await getLocale()
+  const t = await getTranslations({ locale, namespace: "accessibility" })
+
   return (
-    <html className="dark" dir="ltr">
+    <html lang={locale} className="dark" dir="ltr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#1A5EFF" />
       </head>
-      <body className={`${inter.className} bg-background text-foreground antialiased`}>
+      <body className={`${manrope.variable} font-sans bg-background text-foreground antialiased`}>
         <MouseMoveEffect />
-        <a href="#hero" className="skip-to-content sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground">
-          Skip to main content
+        <a href="#main-content" className="skip-to-content">
+          {t("skipToContent")}
         </a>
         {children}
         <Toaster />
