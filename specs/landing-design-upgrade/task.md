@@ -99,9 +99,9 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 
 La entrega de PLAN-1 está completa, con cierre documental a752a94d127ebb6c0cc55812dd75a3cbc5495c8d. El usuario solicitó después un ajuste material de fondo/procesos/servicios; PLAN-2 añade únicamente TASK-007 y TASK-008. La autorización previa de PLAN-1 no se interpreta como aprobación de esta propuesta nueva.
 
-- **Próxima tarea:** TASK-007 en ejecución; TASK-008 depende de su revisión y commit.
+- **Próxima tarea:** TASK-008 en ejecución sobre WU-007 revisada y guardada.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN; aprobación del diseño con correcciones expresas recibida: loop al seleccionar ejemplos y ventajas/desventajas. Guardado y DESIGN_APPROVED confirmados; no pedir aprobación repetida.
-- **Siguiente acción:** implementar TASK-007. Base actual a752a94d127ebb6c0cc55812dd75a3cbc5495c8d sobre codex/landing-design-upgrade. Tareas anteriores DONE; publicación no autorizada.
+- **Siguiente acción:** implementar TASK-008. Base actual8c0e865e866966715edda727a1a424acc8ebfce3 sobre codex/landing-design-upgrade. TASK-001–TASK-007 DONE; publicación no autorizada.
 
 ## PLAN-2 — Ajuste de atmósfera y workflows
 
@@ -115,7 +115,7 @@ La entrega de PLAN-1 está completa, con cierre documental a752a94d127ebb6c0cc55
 
 ### TASK-007 — Luz ambiental y Dot Field
 
-**Estado:** IN_PROGRESS · **Criterios:** AC-012, AC-009, AC-010, AC-015
+**Estado:** DONE · **Criterios:** AC-012, AC-009, AC-010, AC-015
 
 Añadir luces tenues localizadas en portada/servicios y campo de puntos discreto en procesos. Conservar la lectura y geometría del contenido, la base oscura y el resto de secciones. Decoración estática, sin cursor ni parallax.
 
@@ -123,11 +123,11 @@ Añadir luces tenues localizadas en portada/servicios y campo de puntos discreto
 - **Archivos:** app/globals.css, app/[locale]/page.tsx o components/hero.tsx, components/features.tsx y components/project-timeline.tsx según integración de capas.
 - **Termina:** capas decorativas no interactivas ni expuestas a lectores de pantalla; contraste y ausencia de overflow comprobados ES/EN ×375/768/1440; reduced/noJS conservan legibilidad; typecheck/lint/build/diffcheck y revisión aprobados.
 - **WU-007:** 60–150 líneas, 2–5 archivos; commit propuesto feat: add subtle landing atmosphere.
-- **Resultado:** implementada52 líneas/4 archivos (49 altas+3 bajas). tsc/lint/build/diffcheck y18 variantes ES/EN375/768/1440 normal/reduced/noJS PASS; sin overflow/recortes/pageerrors. Capas estáticas aria-hidden/pointer-none detrás del contenido, luces3.8%/5% y puntos2px/32px. Contraste compuesto conservador muted/luz≥7.30, muted/puntos≈6.71, botonesblackbrand5.24. Reviewer APPROVED; pendiente commit local.
+- **Resultado:** commit8c0e865e866966715edda727a1a424acc8ebfce3. WU-00752 líneas/4 archivos (49 altas+3 bajas); tsc/lint/build/diffcheck y18 variantes ES/EN375/768/1440 normal/reduced/noJS PASS; sin overflow/recortes/pageerrors. Capas estáticas aria-hidden/pointer-none detrás del contenido, luces3.8%/5% y puntos2px/32px. Contraste compuesto conservador muted/luz≥7.30, muted/puntos≈6.71, botonesblackbrand5.24. Reviewer APPROVED.
 
 ### TASK-008 — Comparativa de servicios con nodos y Motion
 
-**Estado:** TODO · **Criterios:** AC-013, AC-014, AC-015, AC-009, AC-010
+**Estado:** IN_PROGRESS · **Criterios:** AC-013, AC-014, AC-015, AC-009, AC-010
 
 Reemplazar las miniinterfaces individuales por un comparador compartido y selector de cuatro ejemplos de los servicios existentes. Mantener servicios y textos; contar la misma operación manual y centralizada mediante nodos/conexiones, cuello de botella y avance. Al seleccionar, el ejemplo anima automáticamente en loop con Motion ya instalado; sin botones reproducir/reiniciar. Mostrar desventajas manuales y ventajas relacionadas con capacidades de Nexovate, sin métricas o promesas inventadas.
 
@@ -135,4 +135,4 @@ Reemplazar las miniinterfaces individuales por un comparador compartido y select
 - **Archivos:** components/features.tsx, components/service-illustrations.tsx, components/service-workflow.tsx (nuevo si necesario), messages/{es,en}/index.json, app/globals.css y hook de visibilidad acotado si necesario.
 - **Termina:** comparación, cuatro ejemplos y ventajas/desventajas ES/EN legibles en 375/768/1440; etiqueta ilustrativa y cuello reconocibles sin depender del color. Selección clic/Enter/Space/toque inicia loop, cambios rápidos cancelan ejecución anterior, pausa/reanudación discreta funcional y sin foco robado/anuncios repetitivos. Pausa fuera de vista/pestaña oculta y limpieza al cambiar ejemplo/desmontar observadas. Reduced-motion y noJS conservan ambos recorridos. tsc/lint/build/diffcheck, revisión del candidato e integración con navegación/contacto aprobados.
 - **WU-008:** 440–750 líneas, 4–7 archivos; unidad cohesiva de comparación/selección/loop y retirada de ejemplos anteriores. Commit propuesto feat: compare manual and optimized workflows.
-- **Resultado:** pendiente.
+- **Resultado:** WU-008 implementada: 522 líneas fuente, 412 altas/110 bajas en 6 archivos. tsc/lint/build/diffcheck y claves JSON únicas PASS. Seis variantes ES/EN ×375/768/1440 y 24 selecciones clic/toque/Enter/Space PASS: 8 nodos y 4 puntos por ejemplo, foco estable, sin overflow/pageerrors y cuatro servicios conservados. Dos ciclos por ruta en los cuatro ejemplos, pausa/reanudación, visibilidad real y 12 cambios rápidos con limpieza comprobados. Pestaña oculta probada mediante simulación explícita; 18 variantes reduced/noJS/noObserver PASS. Defecto móvil corregido con observación independiente de cada ruta. Integración afectada WhatsApp/Cal PASS; Reviewer APPROVED para WU-008 y cierre de PLAN-2. Pendiente commit local.

@@ -79,6 +79,103 @@
         "before": "La información se consulta en fuentes separadas.",
         "after": "Las fuentes se reúnen en una vista compartida."
       }
+    },
+    "workflow": {
+      "illustrative": "Ejemplo ilustrativo",
+      "title": "La misma operación, dos formas de trabajar",
+      "description": "Compará un recorrido manual con una solución de software. Estos ejemplos muestran capacidades, no resultados medidos.",
+      "selector": "Elegí un ejemplo",
+      "manual": "Con Excel y tareas manuales",
+      "optimized": "Con software de Nexovate",
+      "difficulties": "Dificultades de este recorrido",
+      "benefits": "Ventajas del software",
+      "pause": "Pausar movimiento",
+      "resume": "Reanudar movimiento",
+      "static": "Comparación sin movimiento.",
+      "customSoftware": {
+        "operation": "Una solicitud interna",
+        "manual": {
+          "node0": "Solicitud",
+          "node1": "Planilla",
+          "node2": "Revisión",
+          "node3": "Mensajes",
+          "summary": "Solicitudes en espera de revisión y asignación.",
+          "point0": "La solicitud queda repartida entre planilla y mensajes.",
+          "point1": "La asignación depende de una revisión manual."
+        },
+        "optimized": {
+          "node0": "Solicitud",
+          "node1": "Sistema propio",
+          "node2": "Asignación",
+          "node3": "Estado compartido",
+          "summary": "Solicitud con responsable y estado en el mismo sistema.",
+          "point0": "Solicitudes centralizadas en una interfaz propia.",
+          "point1": "Responsable y estado visibles en el mismo sistema."
+        }
+      },
+      "automation": {
+        "operation": "Un pedido recibido",
+        "manual": {
+          "node0": "Pedido",
+          "node1": "Copia de datos",
+          "node2": "Revisión",
+          "node3": "Tarea manual",
+          "summary": "Pedidos acumulados mientras se revisan y crean las tareas.",
+          "point0": "Cada pedido exige copiar datos y crear una tarea.",
+          "point1": "La cola avanza cuando alguien revisa los pedidos."
+        },
+        "optimized": {
+          "node0": "Pedido",
+          "node1": "Sistema central",
+          "node2": "Reglas",
+          "node3": "Tarea asignada",
+          "summary": "El pedido conecta con reglas y asignación de tareas.",
+          "point0": "Reglas conectan el pedido con la creación de la tarea.",
+          "point1": "La asignación queda integrada al flujo."
+        }
+      },
+      "traceability": {
+        "operation": "Un proceso en curso",
+        "manual": {
+          "node0": "Solicitud",
+          "node1": "Archivos",
+          "node2": "Revisión",
+          "node3": "Estado disperso",
+          "summary": "Cambios pendientes de revisión antes de actualizar el estado.",
+          "point0": "Estado y responsable se consultan en distintas fuentes.",
+          "point1": "Los cambios dispersos dificultan reconstruir el historial."
+        },
+        "optimized": {
+          "node0": "Solicitud",
+          "node1": "Registro",
+          "node2": "Responsable",
+          "node3": "Historial visible",
+          "summary": "Estado, responsable e historial reunidos en un registro.",
+          "point0": "Cada proceso reúne estado, responsable e historial.",
+          "point1": "Los cambios se consultan en un registro compartido."
+        }
+      },
+      "dataIntegration": {
+        "operation": "Datos de varias fuentes",
+        "manual": {
+          "node0": "Fuentes",
+          "node1": "Planillas",
+          "node2": "Conciliación",
+          "node3": "Vista manual",
+          "summary": "Datos pendientes de conciliación para reunir las fuentes.",
+          "point0": "Cada fuente se revisa y copia por separado.",
+          "point1": "La vista conjunta requiere conciliación manual."
+        },
+        "optimized": {
+          "node0": "Fuentes",
+          "node1": "Conexiones",
+          "node2": "Sistema central",
+          "node3": "Vista común",
+          "summary": "Las fuentes se conectan a una vista compartida.",
+          "point0": "Fuentes conectadas a una vista común.",
+          "point1": "La información se consulta desde el sistema central."
+        }
+      }
     }
   },
   "about": {

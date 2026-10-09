@@ -5,7 +5,7 @@ import { FlowArrowIcon } from "@phosphor-icons/react/dist/csr/FlowArrow"
 import { ListChecksIcon } from "@phosphor-icons/react/dist/csr/ListChecks"
 import { DatabaseIcon } from "@phosphor-icons/react/dist/csr/Database"
 import { useTranslations } from "next-intl"
-import { ServiceIllustration, type ServiceType } from "./service-illustrations"
+import ServiceWorkflow from "./service-workflow"
 
 const services = [
   { id: "customSoftware", icon: CodeIcon, wide: true },
@@ -26,6 +26,7 @@ export default function Features() {
         </h2>
         <p className="landing-copy md:col-span-5 md:pb-2">{t("description")}</p>
       </div>
+      <ServiceWorkflow />
       <div className="grid items-start gap-6 md:grid-cols-12">
         {services.map(({ id, icon: Icon, wide }) => (
           <article key={id} aria-labelledby={`service-${id}`}
@@ -35,7 +36,6 @@ export default function Features() {
               {t(`features.${id}.title`)}
             </h3>
             <p className="mt-3 max-w-prose text-base text-muted-foreground">{t(`features.${id}.description`)}</p>
-            <ServiceIllustration type={id as ServiceType} />
           </article>
         ))}
       </div>

@@ -79,6 +79,103 @@
         "before": "Information is checked in separate sources.",
         "after": "The sources come together in a shared view."
       }
+    },
+    "workflow": {
+      "illustrative": "Illustrative example",
+      "title": "The same operation, two ways to work",
+      "description": "Compare a manual workflow with a software solution. These examples show capabilities, not measured outcomes.",
+      "selector": "Choose an example",
+      "manual": "With Excel and manual tasks",
+      "optimized": "With Nexovate software",
+      "difficulties": "Difficulties in this workflow",
+      "benefits": "Software advantages",
+      "pause": "Pause motion",
+      "resume": "Resume motion",
+      "static": "Comparison without motion.",
+      "customSoftware": {
+        "operation": "An internal request",
+        "manual": {
+          "node0": "Request",
+          "node1": "Spreadsheet",
+          "node2": "Review",
+          "node3": "Messages",
+          "summary": "Requests waiting for review and assignment.",
+          "point0": "The request is split between a spreadsheet and messages.",
+          "point1": "Assignment depends on a manual review."
+        },
+        "optimized": {
+          "node0": "Request",
+          "node1": "Own system",
+          "node2": "Assignment",
+          "node3": "Shared status",
+          "summary": "The request has an owner and status in the same system.",
+          "point0": "Requests centralized in a custom interface.",
+          "point1": "Owner and status visible in the same system."
+        }
+      },
+      "automation": {
+        "operation": "An incoming order",
+        "manual": {
+          "node0": "Order",
+          "node1": "Copy data",
+          "node2": "Review",
+          "node3": "Manual task",
+          "summary": "Orders accumulate while tasks are reviewed and created.",
+          "point0": "Each order requires copying data and creating a task.",
+          "point1": "The queue moves when someone reviews the orders."
+        },
+        "optimized": {
+          "node0": "Order",
+          "node1": "Central system",
+          "node2": "Rules",
+          "node3": "Assigned task",
+          "summary": "The order connects with rules and task assignment.",
+          "point0": "Rules connect the order with task creation.",
+          "point1": "Assignment is part of the workflow."
+        }
+      },
+      "traceability": {
+        "operation": "An ongoing process",
+        "manual": {
+          "node0": "Request",
+          "node1": "Files",
+          "node2": "Review",
+          "node3": "Scattered status",
+          "summary": "Changes await review before the status is updated.",
+          "point0": "Status and owner are checked in different sources.",
+          "point1": "Scattered changes make the history harder to reconstruct."
+        },
+        "optimized": {
+          "node0": "Request",
+          "node1": "Record",
+          "node2": "Owner",
+          "node3": "Visible history",
+          "summary": "Status, owner and history together in one record.",
+          "point0": "Each process brings together status, owner and history.",
+          "point1": "Changes are available in a shared record."
+        }
+      },
+      "dataIntegration": {
+        "operation": "Data from several sources",
+        "manual": {
+          "node0": "Sources",
+          "node1": "Spreadsheets",
+          "node2": "Reconcile",
+          "node3": "Manual view",
+          "summary": "Data awaits reconciliation to bring the sources together.",
+          "point0": "Each source is checked and copied separately.",
+          "point1": "A combined view requires manual reconciliation."
+        },
+        "optimized": {
+          "node0": "Sources",
+          "node1": "Connections",
+          "node2": "Central system",
+          "node3": "Shared view",
+          "summary": "Sources connect to a shared view.",
+          "point0": "Sources connected to a shared view.",
+          "point1": "Information is available from the central system."
+        }
+      }
     }
   },
   "about": {

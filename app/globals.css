@@ -162,10 +162,7 @@
   }
 }
 
-.service-change { animation: landing-enter 300ms var(--audit1-motion-ease) both; }
-@media (prefers-reduced-motion: reduce) {
-  .service-change { animation: none; }
-}
+.workflow-request { transform: translateX(-50%); }
 
 @keyframes process-progress {
   from { transform: scaleY(0); }
