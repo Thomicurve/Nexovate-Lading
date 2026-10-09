@@ -10,7 +10,8 @@ export default function Hero() {
 
   return (
     <section id="hero" aria-labelledby="hero-heading"
-      className="landing-container relative flex min-h-svh flex-col items-center justify-center gap-8 pb-20 pt-32 text-center md:pb-24 md:pt-40">
+      className="landing-container relative isolate flex min-h-svh flex-col items-center justify-center gap-8 pb-20 pt-32 text-center md:pb-24 md:pt-40">
+      <span className="decorative-background ambient-light ambient-light-hero" aria-hidden="true" />
       <AnimatedBrandMark />
       <div className="mx-auto max-w-5xl space-y-6">
         <h1 id="hero-heading"

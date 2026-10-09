@@ -1,7 +1,7 @@
 # Mejora integral de diseño — plan y tareas
 
 **Definición:** [spec.md](spec.md) · **Feature:** landing-design-upgrade
-**Plan:** PLAN-1 · **Definición cubierta:** SPEC-1
+**Plan:** PLAN-2 · **Definición cubierta:** SPEC-2; conserva las seis tareas entregadas de PLAN-1/SPEC-1
 
 ## Forma de trabajo
 
@@ -97,6 +97,42 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 
 ## Siguiente paso
 
-- **Próxima tarea:** ninguna; TASK-001–TASK-006 DONE con revisión final de integración aprobada.
-- **Continuación:** COVERED_BY_CONTINUOUS_PLAN; PLAN-1/SPEC-1/AUDIT-REDESIGN-1 aprobados explícitamente el 9 de octubre de 2026.
-- **Siguiente acción:** cierre documental local sobre codex/landing-design-upgrade, HEAD de aplicación 7af6c6489d3fd33fe64bec3a4fc25d5da53b549e. Plan implementado y comprobado. Privacidad y términos pendientes por decisión del usuario; sin publicación autorizada.
+La entrega de PLAN-1 está completa, con cierre documental a752a94d127ebb6c0cc55812dd75a3cbc5495c8d. El usuario solicitó después un ajuste material de fondo/procesos/servicios; PLAN-2 añade únicamente TASK-007 y TASK-008. La autorización previa de PLAN-1 no se interpreta como aprobación de esta propuesta nueva.
+
+- **Próxima tarea:** TASK-007 en ejecución; TASK-008 depende de su revisión y commit.
+- **Continuación:** COVERED_BY_CONTINUOUS_PLAN; aprobación del diseño con correcciones expresas recibida: loop al seleccionar ejemplos y ventajas/desventajas. Guardado y DESIGN_APPROVED confirmados; no pedir aprobación repetida.
+- **Siguiente acción:** implementar TASK-007. Base actual a752a94d127ebb6c0cc55812dd75a3cbc5495c8d sobre codex/landing-design-upgrade. Tareas anteriores DONE; publicación no autorizada.
+
+## PLAN-2 — Ajuste de atmósfera y workflows
+
+**Solicitud:** el usuario pidió luces discretas en el fondo, Dot Field en procesos y una gráfica comparativa de nodos animados para operación manual con Excel frente a soluciones de software, utilizando Motion for React.
+
+**Aprobación del ajuste:** APPROVE_CURRENT_PLAN_WITH_REQUESTED_CHANGES. Usuario: «El diseño me gusta ... no ... botón de reproducir comparación y reiniciar ... cuando se seleccione alguno de los ejemplos ... se reproduzca en loop ... desventajas ... Excel y tareas manuales ... ventajas ... software». SPEC-2/PLAN-2 incorporan exactamente estas correcciones, sin pedir aprobación repetida. Designer revalidó AUDIT-REDESIGN-2 en nexovateLandingDesign.pen: desktop urBWH, móvil tfkOk y estados WO7kj; DESIGN_APPROVED y guardado físico657091 bytes9/10/2026 20:03:05 confirmados junto con respuesta «Listo, guardado». La lectura estructural no prueba geometría por posiciones cacheadas. Aprobación histórica AUDIT-REDESIGN-1 preservada.
+
+**Ejecución:** mismo checkout y rama, dos tareas secuenciales, un escritor y revisión independiente antes de cada commit local. Sin push/PR/merge/despliegue. TDD OFF como en PLAN-1, sin runner nuevo; comprobaciones funcionales obligatorias. Riesgo medio por loops/cancelación/cambio de ejemplo y disposición responsive. Pronóstico adicional 500–900 líneas autorales, 6–9 archivos, confianza media; sin imágenes ni nuevas dependencias.
+
+**Corrección de diseño:** Designer emitió DESIGN_APPROVED tras la decisión expresa y el guardado del usuario «Listo, guardado». Archivo físico657091 bytes9/10/2026 20:03:05. Selectores hawB7/NovMC, pausa MHtAQ/t0p5Jd, listas O2KDBF/zX2ul y Pk0gG/zfK6G; estados Vp9pZ/DRygk/ZonML/XyyKw y reglas z6qGmj vigentes, sin reproducir/reiniciar. Luces y puntos preservados. Persistencia/revalidación completadas. No se declara movimiento runtime ni geometría certificada desde readback cacheado; metadata heredada queda superada por reglas nuevas y aprobación expresa.
+
+### TASK-007 — Luz ambiental y Dot Field
+
+**Estado:** IN_PROGRESS · **Criterios:** AC-012, AC-009, AC-010, AC-015
+
+Añadir luces tenues localizadas en portada/servicios y campo de puntos discreto en procesos. Conservar la lectura y geometría del contenido, la base oscura y el resto de secciones. Decoración estática, sin cursor ni parallax.
+
+- **Dependencia:** aprobación y persistencia del diseño/PLAN-2/SPEC-2; TASK-001–TASK-006 entregadas.
+- **Archivos:** app/globals.css, app/[locale]/page.tsx o components/hero.tsx, components/features.tsx y components/project-timeline.tsx según integración de capas.
+- **Termina:** capas decorativas no interactivas ni expuestas a lectores de pantalla; contraste y ausencia de overflow comprobados ES/EN ×375/768/1440; reduced/noJS conservan legibilidad; typecheck/lint/build/diffcheck y revisión aprobados.
+- **WU-007:** 60–150 líneas, 2–5 archivos; commit propuesto feat: add subtle landing atmosphere.
+- **Resultado:** implementada52 líneas/4 archivos (49 altas+3 bajas). tsc/lint/build/diffcheck y18 variantes ES/EN375/768/1440 normal/reduced/noJS PASS; sin overflow/recortes/pageerrors. Capas estáticas aria-hidden/pointer-none detrás del contenido, luces3.8%/5% y puntos2px/32px. Contraste compuesto conservador muted/luz≥7.30, muted/puntos≈6.71, botonesblackbrand5.24. Reviewer APPROVED; pendiente commit local.
+
+### TASK-008 — Comparativa de servicios con nodos y Motion
+
+**Estado:** TODO · **Criterios:** AC-013, AC-014, AC-015, AC-009, AC-010
+
+Reemplazar las miniinterfaces individuales por un comparador compartido y selector de cuatro ejemplos de los servicios existentes. Mantener servicios y textos; contar la misma operación manual y centralizada mediante nodos/conexiones, cuello de botella y avance. Al seleccionar, el ejemplo anima automáticamente en loop con Motion ya instalado; sin botones reproducir/reiniciar. Mostrar desventajas manuales y ventajas relacionadas con capacidades de Nexovate, sin métricas o promesas inventadas.
+
+- **Dependencia:** TASK-007 revisada y entregada.
+- **Archivos:** components/features.tsx, components/service-illustrations.tsx, components/service-workflow.tsx (nuevo si necesario), messages/{es,en}/index.json, app/globals.css y hook de visibilidad acotado si necesario.
+- **Termina:** comparación, cuatro ejemplos y ventajas/desventajas ES/EN legibles en 375/768/1440; etiqueta ilustrativa y cuello reconocibles sin depender del color. Selección clic/Enter/Space/toque inicia loop, cambios rápidos cancelan ejecución anterior, pausa/reanudación discreta funcional y sin foco robado/anuncios repetitivos. Pausa fuera de vista/pestaña oculta y limpieza al cambiar ejemplo/desmontar observadas. Reduced-motion y noJS conservan ambos recorridos. tsc/lint/build/diffcheck, revisión del candidato e integración con navegación/contacto aprobados.
+- **WU-008:** 440–750 líneas, 4–7 archivos; unidad cohesiva de comparación/selección/loop y retirada de ejemplos anteriores. Commit propuesto feat: compare manual and optimized workflows.
+- **Resultado:** pendiente.

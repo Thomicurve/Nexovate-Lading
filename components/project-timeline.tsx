@@ -19,7 +19,8 @@ export default function ProjectTimeline() {
   const [entered, ref] = useIntersectionObserver<HTMLOListElement>({ threshold: 0.1 })
 
   return (
-    <section id="process" aria-labelledby="process-heading" className="landing-container landing-section">
+    <section id="process" aria-labelledby="process-heading" className="landing-container landing-section relative isolate">
+      <span className="decorative-background process-dot-field" aria-hidden="true" />
       <div className="mx-auto max-w-2xl text-center">
         <h2 id="process-heading" className="text-3xl font-semibold tracking-tight md:text-4xl">{t("title")}</h2>
         <p className="mt-4 text-base text-muted-foreground">{t("description")}</p>

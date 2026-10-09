@@ -18,7 +18,8 @@ export default function Features() {
   const t = useTranslations("solutions")
 
   return (
-    <section id="solutions" aria-labelledby="services-heading" className="landing-container landing-section">
+    <section id="solutions" aria-labelledby="services-heading" className="landing-container landing-section relative isolate">
+      <span className="decorative-background ambient-light ambient-light-services" aria-hidden="true" />
       <div className="mb-12 grid gap-6 md:grid-cols-12 md:items-end">
         <h2 id="services-heading" className="max-w-2xl text-3xl font-semibold tracking-tight md:col-span-7 md:text-5xl">
           {t("title")}

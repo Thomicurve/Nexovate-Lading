@@ -2,7 +2,7 @@
 
 > Dar carácter propio a cada sección y mostrar cómo Nexovate ordena la operación, con movimiento intencional y un recorrido de contacto claro.
 
-**Feature:** landing-design-upgrade · **Definición:** SPEC-1
+**Feature:** landing-design-upgrade · **Definición:** SPEC-2 (ajuste de fondo y comparativa; conserva SPEC-1)
 **Plan y tareas:** [task.md](task.md)
 
 ## Necesidad
@@ -55,5 +55,26 @@ Crear una propuesta editable desktop/mobile en nexovateLandingDesign.pen preserv
 
 ## Decisiones pendientes
 
-Ninguna decisión bloqueante: SPEC-1/PLAN-1/AUDIT-REDESIGN-1 aprobados y revalidados.
+El ajuste de SPEC-2 sustituye la presentación de ejemplos individuales de servicios por una comparativa compartida; el resto de SPEC-1 y sus criterios se conservan. La aprobación previa corresponde a SPEC-1/PLAN-1/AUDIT-REDESIGN-1.
 El usuario decidió el 9 de octubre de 2026: «Usar Nexovate; documentos legales pendientes». Esta decisión permite completar el rediseño usando la marca; privacidad y términos quedan expresamente pendientes para una solicitud posterior con datos reales.
+
+## Ajuste solicitado: luz, Dot Field y comparación de workflows
+
+El usuario pidió suavizar el fondo completamente negro con luces discretas, incorporar un Dot Field al proceso y mostrar mediante nodos animados la diferencia entre una operación con Excel y trabajo manual y otra organizada con software. La base oscura, Manrope, marca, navegación, equipo y contacto se conservan.
+
+Las luces usan el azul existente a baja intensidad, localizadas detrás del contenido de portada y servicios. El campo de puntos queda en el fondo del proceso, discreto y estático, sin competir con las etapas ni captar eventos de interacción. Esta petición autoriza la luz ambiental pese a la recomendación general de la skill de evitar fondos degradados; no requiere cambiar la skill ni reactivar el efecto del cursor.
+
+Servicios mantiene las cuatro líneas y sus descripciones. Un comparador compartido reemplaza las cuatro miniinterfaces y permite seleccionar un ejemplo de software a medida, automatización, trazabilidad o integración de datos. Cada selección muestra dos recorridos de la misma operación con nodos, conexiones y solicitudes ilustrativas. El flujo manual muestra solicitud, planilla/archivos, copias y revisión con cola, y seguimiento disperso. El optimizado muestra solicitud, sistema central, reglas/asignación y estado compartido. El atasco se explica mediante texto y acumulación, sin presentar Excel como necesariamente defectuoso ni inventar métricas, casos de éxito o garantías. Bajo cada recorrido se explican dificultades concretas de ese trabajo manual y ventajas relacionadas con las capacidades de Nexovate: centralización, automatización, seguimiento o conexión de fuentes según el ejemplo.
+
+Los recorridos se comparan simultáneamente en dos columnas en escritorio y se apilan en móvil. Seleccionar un ejemplo activa su animación en loop automáticamente, sin botones de reproducir o reiniciar. El primer ejemplo queda seleccionado inicialmente y anima al estar visible. Cada ciclo presenta la acumulación manual y el avance centralizado con un breve reposo entre ciclos; el usuario puede detener/reanudar el movimiento mediante un control discreto, sin tener que pulsarlo para iniciar. Los nodos, desventajas y ventajas permanecen legibles mientras anima. Fuera de pantalla o con la pestaña oculta se detiene el loop; movimiento reducido muestra la comparación estática completa. El movimiento usa las APIs de Motion ya disponibles en framer-motion 12.6.2, sin instalar un segundo motor ni migrar dependencias. La documentación oficial de useAnimate admite ambas rutas de importación: https://motion.dev/docs/react-use-animate.
+
+- **AC-012 — Atmósfera:** luz ambiental azul tenue y Dot Field localizado en procesos; sin captura de puntero, desbordamiento o reducción del contraste de texto/controles; sin movimiento decorativo continuo.
+- **AC-013 — Comparación:** cuatro servicios conservados, selector de cuatro ejemplos y dos flujos de la misma operación con nodos y conexiones. Cuello de botella reconocible por texto y estado, ventajas del flujo optimizado y desventajas del manual específicas de cada ejemplo, etiqueta ilustrativa en ES/EN. Reemplaza los ejemplos individuales de AC-004, conservando identificación de servicios y acceso equivalente. Usar la marca Nexovate existente; la referencia verbal «Nexo8» no implica cambio de marca.
+- **AC-014 — Animación automática:** selección por clic, teclado y toque inicia loop automáticamente; ejemplo inicial seleccionado, sin botones reproducir/reiniciar ni ejecuciones concurrentes. Control discreto de pausa/reanudación, sin robar foco o anunciar cada ciclo repetidamente. Movimiento reducido muestra estados equivalentes sin desplazamientos; sin JavaScript conserva ambos recorridos y explicaciones del ejemplo inicial, sin controles inoperantes. Animaciones detenidas fuera de pantalla/pestaña oculta, limpieza al desmontar y cambiar ejemplo, sin cambios tardíos de una ejecución anterior.
+- **AC-015 — Evidencia del ajuste:** candidato Pencil editable AUDIT-REDESIGN-2, comprobaciones ES/EN a 375/768/1440, controles/contraste/pausa/reinicio observados, revisión independiente y commits locales acotados. Preservar toda la entrega anterior y trabajo ajeno.
+
+Superficies previstas: app/globals.css, app/[locale]/page.tsx o components/hero.tsx para luz, components/project-timeline.tsx para puntos; components/features.tsx, components/service-illustrations.tsx y/o nuevo components/service-workflow.tsx, mensajes ES/EN y un hook de visibilidad solo si es necesario. Nodos y conexiones son interfaz nativa, sin imágenes o exports SVG nuevos.
+
+Candidato AUDIT-REDESIGN-2 en nexovateLandingDesign.pen: desktop urBWH, móvil tfkOk, estados WO7kj; servicios Jr4m2/t8drv, rutas manual f290fu/w1ppx y Nexovate euAXJ/nIBj8; proceso JYb5V/FhXTP con puntos hrJ5U/ij5ld. Comparador arriba de las cuatro explicaciones de servicios. Dos columnas desde 1024px, recorridos apilados a 768/375px. Luces estáticas azules con intensidad máxima aproximada 5% desktop y 3,8% móvil; puntos nativos de 2px cada 32px en márgenes del proceso. Controles negro sobre azul de marca, reutilizando contraste 5,24:1.
+
+Corrección solicitada: selectores hawB7/NovMC, pausa MHtAQ/t0p5Jd, desventajas O2KDBF/zX2ul y ventajas Pk0gG/zfK6G. Estados de ejemplos ES/EN Vp9pZ (software a medida), DRygk (automatización), ZonML (trazabilidad) y XyyKw (integración). Reglas z6qGmj sustituyen explícitamente la interacción finita anterior, incluidos los estados bmQqn/comwT/G2rDR e i6BPe que quedan como material previo. Frames históricos preservados. Readback del proveedor conserva posiciones cacheadas y metadata parcial heredada; gobiernan los nodos corregidos y SPEC-2, no las referencias antiguas de reproducción/reinicio. No acredita ausencia de solapamientos. Inspección nativa y aprobación del usuario gobiernan la aceptación visual.

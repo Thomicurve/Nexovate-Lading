@@ -203,3 +203,46 @@
 }
 
 .calendar-embed iframe { max-width: 100%; }
+
+.decorative-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-light {
+  --ambient-strength: 0.038;
+  background-repeat: no-repeat;
+}
+
+.ambient-light-hero {
+  background-image: radial-gradient(
+    ellipse 65% 50% at 45% 30%,
+    hsl(var(--audit1-brand) / var(--ambient-strength)),
+    transparent 100%
+  );
+}
+
+.ambient-light-services {
+  background-image: radial-gradient(
+    ellipse 70% 45% at 65% 25%,
+    hsl(var(--audit1-brand) / var(--ambient-strength)),
+    transparent 100%
+  );
+}
+
+.process-dot-field {
+  background-image: radial-gradient(
+    circle,
+    hsl(var(--audit1-secondary) / 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to right, black, transparent 12%, transparent 88%, black);
+}
+
+@media (min-width: 768px) {
+  .ambient-light { --ambient-strength: 0.05; }
+}
