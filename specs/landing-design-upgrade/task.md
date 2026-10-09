@@ -85,7 +85,7 @@ Integrar CTA/contacto, presentación y estados del calendario, fallback directo,
 
 ### TASK-006 — Recursos, movimiento global e integración
 
-**Estado:** IN_PROGRESS · **Criterios:** AC-008, AC-009, AC-010, AC-011
+**Estado:** DONE · **Criterios:** AC-008, AC-009, AC-010, AC-011
 
 Resolver metadatos y referencias faltantes con assets existentes, manifest de formato/tamaños reales y sitemap de idiomas. Eliminar efectos globales redundantes o pausarlos correctamente. Comprobar integración completa y corregir defectos del alcance aprobado.
 
@@ -93,10 +93,10 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 - **Archivos:** app/layout.tsx, app/[locale]/layout.tsx, app/[locale]/page.tsx, components/mouse-move-effect.tsx, components/animated-section.tsx, hooks/useIntersectionObserver.ts, componentes de animación afectados, public/manifest.json, public/sitemap.xml, messages/{es,en}/index.json, app/globals.css. Corregir otros archivos anteriores solo por defectos concretos de integración.
 - **Termina:** referencias reales y ES/EN coherentes, pausa/reduced-motion verificadas, typecheck/build y comprobaciones globales pertinentes observadas; revisión de integración y commits aceptados. Documentos legales continúan pendientes por decisión del usuario, sin declararlos implementados.
 - **WU-006:** 70–200 líneas, 5–9 archivos; commit propuesto fix: complete landing accessibility and metadata.
-- **Resultado:** WU-006 implementada, 149 líneas/6 archivos. tsc/lint/build/diffcheck y JSON/XML PASS. DOM integración ES/EN ×375/768/1440: metadatos/idioma/main/menú/hash repetido/foco/anclas/WhatsApp/fallback/reduced/noJS sin overflow/errores PASS. Recursos locales200 PNG2172×724 e ICO16/32/48 comprobados. Logo en pausa offscreen/reduced y hidden mediante simulación explícita; contraste TASK-001 reutilizado. Reviewer APPROVED para WU-006 y revisión final de integración; pendiente commit local.
+- **Resultado:** commit 7af6c6489d3fd33fe64bec3a4fc25d5da53b549e. WU-006 149 líneas/6 archivos; tsc/lint/build/diffcheck y JSON/XML PASS. DOM integración ES/EN ×375/768/1440: metadatos/idioma/main/menú/hash repetido/foco/anclas/WhatsApp/fallback/reduced/noJS sin overflow/errores PASS. Recursos locales200 PNG2172×724 e ICO16/32/48 comprobados. Logo en pausa offscreen/reduced y hidden mediante simulación explícita; contraste TASK-001 reutilizado. Reviewer APPROVED para WU-006 y revisión final de integración.
 
 ## Siguiente paso
 
-- **Próxima tarea:** TASK-006 sobre commits aceptados TASK-001–TASK-005.
+- **Próxima tarea:** ninguna; TASK-001–TASK-006 DONE con revisión final de integración aprobada.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN; PLAN-1/SPEC-1/AUDIT-REDESIGN-1 aprobados explícitamente el 9 de octubre de 2026.
-- **Siguiente acción:** TASK-006 en ejecución sobre codex/landing-design-upgrade, base 4a0b1796c6029590a0f7040c17a8d484635ef2c0. Plan/diseño/modo aprobados y persistencia/revalidación completadas.
+- **Siguiente acción:** cierre documental local sobre codex/landing-design-upgrade, HEAD de aplicación 7af6c6489d3fd33fe64bec3a4fc25d5da53b549e. Plan implementado y comprobado. Privacidad y términos pendientes por decisión del usuario; sin publicación autorizada.
