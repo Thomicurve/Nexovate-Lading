@@ -25,7 +25,7 @@ Verificación DOM/comportamiento sin capturas de /es y /en a 375, 768 y 1440 px:
 
 ### TASK-001 — Sistema visual y base accesible
 
-**Estado:** IN_PROGRESS · **Criterios:** AC-001, AC-009, AC-010, AC-011
+**Estado:** DONE · **Criterios:** AC-001, AC-009, AC-010, AC-011
 
 Definir tokens del diseño aprobado, Manrope, botones y base semántica/idioma/zoom. Unificar foco, hover y pressed. Incorporar el set de iconos aprobado verificando el paquete; no actualizar dependencias ajenas.
 
@@ -33,19 +33,19 @@ Definir tokens del diseño aprobado, Manrope, botones y base semántica/idioma/z
 - **Archivos:** app/layout.tsx, app/[locale]/layout.tsx, app/[locale]/page.tsx, app/i18n/request.ts, app/globals.css, tailwind.config.js, components/ui/button.tsx, components/ui/card.tsx, messages/{es,en}/index.json, package.json y lockfile existente. Adaptar requestLocale para AC-009/AC-010; mantener ruta ../../messages, que ya era correcta. Sin cambio de idiomas ni arquitectura.
 - **Termina:** tokens y controles coherentes, idioma/main/salto/zoom funcionales; typecheck/build, DOM/contraste afectados y revisión aprobados.
 - **WU-001:** 220–380 líneas, 8–12 archivos; commit propuesto feat: establish landing visual system.
-- **Resultado:** candidato WU-001 de 253 líneas fuente + lock14; tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, idioma/main/salto/zoom/Manrope/contraste/reduced-motion PASS. Mensajes finales sin diff y claves únicas. Reviewer APPROVED sobre diff final suministrado; commit local pendiente. Advertencia Orb previa y recursos/metadata restantes se resuelven en tareas posteriores.
+- **Resultado:** commit 4d5932bea257d5ba26db7745c1c9b418eb58e543. WU-001 de 253 líneas fuente + lock14; tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, idioma/main/salto/zoom/Manrope/contraste/reduced-motion PASS. Mensajes finales sin diff y claves únicas. Reviewer APPROVED sobre diff final suministrado. Advertencia Orb previa y recursos/metadata restantes se resuelven en tareas posteriores.
 
 ### TASK-002 — Navegación y portada
 
-**Estado:** TODO · **Criterios:** AC-002, AC-003, AC-009, AC-010, AC-011
+**Estado:** IN_PROGRESS · **Criterios:** AC-002, AC-003, AC-009, AC-010, AC-011
 
 Implementar barra flotante y menú, sección activa, cortes del título y CTA jerarquizados. Coordinar entrada con logo sin reintroducir gráfico de procesos; retirar o atenuar Orb según diseño aprobado.
 
 - **Dependencia:** TASK-001.
 - **Archivos:** components/navbar.tsx, components/hero.tsx, components/animated-brand-mark.tsx, components/animated-section.tsx, hooks/useIntersectionObserver.ts, components/blocks/Backgrounds/Orb.tsx, messages/{es,en}/index.json, app/globals.css.
 - **Termina:** menú completa cierre, Escape/foco/scroll correcto, sección activa y anclas funcionales; portada coincide con Pencil; reduced-motion comprobado; revisión aprobada.
-- **WU-002:** 280–480 líneas, 6–9 archivos; commit propuesto feat: refine landing navigation and hero.
-- **Resultado:** pendiente.
+- **WU-002:** pronóstico revisado 650–850 líneas agregadas/eliminadas, 4–5 archivos, debido a sustituir navbar existente de 355 líneas y hero de 87. Se conserva una unidad cohesiva, mismos criterios/superficies/tarea y entrega local; el rango inicial no contó adecuadamente eliminaciones de estructura duplicada. Sin cambios de comportamiento, riesgo ni estrategia de entrega. Commit propuesto feat: refine landing navigation and hero.
+- **Resultado:** WU-002 623 líneas/5 archivos; tsc/lint/build/diffcheck PASS; DOM seis variantes ES/EN375/768/1440 sin overflow/errores, anclas/activo/idioma/hero/logo/reduced/SSR legible PASS. Menú cuatro variantes móviles: foco/Escape/cierre100msabierto350mscerrado/scroll PASS. Reviewer pidió corregir destino con hash repetido; scrollIntoView auto añadido y ocho variantes normal/reduced PASS, luego Reviewer APPROVED. Commit pendiente.
 
 ### TASK-003 — Servicios diferenciados
 
@@ -97,6 +97,6 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 
 ## Siguiente paso
 
-- **Próxima tarea:** TASK-001 después de aprobación y revalidación de AUDIT-REDESIGN-1.
+- **Próxima tarea:** TASK-002 sobre commit aceptado TASK-001.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN; PLAN-1/SPEC-1/AUDIT-REDESIGN-1 aprobados explícitamente el 9 de octubre de 2026.
-- **Siguiente acción:** TASK-001 en ejecución sobre codex/landing-design-upgrade, base 1fc8cf789328424eee92781ea0951a0e1a1894f7. Plan/diseño/modo aprobados y persistencia/revalidación completadas.
+- **Siguiente acción:** TASK-002 en ejecución sobre codex/landing-design-upgrade, base 4d5932bea257d5ba26db7745c1c9b418eb58e543. Plan/diseño/modo aprobados y persistencia/revalidación completadas.

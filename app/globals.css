@@ -125,3 +125,39 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: hsl(var(--muted-foreground));
 }
+
+@keyframes landing-enter {
+  from { opacity: 0.65; transform: translateY(0.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes landing-menu-enter {
+  from { opacity: 0; transform: translateY(-0.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes landing-menu-exit {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-0.5rem); }
+}
+
+.hero-enter, .section-enter {
+  animation: landing-enter 800ms var(--audit1-motion-ease) both;
+}
+
+.hero-title { animation-delay: 200ms; }
+.hero-copy { animation-delay: 400ms; }
+.hero-actions { animation-delay: 600ms; }
+
+.mobile-navigation::backdrop { background: transparent; }
+.menu-enter { animation: landing-menu-enter 300ms var(--audit1-motion-ease) both; }
+.menu-exit { animation: landing-menu-exit 300ms var(--audit1-motion-ease) both; }
+.menu-enter .menu-link { animation: landing-enter 400ms var(--audit1-motion-ease) both; }
+.menu-enter .menu-link:nth-child(2) { animation-delay: 100ms; }
+.menu-enter .menu-link:nth-child(3) { animation-delay: 200ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter, .section-enter, .menu-enter, .menu-exit, .menu-enter .menu-link {
+    animation: none;
+  }
+}
