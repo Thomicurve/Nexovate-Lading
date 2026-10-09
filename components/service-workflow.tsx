@@ -83,7 +83,7 @@ function WorkflowLane({ example, lane, running, reduced, mounted }: {
         duration: 4,
         times: [0, 0.25, 0.7, 1],
         delay: index * 0.4,
-        ease: "linear",
+        ease: [0.32, 0.72, 0, 1],
         repeat: Infinity,
         repeatDelay: 1.2,
       })
@@ -190,7 +190,7 @@ export default function ServiceWorkflow() {
         <div role="group" aria-label={t("selector")} className="mt-6 grid grid-cols-2 gap-2 lg:grid-cols-4">
           {examples.map(example => <button key={example} type="button" onClick={() => select(example)}
             aria-pressed={selected === example} aria-controls={id}
-            className={`min-h-12 rounded-lg px-3 py-2 text-sm font-semibold transition-colors hover:bg-accent ${selected === example ? "bg-brand text-background hover:bg-foreground" : "border bg-background text-foreground"}`}>
+            className={`min-h-12 rounded-lg px-3 py-2 text-sm font-semibold transition-colors duration-300 ease-landing hover:bg-accent ${selected === example ? "bg-brand text-background hover:bg-foreground" : "border bg-background text-foreground"}`}>
             {services(`${example}.title`)}
           </button>)}
         </div>
