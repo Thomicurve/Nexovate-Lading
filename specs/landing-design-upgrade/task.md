@@ -37,7 +37,7 @@ Definir tokens del diseño aprobado, Manrope, botones y base semántica/idioma/z
 
 ### TASK-002 — Navegación y portada
 
-**Estado:** IN_PROGRESS · **Criterios:** AC-002, AC-003, AC-009, AC-010, AC-011
+**Estado:** DONE · **Criterios:** AC-002, AC-003, AC-009, AC-010, AC-011
 
 Implementar barra flotante y menú, sección activa, cortes del título y CTA jerarquizados. Coordinar entrada con logo sin reintroducir gráfico de procesos; retirar o atenuar Orb según diseño aprobado.
 
@@ -45,11 +45,11 @@ Implementar barra flotante y menú, sección activa, cortes del título y CTA je
 - **Archivos:** components/navbar.tsx, components/hero.tsx, components/animated-brand-mark.tsx, components/animated-section.tsx, hooks/useIntersectionObserver.ts, components/blocks/Backgrounds/Orb.tsx, messages/{es,en}/index.json, app/globals.css.
 - **Termina:** menú completa cierre, Escape/foco/scroll correcto, sección activa y anclas funcionales; portada coincide con Pencil; reduced-motion comprobado; revisión aprobada.
 - **WU-002:** pronóstico revisado 650–850 líneas agregadas/eliminadas, 4–5 archivos, debido a sustituir navbar existente de 355 líneas y hero de 87. Se conserva una unidad cohesiva, mismos criterios/superficies/tarea y entrega local; el rango inicial no contó adecuadamente eliminaciones de estructura duplicada. Sin cambios de comportamiento, riesgo ni estrategia de entrega. Commit propuesto feat: refine landing navigation and hero.
-- **Resultado:** WU-002 623 líneas/5 archivos; tsc/lint/build/diffcheck PASS; DOM seis variantes ES/EN375/768/1440 sin overflow/errores, anclas/activo/idioma/hero/logo/reduced/SSR legible PASS. Menú cuatro variantes móviles: foco/Escape/cierre100msabierto350mscerrado/scroll PASS. Reviewer pidió corregir destino con hash repetido; scrollIntoView auto añadido y ocho variantes normal/reduced PASS, luego Reviewer APPROVED. Commit pendiente.
+- **Resultado:** commit df1f0210e028794a1489101be21f2fd92f37ad2d. WU-002 623 líneas/5 archivos; tsc/lint/build/diffcheck PASS; DOM seis variantes ES/EN375/768/1440 sin overflow/errores, anclas/activo/idioma/hero/logo/reduced/SSR legible PASS. Menú cuatro variantes móviles: foco/Escape/cierre100msabierto350mscerrado/scroll PASS. Reviewer pidió corregir destino con hash repetido; scrollIntoView auto añadido y ocho variantes normal/reduced PASS, luego Reviewer APPROVED.
 
 ### TASK-003 — Servicios diferenciados
 
-**Estado:** TODO · **Criterios:** AC-004, AC-009, AC-010, AC-011
+**Estado:** IN_PROGRESS · **Criterios:** AC-004, AC-009, AC-010, AC-011
 
 Construir ejemplos nativos de interfaz específicos para los cuatro servicios y movimiento relacionado con sus estados. Conservar legibilidad y altura compacta; ejemplos ilustrativos, no resultados reales.
 
@@ -57,7 +57,7 @@ Construir ejemplos nativos de interfaz específicos para los cuatro servicios y 
 - **Archivos:** components/features.tsx, components/service-illustrations.tsx (nuevo si necesario), components/blocks/Components/PixelCard.tsx, messages/{es,en}/index.json, app/globals.css.
 - **Termina:** cuatro servicios identificables, acceso toque/teclado, ejemplos etiquetados, sin recorte ES/EN; pruebas funcionales y revisión aprobadas.
 - **WU-003:** 240–420 líneas, 4–6 archivos; commit propuesto feat: illustrate custom software services.
-- **Resultado:** pendiente.
+- **Resultado:** WU-003 implementada, 283 líneas/5 archivos. tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, cuatro ejemplos etiquetados, clic/Enter/Space/reset/toque, aria-live, reduced-motion y SSR sin JavaScript PASS; sin overflow/canvas/errores. Reviewer APPROVED sobre fuentes y receipts finales; pendiente commit local.
 
 ### TASK-004 — Equipo y proceso
 
@@ -97,6 +97,6 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 
 ## Siguiente paso
 
-- **Próxima tarea:** TASK-002 sobre commit aceptado TASK-001.
+- **Próxima tarea:** TASK-003 sobre commits aceptados TASK-001/TASK-002.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN; PLAN-1/SPEC-1/AUDIT-REDESIGN-1 aprobados explícitamente el 9 de octubre de 2026.
-- **Siguiente acción:** TASK-002 en ejecución sobre codex/landing-design-upgrade, base 4d5932bea257d5ba26db7745c1c9b418eb58e543. Plan/diseño/modo aprobados y persistencia/revalidación completadas.
+- **Siguiente acción:** TASK-003 en ejecución sobre codex/landing-design-upgrade, base df1f0210e028794a1489101be21f2fd92f37ad2d. Plan/diseño/modo aprobados y persistencia/revalidación completadas.

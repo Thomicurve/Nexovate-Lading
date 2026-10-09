@@ -33,6 +33,52 @@
         "title": "Datos e integraciones",
         "description": "Conectamos datos de planillas y herramientas para dar una visión compartida de la operación."
       }
+    },
+    "examples": {
+      "illustrative": "Ejemplo ilustrativo",
+      "viewChange": "Ver cambio",
+      "changeHint": "Activá el ejemplo.",
+      "resetHint": "Pulsá otra vez para volver.",
+      "customSoftware": {
+        "workspace": "Operación",
+        "screen": "Solicitudes internas",
+        "request": "Compra de insumos",
+        "unassigned": "Sin asignar",
+        "assigned": "Asignada",
+        "owner": "Equipo de operaciones",
+        "before": "Una solicitud espera responsable.",
+        "after": "La solicitud tiene un equipo asignado."
+      },
+      "automation": {
+        "screen": "Flujo de tareas",
+        "manual": "Manual",
+        "connected": "Conectado",
+        "source": "Pedido recibido",
+        "pending": "Tarea pendiente",
+        "created": "Tarea creada",
+        "before": "El pedido requiere crear una tarea manualmente.",
+        "after": "El pedido crea la tarea en el sistema."
+      },
+      "traceability": {
+        "screen": "Seguimiento de solicitud",
+        "review": "Por revisar",
+        "inProgress": "En curso",
+        "owner": "Equipo de operaciones",
+        "received": "Solicitud recibida",
+        "awaiting": "Asignación pendiente",
+        "assigned": "Responsable asignado",
+        "before": "La solicitud está recibida y espera asignación.",
+        "after": "Estado y responsable quedan visibles para el equipo."
+      },
+      "dataIntegration": {
+        "screen": "Vista de la operación",
+        "spreadsheet": "Planilla",
+        "system": "Sistema",
+        "separate": "Datos separados",
+        "shared": "Vista compartida",
+        "before": "La información se consulta en fuentes separadas.",
+        "after": "Las fuentes se reúnen en una vista compartida."
+      }
     }
   },
   "about": {

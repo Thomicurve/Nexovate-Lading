@@ -161,3 +161,8 @@
     animation: none;
   }
 }
+
+.service-change { animation: landing-enter 300ms var(--audit1-motion-ease) both; }
+@media (prefers-reduced-motion: reduce) {
+  .service-change { animation: none; }
+}

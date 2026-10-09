@@ -33,6 +33,52 @@
         "title": "Data and integrations",
         "description": "We connect data from spreadsheets and tools to give your team a shared view of operations."
       }
+    },
+    "examples": {
+      "illustrative": "Illustrative example",
+      "viewChange": "View change",
+      "changeHint": "Activate the example.",
+      "resetHint": "Press again to reset.",
+      "customSoftware": {
+        "workspace": "Operations",
+        "screen": "Internal requests",
+        "request": "Supply purchase",
+        "unassigned": "Unassigned",
+        "assigned": "Assigned",
+        "owner": "Operations team",
+        "before": "A request is waiting for an owner.",
+        "after": "The request has a team assigned."
+      },
+      "automation": {
+        "screen": "Task workflow",
+        "manual": "Manual",
+        "connected": "Connected",
+        "source": "Order received",
+        "pending": "Task pending",
+        "created": "Task created",
+        "before": "The order requires manually creating a task.",
+        "after": "The order creates the task in the system."
+      },
+      "traceability": {
+        "screen": "Request tracking",
+        "review": "To review",
+        "inProgress": "In progress",
+        "owner": "Operations team",
+        "received": "Request received",
+        "awaiting": "Assignment pending",
+        "assigned": "Owner assigned",
+        "before": "The request has been received and awaits assignment.",
+        "after": "The team can see both the status and the owner."
+      },
+      "dataIntegration": {
+        "screen": "Operations view",
+        "spreadsheet": "Spreadsheet",
+        "system": "System",
+        "separate": "Separate data",
+        "shared": "Shared view",
+        "before": "Information is checked in separate sources.",
+        "after": "The sources come together in a shared view."
+      }
     }
   },
   "about": {
