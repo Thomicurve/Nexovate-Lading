@@ -1,67 +1,50 @@
 "use client"
-import { useTranslations } from "next-intl"
-import { motion, useReducedMotion } from "framer-motion"
-import { ArrowDown, MessageCircle, ListChecks, Code2, Handshake } from "lucide-react"
 
-const ProjectTimeline = () => {
+import { useTranslations } from "next-intl"
+import { ChatCircleIcon } from "@phosphor-icons/react/dist/csr/ChatCircle"
+import { ListChecksIcon } from "@phosphor-icons/react/dist/csr/ListChecks"
+import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code"
+import { HandshakeIcon } from "@phosphor-icons/react/dist/csr/Handshake"
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver"
+
+const steps = [
+  { key: "step1", icon: ChatCircleIcon },
+  { key: "step2", icon: ListChecksIcon },
+  { key: "step3", icon: CodeIcon },
+  { key: "step4", icon: HandshakeIcon },
+] as const
+
+export default function ProjectTimeline() {
   const t = useTranslations("timeline")
-  const reducedMotion = useReducedMotion()
-  const steps = [
-    { key: "step1", icon: MessageCircle },
-    { key: "step2", icon: ListChecks },
-    { key: "step3", icon: Code2 },
-    { key: "step4", icon: Handshake },
-  ] as const
+  const [entered, ref] = useIntersectionObserver<HTMLOListElement>({ threshold: 0.1 })
 
   return (
-    <section id="process" className="py-24 relative overflow-x-clip">
-      <div className="max-w-6xl mx-auto px-6 md:px-4">
-        <h2 className="text-3xl font-bold text-center">{t("title")}</h2>
-        <p className="text-center mt-4">{t("description")}</p>
-
-        <div className="mt-16 relative">
-          <div aria-hidden="true" className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-900" />
-
-          <ol role="list" className="md:space-y-12">
-            {steps.map((step, index) => (
-              <li key={step.key}>
-                <div className="relative flex flex-col md:flex-row">
-                  {index % 2 === 1 && <div className="hidden md:block md:w-1/2 md:pr-8" />}
-                  <motion.div
-                    className={`w-full md:w-1/2 [--timeline-entry-x:0px] ${index % 2 === 0 ? "md:pr-8 md:[--timeline-entry-x:-50px]" : "md:pl-8 md:[--timeline-entry-x:50px]"}`}
-                    initial={reducedMotion ? false : { opacity: 0, x: "var(--timeline-entry-x)" }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: reducedMotion ? 0 : 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="bg-background/80 border border-blue-600/20 rounded-lg p-5 md:p-6 shadow-lg">
-                      <div className="flex items-center mb-2">
-                        <span aria-hidden="true" className="md:hidden mr-3 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
-                          {index + 1}
-                        </span>
-                        <step.icon size={24} className="text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
-                        <h3 className="text-xl font-bold text-blue-500">{t(`steps.${step.key}.title`)}</h3>
-                      </div>
-                      <p className="text-gray-300">{t(`steps.${step.key}.description`)}</p>
-                    </div>
-                  </motion.div>
-                  <div aria-hidden="true" className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-blue-600 border-2 border-background">
-                    <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xs font-bold text-white">{index + 1}</span>
-                  </div>
-                  {index % 2 === 0 && <div className="hidden md:block md:w-1/2 md:pl-8" />}
-                </div>
-                {index < steps.length - 1 && (
-                  <div aria-hidden="true" className="flex h-12 items-center justify-center md:hidden">
-                    <ArrowDown className="h-8 w-6 text-blue-500" />
-                  </div>
-                )}
-              </li>
-            ))}
-          </ol>
-        </div>
+    <section id="process" aria-labelledby="process-heading" className="landing-container landing-section">
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 id="process-heading" className="text-3xl font-semibold tracking-tight md:text-4xl">{t("title")}</h2>
+        <p className="mt-4 text-base text-muted-foreground">{t("description")}</p>
       </div>
+      <ol role="list" ref={ref} className={`mx-auto mt-16 max-w-5xl ${entered ? "process-enter" : ""}`}>
+        {steps.map(({ key, icon: Icon }, index) => (
+          <li key={key} className="relative grid grid-cols-[2rem_1fr] items-start gap-4 pb-12 last:pb-0 md:grid-cols-[1fr_2rem_1fr] md:gap-8">
+            {index < steps.length - 1 && (
+              <span className="process-connector absolute bottom-0 left-4 top-4 w-px bg-border md:left-1/2" aria-hidden="true">
+                <span className="process-progress absolute inset-0 origin-top bg-brand" />
+              </span>
+            )}
+            <span className="process-marker relative z-10 col-start-1 row-start-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand text-sm font-semibold text-background md:col-start-2" aria-hidden="true">
+              {index + 1}
+            </span>
+            <div className={`col-start-2 row-start-1 min-w-0 ${index % 2 === 0 ? "md:col-start-1 md:text-right" : "md:col-start-3"}`}>
+              <div className={`mb-3 flex items-center gap-3 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+                <Icon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                <h3 className="text-xl font-semibold tracking-tight md:text-2xl">{t(`steps.${key}.title`)}</h3>
+              </div>
+              <p className="max-w-prose text-base text-muted-foreground">{t(`steps.${key}.description`)}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </section>
   )
 }
-
-export default ProjectTimeline

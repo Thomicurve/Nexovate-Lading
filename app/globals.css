@@ -166,3 +166,31 @@
 @media (prefers-reduced-motion: reduce) {
   .service-change { animation: none; }
 }
+
+@keyframes process-progress {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes process-marker {
+  from { background-color: hsl(var(--card)); color: hsl(var(--foreground)); }
+  to { background-color: hsl(var(--audit1-brand)); color: hsl(var(--background)); }
+}
+
+.process-enter .process-progress {
+  animation: process-progress 800ms var(--audit1-motion-ease) both;
+}
+
+.process-enter .process-marker {
+  animation: process-marker 400ms var(--audit1-motion-ease) both;
+}
+
+.process-enter li:nth-child(2) .process-progress,
+.process-enter li:nth-child(2) .process-marker { animation-delay: 200ms; }
+.process-enter li:nth-child(3) .process-progress,
+.process-enter li:nth-child(3) .process-marker { animation-delay: 400ms; }
+.process-enter li:nth-child(4) .process-marker { animation-delay: 600ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .process-enter .process-progress, .process-enter .process-marker { animation: none; }
+}

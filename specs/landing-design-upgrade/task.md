@@ -49,7 +49,7 @@ Implementar barra flotante y menú, sección activa, cortes del título y CTA je
 
 ### TASK-003 — Servicios diferenciados
 
-**Estado:** IN_PROGRESS · **Criterios:** AC-004, AC-009, AC-010, AC-011
+**Estado:** DONE · **Criterios:** AC-004, AC-009, AC-010, AC-011
 
 Construir ejemplos nativos de interfaz específicos para los cuatro servicios y movimiento relacionado con sus estados. Conservar legibilidad y altura compacta; ejemplos ilustrativos, no resultados reales.
 
@@ -57,11 +57,11 @@ Construir ejemplos nativos de interfaz específicos para los cuatro servicios y 
 - **Archivos:** components/features.tsx, components/service-illustrations.tsx (nuevo si necesario), components/blocks/Components/PixelCard.tsx, messages/{es,en}/index.json, app/globals.css.
 - **Termina:** cuatro servicios identificables, acceso toque/teclado, ejemplos etiquetados, sin recorte ES/EN; pruebas funcionales y revisión aprobadas.
 - **WU-003:** 240–420 líneas, 4–6 archivos; commit propuesto feat: illustrate custom software services.
-- **Resultado:** WU-003 implementada, 283 líneas/5 archivos. tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, cuatro ejemplos etiquetados, clic/Enter/Space/reset/toque, aria-live, reduced-motion y SSR sin JavaScript PASS; sin overflow/canvas/errores. Reviewer APPROVED sobre fuentes y receipts finales; pendiente commit local.
+- **Resultado:** commit b53e424cf107d61837eeca2f54321d4cad33eb8d. WU-003 283 líneas/5 archivos; tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, cuatro ejemplos etiquetados, clic/Enter/Space/reset/toque, aria-live, reduced-motion y SSR sin JavaScript PASS; sin overflow/canvas/errores. Reviewer APPROVED sobre fuentes y receipts finales.
 
 ### TASK-004 — Equipo y proceso
 
-**Estado:** TODO · **Criterios:** AC-005, AC-006, AC-009, AC-010, AC-011
+**Estado:** IN_PROGRESS · **Criterios:** AC-005, AC-006, AC-009, AC-010, AC-011
 
 Implementar composición editorial de socios y avance discreto del proceso. Preservar datos/fotos y secuencia desktop/mobile; no inventar entregables o compromisos.
 
@@ -69,7 +69,7 @@ Implementar composición editorial de socios y avance discreto del proceso. Pres
 - **Archivos:** components/about-us.tsx, components/project-timeline.tsx, components/blocks/Backgrounds/Squares.tsx, messages/{es,en}/index.json, app/globals.css.
 - **Termina:** dos perfiles reales y secuencia de cuatro pasos conectados, sin ruido de fondos, movimiento reducido y responsive comprobados; revisión aprobada.
 - **WU-004:** 200–340 líneas, 4–6 archivos; commit propuesto feat: refine team and project process sections.
-- **Resultado:** pendiente.
+- **Resultado:** WU-004 implementada, 210 líneas/3 archivos. tsc/lint/build/diffcheck PASS; DOM ES/EN ×375/768/1440, dos fotos cargadas/bios preservadas, cuatro pasos/orden/tres conectores sin overflow/errores PASS. Animación finita sin reinicio, reduced-motion y lectura sin JS/IntersectionObserver PASS. Reviewer APPROVED; pendiente commit local.
 
 ### TASK-005 — Contacto, reserva y cierre
 
@@ -97,6 +97,6 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 
 ## Siguiente paso
 
-- **Próxima tarea:** TASK-003 sobre commits aceptados TASK-001/TASK-002.
+- **Próxima tarea:** TASK-004 sobre commits aceptados TASK-001–TASK-003.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN; PLAN-1/SPEC-1/AUDIT-REDESIGN-1 aprobados explícitamente el 9 de octubre de 2026.
-- **Siguiente acción:** TASK-003 en ejecución sobre codex/landing-design-upgrade, base df1f0210e028794a1489101be21f2fd92f37ad2d. Plan/diseño/modo aprobados y persistencia/revalidación completadas.
+- **Siguiente acción:** TASK-004 en ejecución sobre codex/landing-design-upgrade, base b53e424cf107d61837eeca2f54321d4cad33eb8d. Plan/diseño/modo aprobados y persistencia/revalidación completadas.
