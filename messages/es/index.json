@@ -171,5 +171,11 @@
     "languageSelector": "Seleccionar idioma",
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú"
+  },
+  "metadata": {
+    "title": "Nexovate - Software a medida y automatización de procesos",
+    "description": "Creamos software a medida para automatizar tareas, seguir procesos y reunir tus datos en un solo lugar. Más claridad para trabajar y decidir.",
+    "keywords": "software a medida, automatización de procesos, trazabilidad, datos centralizados, integraciones, sistemas internos, procesos empresariales, Argentina",
+    "imageAlt": "Nexovate - Software a medida y automatización de procesos"
   }
 }

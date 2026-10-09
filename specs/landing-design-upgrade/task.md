@@ -73,7 +73,7 @@ Implementar composición editorial de socios y avance discreto del proceso. Pres
 
 ### TASK-005 — Contacto, reserva y cierre
 
-**Estado:** IN_PROGRESS · **Criterios:** AC-007, AC-008, AC-009, AC-010, AC-011
+**Estado:** DONE · **Criterios:** AC-007, AC-008, AC-009, AC-010, AC-011
 
 Integrar CTA/contacto, presentación y estados del calendario, fallback directo, footer compacto y enlace WhatsApp único accesible. Usar la denominación Nexovate por decisión explícita del usuario del 9 de octubre de 2026: «Usar Nexovate; documentos legales pendientes». No crear textos/enlaces legales; quedan fuera de la entrega actual por esa decisión.
 
@@ -81,11 +81,11 @@ Integrar CTA/contacto, presentación y estados del calendario, fallback directo,
 - **Archivos:** components/cta.tsx, components/contact.tsx, components/calendar.tsx, components/footer.tsx, components/chatButton.tsx, app/[locale]/page.tsx, messages/{es,en}/index.json, app/globals.css.
 - **Termina:** sin CTA duplicado, estados de carga/fallo comprobados con salida funcional sin reserva real, WhatsApp no obstruye controles, footer coherente; revisión aprobada.
 - **WU-005:** pronóstico revisado 500–600 líneas, 7–10 archivos; candidato de 523 líneas/9 archivos (174 altas +349 bajas comprobadas en staging; corrige suma del handoff previo). El crecimiento corresponde a eliminar formularios/chat comentados y estructuras duplicadas de contacto/pie, ya incluidos en el alcance. Se conserva la unidad cohesiva y los mismos criterios, diseño, arquitectura y entrega local. Commit propuesto feat: simplify contact and booking experience.
-- **Resultado:** WU-005 implementada, 523 líneas/9 archivos. tsc/lint/build/diffcheck y JSON único PASS. DOM ES/EN ×375/768/1440 live Cal ready, contacto/WhatsApp único48px adaptativo/enlaces/foco sin overflow/errores PASS. Estados simulados loading/timeout/ready/error, aborto de script y seis variantes reduced/noJS PASS; ninguna reserva enviada. Reviewer APPROVED; pendiente commit local.
+- **Resultado:** commit 4a0b1796c6029590a0f7040c17a8d484635ef2c0. WU-005 523 líneas/9 archivos; tsc/lint/build/diffcheck y JSON único PASS. DOM ES/EN ×375/768/1440 live Cal ready, contacto/WhatsApp único48px adaptativo/enlaces/foco sin overflow/errores PASS. Estados simulados loading/timeout/ready/error, aborto de script y seis variantes reduced/noJS PASS; ninguna reserva enviada. Reviewer APPROVED.
 
 ### TASK-006 — Recursos, movimiento global e integración
 
-**Estado:** TODO · **Criterios:** AC-008, AC-009, AC-010, AC-011
+**Estado:** IN_PROGRESS · **Criterios:** AC-008, AC-009, AC-010, AC-011
 
 Resolver metadatos y referencias faltantes con assets existentes, manifest de formato/tamaños reales y sitemap de idiomas. Eliminar efectos globales redundantes o pausarlos correctamente. Comprobar integración completa y corregir defectos del alcance aprobado.
 
@@ -93,10 +93,10 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 - **Archivos:** app/layout.tsx, app/[locale]/layout.tsx, app/[locale]/page.tsx, components/mouse-move-effect.tsx, components/animated-section.tsx, hooks/useIntersectionObserver.ts, componentes de animación afectados, public/manifest.json, public/sitemap.xml, messages/{es,en}/index.json, app/globals.css. Corregir otros archivos anteriores solo por defectos concretos de integración.
 - **Termina:** referencias reales y ES/EN coherentes, pausa/reduced-motion verificadas, typecheck/build y comprobaciones globales pertinentes observadas; revisión de integración y commits aceptados. Documentos legales continúan pendientes por decisión del usuario, sin declararlos implementados.
 - **WU-006:** 70–200 líneas, 5–9 archivos; commit propuesto fix: complete landing accessibility and metadata.
-- **Resultado:** pendiente.
+- **Resultado:** WU-006 implementada, 149 líneas/6 archivos. tsc/lint/build/diffcheck y JSON/XML PASS. DOM integración ES/EN ×375/768/1440: metadatos/idioma/main/menú/hash repetido/foco/anclas/WhatsApp/fallback/reduced/noJS sin overflow/errores PASS. Recursos locales200 PNG2172×724 e ICO16/32/48 comprobados. Logo en pausa offscreen/reduced y hidden mediante simulación explícita; contraste TASK-001 reutilizado. Reviewer APPROVED para WU-006 y revisión final de integración; pendiente commit local.
 
 ## Siguiente paso
 
-- **Próxima tarea:** TASK-005 sobre commits aceptados TASK-001–TASK-004.
+- **Próxima tarea:** TASK-006 sobre commits aceptados TASK-001–TASK-005.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN; PLAN-1/SPEC-1/AUDIT-REDESIGN-1 aprobados explícitamente el 9 de octubre de 2026.
-- **Siguiente acción:** TASK-005 en ejecución sobre codex/landing-design-upgrade, base 4000141a19f6f3eaecadef55074f9e4f1b7cf44b. Plan/diseño/modo aprobados y persistencia/revalidación completadas.
+- **Siguiente acción:** TASK-006 en ejecución sobre codex/landing-design-upgrade, base 4a0b1796c6029590a0f7040c17a8d484635ef2c0. Plan/diseño/modo aprobados y persistencia/revalidación completadas.
