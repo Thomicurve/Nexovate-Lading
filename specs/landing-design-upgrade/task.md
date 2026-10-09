@@ -99,9 +99,9 @@ Resolver metadatos y referencias faltantes con assets existentes, manifest de fo
 
 La entrega de PLAN-1 está completa, con cierre documental a752a94d127ebb6c0cc55812dd75a3cbc5495c8d. El usuario solicitó después un ajuste material de fondo/procesos/servicios; PLAN-2 añade únicamente TASK-007 y TASK-008. La autorización previa de PLAN-1 no se interpreta como aprobación de esta propuesta nueva.
 
-- **Próxima tarea:** TASK-008 en ejecución sobre WU-007 revisada y guardada.
+- **Próxima tarea:** ninguna; TASK-001–TASK-008 DONE y revisión final de PLAN-2 aprobada.
 - **Continuación:** COVERED_BY_CONTINUOUS_PLAN; aprobación del diseño con correcciones expresas recibida: loop al seleccionar ejemplos y ventajas/desventajas. Guardado y DESIGN_APPROVED confirmados; no pedir aprobación repetida.
-- **Siguiente acción:** implementar TASK-008. Base actual8c0e865e866966715edda727a1a424acc8ebfce3 sobre codex/landing-design-upgrade. TASK-001–TASK-007 DONE; publicación no autorizada.
+- **Siguiente acción:** entrega local completada sobre codex/landing-design-upgrade; HEAD de aplicación10654f69f49d351646d918615ddf66c6709f9345. Las animaciones se implementaron y comprobaron, además de la aprobación visual del candidato. Cualquier publicación requiere autorización separada.
 
 ## PLAN-2 — Ajuste de atmósfera y workflows
 
@@ -127,7 +127,7 @@ Añadir luces tenues localizadas en portada/servicios y campo de puntos discreto
 
 ### TASK-008 — Comparativa de servicios con nodos y Motion
 
-**Estado:** IN_PROGRESS · **Criterios:** AC-013, AC-014, AC-015, AC-009, AC-010
+**Estado:** DONE · **Criterios:** AC-013, AC-014, AC-015, AC-009, AC-010
 
 Reemplazar las miniinterfaces individuales por un comparador compartido y selector de cuatro ejemplos de los servicios existentes. Mantener servicios y textos; contar la misma operación manual y centralizada mediante nodos/conexiones, cuello de botella y avance. Al seleccionar, el ejemplo anima automáticamente en loop con Motion ya instalado; sin botones reproducir/reiniciar. Mostrar desventajas manuales y ventajas relacionadas con capacidades de Nexovate, sin métricas o promesas inventadas.
 
@@ -136,4 +136,4 @@ Reemplazar las miniinterfaces individuales por un comparador compartido y select
 - **Termina:** comparación, cuatro ejemplos y ventajas/desventajas ES/EN legibles en 375/768/1440; etiqueta ilustrativa y cuello reconocibles sin depender del color. Selección clic/Enter/Space/toque inicia loop, cambios rápidos cancelan ejecución anterior, pausa/reanudación discreta funcional y sin foco robado/anuncios repetitivos. Pausa fuera de vista/pestaña oculta y limpieza al cambiar ejemplo/desmontar observadas. Reduced-motion y noJS conservan ambos recorridos. tsc/lint/build/diffcheck, revisión del candidato e integración con navegación/contacto aprobados.
 - **WU-008:** 440–750 líneas, 4–7 archivos; unidad cohesiva de comparación/selección/loop y retirada de ejemplos anteriores. Commit propuesto feat: compare manual and optimized workflows.
 - **Resultado:** commit ab72328e19ea4423fae873ad3f2ae1faed049b7f. WU-008: 522 líneas fuente, 412 altas/110 bajas en 6 archivos. tsc/lint/build/diffcheck y claves JSON únicas PASS. Seis variantes ES/EN ×375/768/1440 y 24 selecciones clic/toque/Enter/Space PASS: 8 nodos y 4 puntos por ejemplo, foco estable, sin overflow/pageerrors y cuatro servicios conservados. Dos ciclos por ruta en los cuatro ejemplos, pausa/reanudación, visibilidad real y 12 cambios rápidos con limpieza comprobados. Pestaña oculta probada mediante simulación explícita; 18 variantes reduced/noJS/noObserver PASS. Defecto móvil corregido con observación independiente de cada ruta. Integración afectada WhatsApp/Cal PASS; Reviewer APPROVED para WU-008 e integración.
-- **Corrección de ritmo:** 2 altas/2 bajas en service-workflow.tsx: selector300ms/ease-landing y Motion[0.32,0.72,0,1]. tsc/lint/build/diffcheck actualizado PASS. Production1440/375: curva, dos ciclos, pausa/reanudación, 8 cambios rápidos/cleanup y reduced estático PASS, cero errores. Reviewer APPROVED para delta y cierre PLAN-2; pendiente commit local de esta corrección.
+- **Corrección de ritmo:** commit10654f69f49d351646d918615ddf66c6709f9345, 2 altas/2 bajas en service-workflow.tsx: selector a300ms/ease-landing y curva Motion[0.32,0.72,0,1]. tsc/lint/build/diffcheck actualizado PASS. Production1440/375: curva, dos ciclos, pausa/reanudación, 8 cambios rápidos/cleanup y reduced estático PASS, cero errores. Reviewer APPROVED para delta y cierre PLAN-2; TASK-008 completa con ambos commits locales.
