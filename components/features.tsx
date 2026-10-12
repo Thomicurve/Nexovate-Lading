@@ -4,7 +4,9 @@ import { CodeIcon } from "@phosphor-icons/react/dist/csr/Code"
 import { FlowArrowIcon } from "@phosphor-icons/react/dist/csr/FlowArrow"
 import { ListChecksIcon } from "@phosphor-icons/react/dist/csr/ListChecks"
 import { DatabaseIcon } from "@phosphor-icons/react/dist/csr/Database"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
+import type { Locale } from "@/app/i18n"
+import { servicePath } from "@/lib/services"
 import ServiceWorkflow from "./service-workflow"
 import RevealCard from "./reveal-card"
 
@@ -17,6 +19,7 @@ const services = [
 
 export default function Features() {
   const t = useTranslations("solutions")
+  const locale = useLocale() as Locale
 
   return (
     <section id="solutions" aria-labelledby="services-heading" className="landing-section relative isolate">
@@ -35,7 +38,7 @@ export default function Features() {
               className={`min-w-0 rounded-xl bg-card p-6 ${wide ? "md:col-span-7" : "md:col-span-5"}`}>
               <Icon className="mb-4 h-6 w-6 text-foreground" aria-hidden="true" />
               <h3 id={`service-${id}`} className="text-xl font-semibold tracking-tight md:text-2xl">
-                {t(`features.${id}.title`)}
+                <a href={servicePath(id, locale)} className="hover:underline underline-offset-4">{t(`features.${id}.title`)}</a>
               </h3>
               <p className="mt-3 max-w-prose text-base text-muted-foreground">{t(`features.${id}.description`)}</p>
             </RevealCard>

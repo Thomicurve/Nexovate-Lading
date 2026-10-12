@@ -19,19 +19,23 @@
     "features": {
       "customSoftware": {
         "title": "Custom software",
-        "description": "We build internal systems and customer platforms tailored to the way you work."
+        "description": "We build internal systems and customer platforms tailored to the way you work.",
+        "seoTitle": "Custom software for businesses in Argentina | Nexovate"
       },
       "automation": {
         "title": "Process automation",
-        "description": "We connect tasks and systems to reduce manual work and avoid copying and pasting."
+        "description": "We connect tasks and systems to reduce manual work and avoid copying and pasting.",
+        "seoTitle": "Business process automation | Nexovate"
       },
       "traceability": {
         "title": "Tracking and traceability",
-        "description": "See the status, owners and pending tasks of each process in one place."
+        "description": "See the status, owners and pending tasks of each process in one place.",
+        "seoTitle": "Process tracking and traceability | Nexovate"
       },
       "dataIntegration": {
         "title": "Data and integrations",
-        "description": "We connect data from spreadsheets and tools to give your team a shared view of operations."
+        "description": "We connect data from spreadsheets and tools to give your team a shared view of operations.",
+        "seoTitle": "Business system and data integration | Nexovate"
       }
     },
     "examples": {
@@ -275,5 +279,11 @@
     "description": "Custom software and automation for businesses and SMEs in Argentina. We connect your tasks, processes and data.",
     "keywords": "custom software, process automation, traceability, centralized data, integrations, internal systems, business processes, Argentina",
     "imageAlt": "Nexovate - Custom software and process automation"
+  },
+  "servicePages": {
+    "home": "Home",
+    "breadcrumb": "Breadcrumb",
+    "contact": "Let’s talk about your process",
+    "related": "Other services"
   }
 }

@@ -63,7 +63,7 @@ Optimizar la entrega del PNG existente mediante Next Image con sizes adecuados y
 
 ### TASK-004 — Seguridad compatible e inventario de privacidad
 
-**Status:** IN_PROGRESS · **Criteria:** AC-007, AC-009.
+**Status:** DONE · **Criteria:** AC-007, AC-009.
 
 Revisar cookie, cabeceras y dependencias reales. Aplicar Referrer-Policy y Permissions-Policy compatibles, determinar COOP apropiado; observar CSP antes de enforcement. Elaborar inventario factual de Analytics, Cal.com y WhatsApp y solicitar datos mínimos pendientes antes de contenido público de privacidad/perfiles. No agregar un banner sin identificar su necesidad real.
 
@@ -76,11 +76,11 @@ Revisar cookie, cabeceras y dependencias reales. Aplicar Referrer-Policy y Permi
 - **Done when:** cabeceras/cookie y terceros funcionan, prueba independiente de seguridad compatible y Reviewer aceptados; inventario y pendientes explícitos; commit de los cambios verificados. Si faltan datos indispensables para contenido público, conservar tarea pendiente y consultar.
 - **Checks:** comunes; inspeccionar cookie HTTPS; navegación, carga de Next, embed, Analytics y enlaces externos; observar violaciones CSP; no reportar ausencia de violations como prueba de seguridad completa.
 - **Work units:** WU-004, 100–180 líneas, 3–6 archivos, confianza media/baja hasta observar política; fix(security): harden headers without breaking integrations.
-- **Result reference:** WU-004 candidata sobre f5fd206f531572010fa38ba60dae038d4a7ef37a; 35 líneas aplicación +94 checks. Build/tipos/lint y tools/seo-task004.mjs exit 0; warning Orb preexistente. Verificación independiente exit 0: cabeceras/cookie/preferencias y navegación, Cal real ready/200, logo/fuentes, destinos/opener; probes script-src y connect-src reportan y permiten ejecución/respuesta. Reviewer APPROVED sin findings. CSP sigue Report-Only sin collector ni enforcement; observación padre local. HTTPS de navegador simulado; Analytics local 404, compatibilidad script/POST simulada y script publicado antiguo 200. Candidato TLS/recepción Analytics pendientes de publicación. Inventario y datos de privacidad pendientes explícitos. Commit pendiente.
+- **Result reference:** WU-004 en commit local verificado 67d8cb65e9d61d2c603409ec21a18e9c63efb121, padre f5fd206f531572010fa38ba60dae038d4a7ef37a; 35 líneas aplicación +94 checks. Build/tipos/lint y tools/seo-task004.mjs exit 0; warning Orb preexistente. Verificación independiente exit 0: cabeceras/cookie/preferencias y navegación, Cal real ready/200, logo/fuentes, destinos/opener; probes script-src y connect-src reportan y permiten ejecución/respuesta. Reviewer APPROVED sin findings. CSP sigue Report-Only sin collector ni enforcement; observación padre local. HTTPS de navegador simulado; Analytics local 404, compatibilidad script/POST simulada y script publicado antiguo 200. Candidato TLS/recepción Analytics pendientes de publicación. Inventario y datos de privacidad pendientes explícitos. Staging vacío y baseline ajena preservada.
 
 ### TASK-005 — Contenido por servicio para empresas argentinas
 
-**Status:** TODO · **Criteria:** AC-008, AC-009.
+**Status:** IN_PROGRESS · **Criteria:** AC-008, AC-009.
 
 Preparar y revisar contenido propio para software a medida, automatización, seguimiento/trazabilidad y datos/integraciones en ES/EN. Rutas propuestas /es/servicios/{software-a-medida,automatizacion-de-procesos,trazabilidad,integracion-de-sistemas} y equivalentes /en/services/{custom-software,process-automation,traceability,system-integration}. Confirmar slugs y estructura editorial antes de publicación; conservar el sistema visual. Agregar enlaces útiles desde cards/pie y navegación que funcione fuera de portada. Casos/perfiles solo cuando se aporten datos verificables.
 
@@ -89,13 +89,15 @@ Preparar y revisar contenido propio para software a medida, automatización, seg
 - **Done when:** cuatro pares de páginas útiles con HTML, enlaces y metadata propios, equivalencia de selector por slug localizado, sitemap correcto y 404 para servicios desconocidos; contenido real revisado, checks/Reviewer y commits aceptados.
 - **Checks:** comunes; rastrear todas las rutas, un H1, títulos/canonical únicos, JSON-LD de página/servicio, selector ES↔EN, CTA de vuelta a contacto, navegación a secciones existentes y viewport sin scroll.
 - **Work units:** WU-005A, infraestructura/rutas/navegación, 180–300 líneas; WU-005B, textos/páginas/enlaces, 200–350 líneas; confianza media. Commits feat(seo): add localized service routes y content(seo): explain Nexovate services for Argentine businesses. Revisar candidato conjunto y divisiones coherentes antes de entrega; si >400 líneas inseparables, explicar división/alcance al usuario.
-- **Result reference:** pendiente.
+- **Result reference:** WU-005A candidata sobre 67d8cb65e9d61d2c603409ec21a18e9c63efb121; 243 líneas aplicación +115 check, once archivos. Build/tipos/lint y tools/seo-task005a.mjs exit 0 con Orb preexistente. Ocho rutas sin JS, H1/metadatos únicos, canonical/alternates/social/grafo de cinco entidades; sitemap diez URLs, once rutas inválidas más fr/mayúsculas 404. Teclado/navegación/selector/CTA desktop y móvil, sin overflow en cinco anchos. Reviewer WU-005A APPROVED sin findings. Unidad funcional con copy existente; commit pendiente. WU-005B editorial todavía requerida para cerrar tarea.
 
 ### TASK-006 — Auditoría final y medición orgánica
 
 **Status:** TODO · **Criteria:** AC-010.
 
 Reutilizar checks aceptados sin repetir suites idénticas. Comprobar integración completa del candidato y auditoría local de producción. Preparar propiedad Search Console, sitemap e inspección de URLs; usar acceso real cuando esté disponible, detener la acción dependiente si requiere autenticación/datos. Tras publicación autorizada, auditar el dominio definitivo con crawl y móvil comparables. Estado publicado y estado local se informan por separado.
+
+El usuario confirmó el 12 de octubre que nexovate.com.ar todavía no está configurado en Search Console. Preparar instrucciones de verificación y envío del sitemap; alta/verificación efectiva, inspección de URLs y métricas orgánicas quedan pendientes de acceso/autenticación y publicación.
 
 - **Depends on:** TASK-005; autorización y capacidad de publicación para comprobaciones posdeploy; acceso de usuario a Search Console para lectura/configuración externa.
 - **Allowed files:** checks tools/seo-* y documentación mínima existente del proyecto; estado solo Orchestrator. Ninguna reimplementación incidental de tareas cerradas ni alta de cuentas/integraciones globales.
@@ -107,9 +109,9 @@ Reutilizar checks aceptados sin repetir suites idénticas. Comprobar integració
 ## Siguiente paso
 
 - **Feature state:** IMPLEMENTING.
-- **Next task:** TASK-004.
+- **Next task:** TASK-005.
 - **Continuation:** COVERED_BY_CONTINUOUS_PLAN.
 - **User decision:** PLAN-1/SPEC-1 y CONTINUOUS con rama y commits locales aprobados explícitamente el 12 de octubre.
-- **Consumed by:** TASK-003 entregada en f5fd206f531572010fa38ba60dae038d4a7ef37a; TASK-004 cubierta por CONTINUOUS.
+- **Consumed by:** TASK-004 entregada en 67d8cb65e9d61d2c603409ec21a18e9c63efb121; TASK-005 cubierta por CONTINUOUS y aprobación editorial explícita.
 
 

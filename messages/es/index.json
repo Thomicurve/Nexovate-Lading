@@ -19,19 +19,23 @@
     "features": {
       "customSoftware": {
         "title": "Software a medida",
-        "description": "Construimos sistemas internos y plataformas para tus clientes, adaptados a tu forma de trabajar."
+        "description": "Construimos sistemas internos y plataformas para tus clientes, adaptados a tu forma de trabajar.",
+        "seoTitle": "Software a medida para empresas en Argentina | Nexovate"
       },
       "automation": {
         "title": "Automatización de procesos",
-        "description": "Conectamos tareas y sistemas para reducir carga manual y evitar el copiar y pegar."
+        "description": "Conectamos tareas y sistemas para reducir carga manual y evitar el copiar y pegar.",
+        "seoTitle": "Automatización de procesos para empresas | Nexovate"
       },
       "traceability": {
         "title": "Seguimiento y trazabilidad",
-        "description": "Consultá el estado, los responsables y los pendientes de cada proceso en un solo lugar."
+        "description": "Consultá el estado, los responsables y los pendientes de cada proceso en un solo lugar.",
+        "seoTitle": "Seguimiento y trazabilidad de procesos | Nexovate"
       },
       "dataIntegration": {
         "title": "Datos e integraciones",
-        "description": "Conectamos datos de planillas y herramientas para dar una visión compartida de la operación."
+        "description": "Conectamos datos de planillas y herramientas para dar una visión compartida de la operación.",
+        "seoTitle": "Integración de sistemas y datos para empresas | Nexovate"
       }
     },
     "examples": {
@@ -275,5 +279,11 @@
     "description": "Software a medida y automatización para empresas y pymes de Argentina. Conectamos tareas, procesos y datos para dar claridad a tu operación.",
     "keywords": "software a medida, automatización de procesos, trazabilidad, datos centralizados, integraciones, sistemas internos, procesos empresariales, Argentina",
     "imageAlt": "Nexovate - Software a medida y automatización de procesos"
+  },
+  "servicePages": {
+    "home": "Inicio",
+    "breadcrumb": "Ruta de navegación",
+    "contact": "Hablemos de tu proceso",
+    "related": "Otros servicios"
   }
 }

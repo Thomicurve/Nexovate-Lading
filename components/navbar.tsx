@@ -7,7 +7,8 @@ import { useLocale, useTranslations } from "next-intl"
 import { GlobeIcon } from "@phosphor-icons/react/dist/csr/Globe"
 import BrandLogo from "@/components/brand-logo"
 import { Button } from "@/components/ui/button"
-import { locales } from "@/app/i18n"
+import { locales, type Locale } from "@/app/i18n"
+import { homeSectionHref, translatedPathname } from "@/lib/services"
 
 const sections = ["hero", "solutions", "about", "process", "contact"]
 
@@ -23,7 +24,7 @@ function MenuLines({ open }: { open: boolean }) {
 export default function Navbar() {
   const t = useTranslations("navbar")
   const a11y = useTranslations("accessibility")
-  const locale = useLocale()
+  const locale = useLocale() as Locale
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
@@ -37,7 +38,9 @@ export default function Navbar() {
     { id: "about", label: t("about"), description: a11y("aboutHeading") },
     { id: "process", label: t("process"), description: a11y("processHeading") },
   ]
-  const localeHref = (language: string) => `/${language}${pathname.replace(/^\/[^/]+/, "")}`
+  const localeHref = (language: Locale) => translatedPathname(pathname, language)
+  const sectionHref = (section: string) => homeSectionHref(locale, pathname, section)
+  const isHome = pathname.replace(/\/$/, "") === `/${locale}`
   const otherLocale = locale === "es" ? "en" : "es"
 
   useEffect(() => {
@@ -134,12 +137,12 @@ export default function Navbar() {
     <>
       <header className="fixed inset-x-4 top-6 z-40 mx-auto max-w-6xl rounded-full border border-border bg-background/90 backdrop-blur-xl">
         <div className="flex min-h-16 items-center gap-4 px-4 lg:px-6">
-          <Link href="#hero" aria-label={a11y("heroHeading")} className="shrink-0 rounded-lg">
+          <Link href={sectionHref("hero")} aria-label={a11y("heroHeading")} className="shrink-0 rounded-lg">
             <BrandLogo />
           </Link>
           <nav className="ml-auto hidden items-center gap-2 lg:flex" aria-label={a11y("mainNavigation")}>
             {navigation.map(({ id, label, description }) => (
-              <a key={id} href={`#${id}`} aria-label={id === "process" ? `${label}: ${description}` : description}
+              <a key={id} href={sectionHref(id)} aria-label={id === "process" ? `${label}: ${description}` : description}
                 aria-current={activeSection === id ? "location" : undefined}
                 className={`rounded-full px-3 py-2 text-sm font-semibold transition-colors duration-300 ease-landing hover:bg-secondary ${activeSection === id ? "bg-secondary text-foreground" : "text-muted-foreground"}`}>
                 {label}
@@ -153,7 +156,7 @@ export default function Navbar() {
             {otherLocale === "es" ? "ES" : "EN"}
           </a>
           <Button asChild size="sm" className="hidden rounded-full lg:inline-flex">
-            <a href="#contact" aria-label={a11y("scheduleHeading")} aria-current={activeSection === "contact" ? "location" : undefined}>{t("schedule")}</a>
+            <a href={sectionHref("contact")} aria-label={a11y("scheduleHeading")} aria-current={activeSection === "contact" ? "location" : undefined}>{t("schedule")}</a>
           </Button>
           <button ref={triggerRef} type="button" onClick={openMenu}
             className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full hover:bg-secondary lg:hidden"
@@ -176,14 +179,14 @@ export default function Navbar() {
           </div>
           <nav className="my-auto flex flex-col gap-4 py-12" aria-label={a11y("mobileNavigation")}>
             {navigation.map(({ id, label, description }) => (
-              <a key={id} href={`#${id}`} onClick={(event) => { event.preventDefault(); closeMenu(id) }}
+              <a key={id} href={sectionHref(id)} onClick={(event) => { if (isHome) { event.preventDefault(); closeMenu(id) } else closeMenu() }}
                 aria-label={id === "process" ? `${label}: ${description}` : description} aria-current={activeSection === id ? "location" : undefined}
                 className="menu-link rounded-lg py-2 text-3xl font-semibold tracking-tight hover:text-muted-foreground">
                 {label}
               </a>
             ))}
             <Button asChild className="mt-4 self-start">
-              <a href="#contact" onClick={(event) => { event.preventDefault(); closeMenu("contact") }}>{t("schedule")}</a>
+              <a href={sectionHref("contact")} onClick={(event) => { if (isHome) { event.preventDefault(); closeMenu("contact") } else closeMenu() }}>{t("schedule")}</a>
             </Button>
           </nav>
           <div className="flex items-center gap-4 border-t border-border pt-6 text-sm">
