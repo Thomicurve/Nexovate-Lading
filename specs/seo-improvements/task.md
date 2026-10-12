@@ -94,7 +94,7 @@ Preparar y revisar contenido propio para software a medida, automatización, seg
 
 ### TASK-006 — Auditoría final y medición orgánica
 
-**Status:** IN_PROGRESS · **Criteria:** AC-010.
+**Status:** DONE · **Criteria:** AC-010.
 
 Reutilizar checks aceptados sin repetir suites idénticas. Comprobar integración completa del candidato y auditoría local de producción. Preparar propiedad Search Console, sitemap e inspección de URLs; usar acceso real cuando esté disponible, detener la acción dependiente si requiere autenticación/datos. Tras publicación autorizada, auditar el dominio definitivo con crawl y móvil comparables. Estado publicado y estado local se informan por separado.
 
@@ -118,6 +118,7 @@ Después de publicar y comprobar el candidato, enviar https://www.nexovate.com.a
 - **Interpretación de los fallos publicados:** diez avisos CSP por Report-Only/unsafe-inline son una limitación real: no hay enforcement XSS. Diez avisos de ancho usan el PNG intrínseco; la geometría descarta overflow observable. La alerta de cuatro servicios EN huérfanos usa un grafo parcial de seis páginas, aunque el crawl final y la comprobación de enlaces cubren diez. Persisten caché conservadora del logo sin versionar, recomendaciones editoriales y datos comerciales pendientes; no se inventan perfiles, clientes, buscador ni fechas para mejorar el score.
 - **Analytics publicado:** script real 200, filtro explícito de webdriver/Headless observado y preservado. No se observó ingesta POST bajo automatización; no se cambiaron UA/webdriver ni se fabricaron eventos. Visita normal en navegador sin errores y script presente, sin comprobante de recepción. Ingesta y conversiones siguen sin evidencia; los contadores anteriores al despliegue no prueban recepción del candidato.
 - **Corrección de checks publicada:** las expectativas Link === undefined de tools/seo-task001.mjs y tools/seo-task006.mjs fallaron por preloads WOFF2 legítimos de Vercel, sin alternates HTTP. Implementer corrigió dos líneas (+2/-2) para permitir preload y seguir rechazando rel=alternate/hreflang. Ambos archivos reales ejecutados una vez contra https://www.nexovate.com.ar, exit 0. Check001 confirmó preferencias/cookies/404/robots/sitemap; check006 confirmó diez páginas, 262 enlaces, 152 fragmentos, cinco GET RSC 200 y ocho navegaciones hidratadas; cero errores HTTP. En esa repetición acotada persistieron siete cancelaciones RSC sin causa demostrada. Ningún cambio de aplicación ni invalidación del build aceptado. Reviewer final publicado APPROVED sin findings; READY_TO_CONTINUE a commit de corrección y cierre de implementación/configuración. AC-010 tiene evidencia suficiente; los resultados externos pendientes no se convierten en éxito.
+- **Entrega de corrección verificada:** commit local 515dad3ca7c3a430965e75afdb326acdb4d5a67d, padre 740bd23e3bf9a44af9b30390133287f3a08cb131, exactamente los dos checks y este documento (+22/-11), staging vacío y baseline ajena conservada. Implementación, verificación publicada y configuración Google aceptadas; cierre documental y publicación de la corrección autorizados. Los pendientes externos de sitemap, indexación/canónica/métricas, ingesta Analytics y datos de privacidad siguen explícitos, sin impedir este cierre de alcance.
 
 ## Siguiente paso
 
@@ -127,9 +128,9 @@ Después de publicar y comprobar el candidato, enviar https://www.nexovate.com.a
 
 **Inspecciones Google:** /es y los cuatro servicios españoles inspeccionados con la sesión autenticada. En todos, el índice indica Google no reconoce esta URL y canónica seleccionada N/D. Se solicitó indexación de las cinco URLs; cinco confirmaciones visibles Se ha solicitado la indexación y cola de rastreo prioritaria. La comprobación previa de Google terminó sin bloqueo; esto acredita solicitudes aceptadas, no indexación efectiva, canónica elegida ni posiciones. Los diez destinos ES/EN están incluidos en el sitemap.
 
-- **Feature state:** CHECKING.
-- **Next task:** ninguna tarea de implementación nueva; TASK-006 pendiente únicamente de entrega de ambos checks y este documento revisados. Tras verificar commit remoto y Vercel se cierra implementación/configuración; procesamiento Google e ingesta Analytics siguen pendientes externos explícitos.
-- **Continuation:** PUBLICATION_AUTHORIZED; TASK-006_CONTINUING.
+- **Feature state:** DONE, implementación y configuración aceptadas; pendientes externos descritos arriba.
+- **Next task:** ninguna tarea de PLAN-1 pendiente. Entrega documental final y push de la corrección ya autorizados; revisar posteriormente el procesamiento de Google y recepción Analytics cuando haya evidencia real.
+- **Continuation:** PLAN-1_COMPLETED; PUBLICATION_AUTHORIZED para la entrega final revisada.
 - **User decision:** PLAN-1/SPEC-1 y CONTINUOUS con rama y commits locales aprobados explícitamente el 12 de octubre. Posteriormente autorizó explícitamente subir los cambios a GitHub, integrarlos en main y publicarlos en Vercel; pidió auditoría publicada y ayuda para configurar Search Console.
 - **Consumed by:** TASK-001–005 completadas y TASK-006 local aceptada/publicada en 740bd23e3bf9a44af9b30390133287f3a08cb131. Auditoría pública y verificación independiente completadas; recepción Analytics sin evidencia, Search Console DNS verificado y solicitudes aceptadas. Procesamiento del sitemap en diagnóstico. No hay pruebas de indexación, posiciones ni conversiones reales.
 
