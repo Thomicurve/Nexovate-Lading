@@ -50,7 +50,7 @@ Agregar Organization/WebSite/WebPage con datos reales y escape JSON-LD; mejorar 
 
 ### TASK-003 — Entrega del logo y calendario diferido
 
-**Status:** IN_PROGRESS · **Criteria:** AC-005, AC-006.
+**Status:** DONE · **Criteria:** AC-005, AC-006.
 
 Optimizar la entrega del PNG existente mediante Next Image con sizes adecuados y conservar recorte. Iniciar calendario al aproximarse al contacto. Mantener enlace directo, respaldo sin JS y errores. Ajustar caché solo para recursos versionados/controlados.
 
@@ -59,20 +59,24 @@ Optimizar la entrega del PNG existente mediante Next Image con sizes adecuados y
 - **Done when:** solicitudes/peso y formato registrados, logo sin overflow ni cambio de proporción; calendario se inicia una vez al acercarse y responde a fallos; Reviewer y commit local aceptados.
 - **Checks:** comunes; medir transferencias desde build producción; geometría en 320/360/390/768/1280; interceptar tráfico Cal.com antes/después del scroll; simular fallo de script/timeout; verificar teclado/enlace sin enviar reservas.
 - **Work units:** WU-003, 100–180 líneas, 3–6 archivos, confianza media; perf(landing): defer calendar and size brand image delivery.
-- **Result reference:** WU-003 candidata sobre 1b53adf199f573da8fab58d7e9c74a76f83a30a4; 41 líneas aplicación +147 checks. Build/tipos/lint y tools/seo-task003.mjs exit 0; warning Orb preexistente. Sin overflow en cinco anchos, recorte preservado. Original 373654 bytes; AVIF 192/256/384/480 px: 2762/3772/5332/6740 bytes, WebP: 3148/4478/7232/9372. Cal emulado y real: cero solicitudes iniciales, una al acercarse, ready real; fallo script/link y timeout comprobados, foco/enlace/respaldo sin JS, limpieza real de observer/listeners/timer. Reviewer APPROVED sin findings. Commit pendiente.
+- **Result reference:** WU-003 en commit local verificado f5fd206f531572010fa38ba60dae038d4a7ef37a, padre 1b53adf199f573da8fab58d7e9c74a76f83a30a4; 41 líneas aplicación +147 checks. Build/tipos/lint y tools/seo-task003.mjs exit 0; warning Orb preexistente. Sin overflow en cinco anchos, recorte preservado. Original 373654 bytes; AVIF 192/256/384/480 px: 2762/3772/5332/6740 bytes, WebP: 3148/4478/7232/9372. Cal emulado y real: cero solicitudes iniciales, una al acercarse, ready real; fallo script/link y timeout comprobados, foco/enlace/respaldo sin JS, limpieza real de observer/listeners/timer. Reviewer APPROVED sin findings. Staging vacío y baseline ajena preservada.
 
 ### TASK-004 — Seguridad compatible e inventario de privacidad
 
-**Status:** TODO · **Criteria:** AC-007, AC-009.
+**Status:** IN_PROGRESS · **Criteria:** AC-007, AC-009.
 
 Revisar cookie, cabeceras y dependencias reales. Aplicar Referrer-Policy y Permissions-Policy compatibles, determinar COOP apropiado; observar CSP antes de enforcement. Elaborar inventario factual de Analytics, Cal.com y WhatsApp y solicitar datos mínimos pendientes antes de contenido público de privacidad/perfiles. No agregar un banner sin identificar su necesidad real.
+
+**Inventario factual:** identidad pública Nexovate y biografías de Thomas Curvelo Ferrer/Juan Lucas Cuenca; contacto existente en WhatsApp (https://wa.me/message/QEX2LSMCN5A6D1) y agenda Cal.com (https://cal.com/nexovate-o7uzwd/15min). Cal carga script/iframe al aproximarse a contacto; WhatsApp es un enlace, sin SDK de seguimiento integrado. Analytics está integrado en el layout; su recepción en Vercel requiere validación publicada. Según [documentación de Vercel](https://vercel.com/docs/analytics/privacy-policy), Web Analytics usa estadísticas agregadas sin cookies de terceros y puede registrar URL, referrer, dispositivo y ubicación aproximada. La preferencia NEXT_LOCALE es independiente. Manrope se entrega como fuente local de Next; los preconnects de Google existentes no prueban descarga de una fuente externa.
+
+**Datos pendientes:** el usuario confirmó que todavía no existen correo público, perfiles, casos autorizados ni política de privacidad. No se agrega una ruta pública de privacidad con hechos inventados. Para prepararla posteriormente faltan responsable y canal de consultas de datos, usos/retención reales de consultas y reservas, configuración de proveedores y validación de esos términos. Este contenido público es condicional en PLAN-1; la presente tarea conserva inventario y pendientes explícitos.
 
 - **Depends on:** TASK-003.
 - **Allowed files:** next.config.mjs, middleware.ts, lib/seo.ts; footer/traducciones y ruta de privacidad solo con hechos/datos confirmados y alcance revisado; checks de cabeceras acotados.
 - **Done when:** cabeceras/cookie y terceros funcionan, prueba independiente de seguridad compatible y Reviewer aceptados; inventario y pendientes explícitos; commit de los cambios verificados. Si faltan datos indispensables para contenido público, conservar tarea pendiente y consultar.
 - **Checks:** comunes; inspeccionar cookie HTTPS; navegación, carga de Next, embed, Analytics y enlaces externos; observar violaciones CSP; no reportar ausencia de violations como prueba de seguridad completa.
 - **Work units:** WU-004, 100–180 líneas, 3–6 archivos, confianza media/baja hasta observar política; fix(security): harden headers without breaking integrations.
-- **Result reference:** pendiente.
+- **Result reference:** WU-004 candidata sobre f5fd206f531572010fa38ba60dae038d4a7ef37a; 35 líneas aplicación +94 checks. Build/tipos/lint y tools/seo-task004.mjs exit 0; warning Orb preexistente. Verificación independiente exit 0: cabeceras/cookie/preferencias y navegación, Cal real ready/200, logo/fuentes, destinos/opener; probes script-src y connect-src reportan y permiten ejecución/respuesta. Reviewer APPROVED sin findings. CSP sigue Report-Only sin collector ni enforcement; observación padre local. HTTPS de navegador simulado; Analytics local 404, compatibilidad script/POST simulada y script publicado antiguo 200. Candidato TLS/recepción Analytics pendientes de publicación. Inventario y datos de privacidad pendientes explícitos. Commit pendiente.
 
 ### TASK-005 — Contenido por servicio para empresas argentinas
 
@@ -103,9 +107,9 @@ Reutilizar checks aceptados sin repetir suites idénticas. Comprobar integració
 ## Siguiente paso
 
 - **Feature state:** IMPLEMENTING.
-- **Next task:** TASK-003.
+- **Next task:** TASK-004.
 - **Continuation:** COVERED_BY_CONTINUOUS_PLAN.
 - **User decision:** PLAN-1/SPEC-1 y CONTINUOUS con rama y commits locales aprobados explícitamente el 12 de octubre.
-- **Consumed by:** TASK-002 entregada en 1b53adf199f573da8fab58d7e9c74a76f83a30a4; TASK-003 cubierta por CONTINUOUS.
+- **Consumed by:** TASK-003 entregada en f5fd206f531572010fa38ba60dae038d4a7ef37a; TASK-004 cubierta por CONTINUOUS.
 
 

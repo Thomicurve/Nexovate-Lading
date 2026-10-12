@@ -3,6 +3,20 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./app/i18n/request.ts');
 
+// Observe resource restrictions before enforcing them. Browser checks collect
+// violations locally; no remote reporting endpoint has been configured.
+const reportOnlyCsp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://app.cal.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "frame-src https://app.cal.com",
+  "object-src 'none'",
+  "base-uri 'self'",
+].join('; ');
+
 const nextConfig = {
   poweredByHeader: false,
   compress: true,
@@ -25,8 +39,20 @@ const nextConfig = {
             value: 'DENY',
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin-allow-popups',
+          },
+          {
+            key: 'Content-Security-Policy-Report-Only',
+            value: reportOnlyCsp,
           },
         ],
       },
