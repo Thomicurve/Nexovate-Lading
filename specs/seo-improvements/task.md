@@ -80,7 +80,7 @@ Revisar cookie, cabeceras y dependencias reales. Aplicar Referrer-Policy y Permi
 
 ### TASK-005 — Contenido por servicio para empresas argentinas
 
-**Status:** IN_PROGRESS · **Criteria:** AC-008, AC-009.
+**Status:** DONE · **Criteria:** AC-008, AC-009.
 
 Preparar y revisar contenido propio para software a medida, automatización, seguimiento/trazabilidad y datos/integraciones en ES/EN. Rutas propuestas /es/servicios/{software-a-medida,automatizacion-de-procesos,trazabilidad,integracion-de-sistemas} y equivalentes /en/services/{custom-software,process-automation,traceability,system-integration}. Confirmar slugs y estructura editorial antes de publicación; conservar el sistema visual. Agregar enlaces útiles desde cards/pie y navegación que funcione fuera de portada. Casos/perfiles solo cuando se aporten datos verificables.
 
@@ -90,29 +90,36 @@ Preparar y revisar contenido propio para software a medida, automatización, seg
 - **Checks:** comunes; rastrear todas las rutas, un H1, títulos/canonical únicos, JSON-LD de página/servicio, selector ES↔EN, CTA de vuelta a contacto, navegación a secciones existentes y viewport sin scroll.
 - **Work units:** WU-005A, infraestructura/rutas/navegación, 180–300 líneas; WU-005B, textos/páginas/enlaces, 200–350 líneas; confianza media. Commits feat(seo): add localized service routes y content(seo): explain Nexovate services for Argentine businesses. Revisar candidato conjunto y divisiones coherentes antes de entrega; si >400 líneas inseparables, explicar división/alcance al usuario.
 - **Result reference:** WU-005A en commit local verificado 1e903a58a9ee9d6cd145fe734b48bd61f40137e9, padre 67d8cb65e9d61d2c603409ec21a18e9c63efb121; 243 líneas aplicación +115 check, once archivos. Build/tipos/lint y tools/seo-task005a.mjs exit 0 con Orb preexistente. Ocho rutas sin JS, H1/metadatos únicos, canonical/alternates/social/grafo de cinco entidades; sitemap diez URLs, once rutas inválidas más fr/mayúsculas 404. Teclado/navegación/selector/CTA desktop y móvil, sin overflow en cinco anchos. Reviewer WU-005A APPROVED sin findings. Unidad funcional con copy existente, staging vacío y baseline preservada. WU-005B editorial todavía requerida para cerrar tarea.
-- **WU-005B:** candidata sobre 1e903a58a9ee9d6cd145fe734b48bd61f40137e9; 210 líneas aplicación +60 checks. Ocho contenidos equivalentes y cuarenta cuerpos distintos en las cinco secciones aprobadas; ejemplos hipotéticos explícitos, metadata/OG/Twitter/WebPage/Service igual a introducción visible. Build/tipos/lint y tools/seo-task005b.mjs exit 0; warning Orb preexistente. Ocho HTML sin JS, contenido/encabezados/grafo/CTA/relacionados y cinco anchos sin overflow. Reviewer WU-005B y cobertura TASK-005 APPROVED sin findings; pruebas WU-005A sin cambios reutilizadas. Commit pendiente.
+- **WU-005B:** commit local verificado 2ce1fea3c71137fffa98c4e09f47a361fa31b8e7, padre 1e903a58a9ee9d6cd145fe734b48bd61f40137e9; 210 líneas aplicación +60 checks. Ocho contenidos equivalentes y cuarenta cuerpos distintos en las cinco secciones aprobadas; ejemplos hipotéticos explícitos, metadata/OG/Twitter/WebPage/Service igual a introducción visible. Build/tipos/lint y tools/seo-task005b.mjs exit 0; warning Orb preexistente. Ocho HTML sin JS, contenido/encabezados/grafo/CTA/relacionados y cinco anchos sin overflow. Reviewer WU-005B y cobertura TASK-005 APPROVED sin findings; pruebas WU-005A sin cambios reutilizadas. Staging vacío y baseline preservada.
 
 ### TASK-006 — Auditoría final y medición orgánica
 
-**Status:** TODO · **Criteria:** AC-010.
+**Status:** IN_PROGRESS · **Criteria:** AC-010.
 
 Reutilizar checks aceptados sin repetir suites idénticas. Comprobar integración completa del candidato y auditoría local de producción. Preparar propiedad Search Console, sitemap e inspección de URLs; usar acceso real cuando esté disponible, detener la acción dependiente si requiere autenticación/datos. Tras publicación autorizada, auditar el dominio definitivo con crawl y móvil comparables. Estado publicado y estado local se informan por separado.
 
 El usuario confirmó el 12 de octubre que nexovate.com.ar todavía no está configurado en Search Console. Preparar instrucciones de verificación y envío del sitemap; alta/verificación efectiva, inspección de URLs y métricas orgánicas quedan pendientes de acceso/autenticación y publicación.
+
+**Configuración pendiente en Google:** en [Search Console](https://search.google.com/search-console), agregar una propiedad de tipo Dominio con nexovate.com.ar, sin protocolo ni www. Copiar el registro TXT entregado por Google y agregarlo en el panel que administra los DNS del dominio; el proveedor efectivo y el token todavía no se conocen. Conservar los registros existentes, verificar desde Search Console y mantener el TXT. La propiedad de dominio incluye protocolos y subdominios; seguir la [guía de verificación de Google](https://support.google.com/webmasters/answer/9008080?hl=es).
+
+Después de publicar y comprobar el candidato, enviar https://www.nexovate.com.ar/sitemap.xml desde el [informe Sitemaps](https://support.google.com/webmasters/answer/7451001?hl=es). Inspeccionar /es y los cuatro servicios españoles; revisar disponibilidad, indexación y canónica elegida por Google mediante la [inspección de URLs](https://support.google.com/webmasters/answer/9012289?hl=es). Una prueba publicada en vivo y una solicitud de indexación no prueban inclusión efectiva. Registrar consultas, impresiones, clics y posiciones del informe de rendimiento cuando existan datos; las conversiones requieren una medición real adicional.
 
 - **Depends on:** TASK-005; autorización y capacidad de publicación para comprobaciones posdeploy; acceso de usuario a Search Console para lectura/configuración externa.
 - **Allowed files:** checks tools/seo-* y documentación mínima existente del proyecto; estado solo Orchestrator. Ninguna reimplementación incidental de tareas cerradas ni alta de cuentas/integraciones globales.
 - **Done when:** criterios de integración aceptados, resultados de auditoría medidos, gaps externos explícitos; commits locales verificados. No declarar indexación/ranking efectivos sin evidencia.
 - **Checks:** producción local y rutas completas, crawl y --mobile de SEOmator5.1, sin capturas; comparar fallos concretos con auditoría original; revisar URLs seleccionadas por Google solo con sesión autenticada. Datos de INP/campo permanecen pendientes si no existen.
 - **Work units:** WU-006, 50–100 líneas de checks/documentación, confianza media; test(seo): verify localized site integration.
-- **Result reference:** pendiente.
+- **Resultado local aceptado:** tools/seo-task006.mjs exit 0: diez HTML sin JavaScript, diez títulos/descripciones únicos, identidad y alternates coherentes, 262 enlaces internos y 152 fragmentos con destino existente; sitemap exacto de diez URLs. Se actualizó solo la expectativa obsoleta de dos entradas en tools/seo-task001.mjs; su comprobación de preferencias, cookies, 404 y robots volvió a pasar. Build/tipos/lint WU-005B siguen válidos, sin cambios posteriores de aplicación. Reviewer WU-006 y cierre local APPROVED sin findings; reutilizó las revisiones y verificaciones aceptadas WU-001–005. Entrega local WU-006: test(seo): verify localized site integration, limitada a ambos checks y este documento; XML de auditoría conservados en workspace. La aceptación local no cierra AC-010 externo.
+- **Auditoría local:** SEOmator 5.1.0 con render, crawl de diez páginas y dos auditorías --mobile, exit 0. Evidencia en reports/seo/2026-10-12/local-after-{crawl,es-mobile,en-mobile}.llm.xml. Crawl: 90/A, 3000 pass, 392 warnings, 108 failures, 150 no medidos; móviles ES/EN: 89/B, respectivamente 280/279 pass, 43/44 warnings, diez failures y 32 no medidos. Estos scores no son comparables al 92 publicado: HTTP local, origen público en canonical/sitemap y servicios todavía ausentes en Vercel producen alertas de transporte/dominio. Las cinco comprobaciones de paridad móvil y LCP/CLS/TTFB/FCP pasan en ambas portadas; son mediciones locales de laboratorio, INP/campo sigue pendiente.
+- **Cambios observables:** desaparecen las alertas de ausencia/tipo/validez de schema, formato/codificación moderna de imágenes, COOP/Permissions/Referrer, nombre accesible distinto del texto y métodos hreflang conflictivos. Los checks directos prueban el origen .com.ar; la auditoría local no sustituye la prueba publicada.
+- **Límites y pendientes:** CSP continúa Report-Only sin collector ni enforcement. Analytics local devuelve 404 y error MIME; requiere validar recepción publicada. Hay cinco fetch RSC abortados en el auditor y abortos también observados durante navegación, sin causa demostrada: los cinco GET con RSC responden 200 text/x-component y las ocho navegaciones hidratadas servicio→portada funcionan; sin errores HTTP propios en chunks/CSS ni fallo listado de Cal. La alerta de scroll horizontal usa dimensiones intrínsecas del PNG, mientras la geometría real pasó en cinco anchos. Schema no tiene campos requeridos ausentes: faltan recomendaciones de contacto/perfiles aún no confirmados y SearchAction sin buscador real. Se conservan avisos editoriales de posible truncamiento de seis descripciones y descripción inglesa corta; no prueban un defecto de indexación. Privacidad/perfiles/casos, autoridad externa y métricas orgánicas necesitan datos reales. Publicación, auditoría pública comparable y Search Console siguen pendientes.
 
 ## Siguiente paso
 
-- **Feature state:** IMPLEMENTING.
-- **Next task:** TASK-005.
-- **Continuation:** COVERED_BY_CONTINUOUS_PLAN.
+- **Feature state:** WAITING_FOR_USER.
+- **Next task:** TASK-006, comprobaciones publicadas y Search Console; parte local aceptada.
+- **Continuation:** LOCAL_SCOPE_ACCEPTED; PUBLICATION_AUTHORITY_REQUIRED.
 - **User decision:** PLAN-1/SPEC-1 y CONTINUOUS con rama y commits locales aprobados explícitamente el 12 de octubre.
-- **Consumed by:** TASK-004 entregada en 67d8cb65e9d61d2c603409ec21a18e9c63efb121; TASK-005 cubierta por CONTINUOUS y aprobación editorial explícita.
+- **Consumed by:** TASK-001–005 completadas y TASK-006 local aceptada bajo CONTINUOUS. Los cambios están preparados para entrega local; publicación, auditoría pública comparable, recepción Analytics y acceso Search Console pendientes de autorización/capacidad. No hay pruebas de indexación, posiciones ni conversiones reales.
 
 

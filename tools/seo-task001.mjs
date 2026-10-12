@@ -73,9 +73,11 @@ try {
   assert.match(sitemap.headers.get('content-type'), /xml/);
   const xml = await sitemap.text();
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1]);
-  assert.equal(entries.length, 2);
-  assert.deepEqual(entries.map((entry) => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), [`${origin}/en`, `${origin}/es`]);
-  for (const entry of entries) {
+  assert.equal(entries.length, 10);
+  const homeEntries = entries.filter((entry) => [`${origin}/es`, `${origin}/en`].includes(entry.match(/<loc>(.*?)<\/loc>/)[1]));
+  assert.equal(homeEntries.length, 2);
+  assert.deepEqual(homeEntries.map((entry) => entry.match(/<loc>(.*?)<\/loc>/)[1]).sort(), [`${origin}/en`, `${origin}/es`]);
+  for (const entry of homeEntries) {
     const languages = Object.fromEntries([...entry.matchAll(/<xhtml:link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)].map((match) => [match[1], match[2]]));
     assert.deepEqual(languages, alternates);
   }
