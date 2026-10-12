@@ -61,3 +61,16 @@ La política CSP depende de scripts, estilo e integraciones actuales; empezar po
 
 PLAN-1/SPEC-1 y CONTINUOUS con rama/commits locales aprobados explícitamente el 12 de octubre. Publicación sin autorización. Usuario confirmó que todavía no existen correo/perfiles/casos/política solicitados: usar identidad y canales actuales comprobables, registrar campos faltantes y no inventarlos. Acceso a Search Console pendiente cuando se alcance la tarea de medición.
 
+## Propuesta editorial de servicios
+
+Estructura y rutas aprobadas explícitamente por el usuario el 12 de octubre: Apruebo la estructura y las rutas propuestas. La autorización de publicación sigue siendo separada.
+
+Cada página explica el problema operativo, qué solución se puede construir, un ejemplo identificado como ilustrativo, cómo se define el alcance y qué información llevar a la primera conversación. Cierra con un enlace a contacto y servicios relacionados. Reutiliza el encabezado, pie, tipografía y contenedores existentes; sin una nueva dirección visual.
+
+1. **Software a medida.** ES /es/servicios/software-a-medida; EN /en/services/custom-software. Títulos: Software a medida para empresas en Argentina | Nexovate / Custom software for businesses in Argentina | Nexovate. Explicar sistemas internos y plataformas para clientes; formularios, permisos y estados según la operación. Ejemplo ilustrativo: solicitudes internas desde el ingreso hasta su responsable. Para conversar: usuarios, pasos actuales y herramientas utilizadas.
+2. **Automatización de procesos.** ES /es/servicios/automatizacion-de-procesos; EN /en/services/process-automation. Títulos: Automatización de procesos para empresas | Nexovate / Business process automation | Nexovate. Explicar tareas repetidas, reglas y excepciones que necesitan revisión humana. Ejemplo ilustrativo: un pedido genera una tarea sin copiar los datos a mano. Para conversar: frecuencia, reglas y puntos de intervención del equipo.
+3. **Seguimiento y trazabilidad.** ES /es/servicios/trazabilidad; EN /en/services/traceability. Títulos: Seguimiento y trazabilidad de procesos | Nexovate / Process tracking and traceability | Nexovate. Explicar estados, responsables e historial de cambios para reconstruir la operación. Ejemplo ilustrativo: seguir una solicitud desde recepción hasta resolución. Para conversar: estados, responsables y datos necesarios en cada paso.
+4. **Datos e integraciones.** ES /es/servicios/integracion-de-sistemas; EN /en/services/system-integration. Títulos: Integración de sistemas y datos para empresas | Nexovate / Business system and data integration | Nexovate. Explicar fuentes separadas, identificadores compartidos, frecuencia de actualización y acceso disponible. Ejemplo ilustrativo: reunir planilla y sistema en una vista compartida. Para conversar: fuentes, permisos y datos que se deben relacionar.
+
+Las versiones inglesas mantienen el mismo alcance. El mercado argentino se presenta de forma natural en el contexto comercial; no se repite en cada encabezado. Los ejemplos describen capacidades posibles, no trabajos realizados ni resultados medidos. Plazos, precios, compatibilidad con proveedores particulares, certificaciones y garantías no se publican sin datos confirmados.
+

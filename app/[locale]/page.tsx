@@ -9,7 +9,8 @@ import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 import { notFound } from "next/navigation"
 import { locales, type Locale } from "@/app/i18n"
-import { languageAlternates, localizedUrl } from "@/lib/seo"
+import { homeStructuredData, languageAlternates, localizedUrl } from "@/lib/seo"
+import StructuredData from "@/components/structured-data"
 
 export async function generateMetadata({
   params: { locale },
@@ -48,9 +49,12 @@ export async function generateMetadata({
   }
 }
 
-export default function Home() {
+export default async function Home({ params: { locale } }: { params: { locale: Locale } }) {
+  if (!locales.includes(locale)) notFound()
+  const t = await getTranslations({ locale, namespace: "metadata" })
   return (
     <div className="relative min-h-screen">
+      <StructuredData data={homeStructuredData(locale, t("title"), t("description"))} />
       <div className="relative z-10">
         <Navbar />
         <main id="main-content" tabIndex={-1}>

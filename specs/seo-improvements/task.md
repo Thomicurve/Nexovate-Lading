@@ -24,7 +24,7 @@ CONTINUOUS avanzará una tarea a la vez dentro de PLAN-1, con checks/review/comm
 
 ### TASK-001 — Dominio, idiomas y rastreo coherentes
 
-**Status:** IN_PROGRESS · **Criteria:** AC-001, AC-002.
+**Status:** DONE · **Criteria:** AC-001, AC-002.
 
 Centralizar origen y rutas; corregir canonical, metadataBase, alternates, OG/Twitter, robots y sitemap. Español como respaldo; conservar detección de idiomas válidos. Evitar hreflang contradictorio entre middleware y HTML. No implementar redirección de un dominio .net que no se controla.
 
@@ -33,11 +33,11 @@ Centralizar origen y rutas; corregir canonical, metadataBase, alternates, OG/Twi
 - **Done when:** HTML ES/EN, raíz por preferencias reconocidas/no reconocidas, rutas 404 y XML/robots cumplen AC; checks, verificación independiente y Reviewer aceptados; commit local verificado.
 - **Checks:** comunes; GET /es y /en, root con Accept-Language es/en/desconocido y cookie; pares alternates exactos; ninguna URL .net en código runtime; sitemap/robots válidos sin rutas duplicadas.
 - **Work units:** WU-001, 120–200 líneas, 5–8 archivos, confianza alta; commit propuesto fix(seo): align domain and localized crawl signals.
-- **Result reference:** candidato WU-001 detenido en codex/seo-improvements sobre 8ef964c0143323615aa2a079f08f5b4a26c94372. Build, TypeScript y lint instalados exit 0; único warning de lint preexistente en Orb.tsx:292. Check tools/seo-task001.mjs exit 0; verificador independiente confirmó canonical único, tres alternates exactos, navegación sin JS, preferencias/cookies, cuatro 404, XML válido y origen independiente de Host/X-Forwarded-Host. Reviewer WU-001 APPROVED, sin findings. Entrega local pendiente. Usar CLIs instalados para tipos/lint; el sandbox normal detectó dependencias erróneamente, y checks elevados funcionaron sin alterar package/lock/tsconfig.
+- **Result reference:** WU-001 en commit local verificado dc162455dbe5318b1a12fa85306dc6fa7758c301, codex/seo-improvements, padre 8ef964c0143323615aa2a079f08f5b4a26c94372. Build, TypeScript y lint instalados exit 0; único warning de lint preexistente en Orb.tsx:292. Check tools/seo-task001.mjs exit 0; verificador independiente confirmó canonical único, tres alternates exactos, navegación sin JS, preferencias/cookies, cuatro 404, XML válido y origen independiente de Host/X-Forwarded-Host. Reviewer WU-001 APPROVED, sin findings. Usar CLIs instalados para tipos/lint; checks elevados funcionaron sin alterar package/lock/tsconfig. Staging vacío y baseline ajena preservada.
 
 ### TASK-002 — Identidad estructurada, snippets y accesibilidad
 
-**Status:** TODO · **Criteria:** AC-003, AC-004.
+**Status:** IN_PROGRESS · **Criteria:** AC-003, AC-004.
 
 Agregar Organization/WebSite/WebPage con datos reales y escape JSON-LD; mejorar meta descriptions ES/EN y nombres accesibles. No añadir ratings, dirección ni perfiles no verificados. Mantener títulos descriptivos y ajustar metadata de páginas interiores en TASK-005.
 
@@ -46,7 +46,7 @@ Agregar Organization/WebSite/WebPage con datos reales y escape JSON-LD; mejorar 
 - **Done when:** JSON-LD parseable, IDs/URLs correctos, atributos y nombres accesibles coherentes por idioma; Reviewer y commit local aceptados.
 - **Checks:** comunes; parse JSON-LD desde HTML, escape de caracteres peligrosos, IDs estables, metadatos únicos y nombres de Proceso/Process en ambas navegaciones.
 - **Work units:** WU-002, 100–170 líneas, 4–7 archivos, confianza alta; feat(seo): describe Nexovate and improve search metadata.
-- **Result reference:** pendiente.
+- **Result reference:** WU-002 candidata detenida sobre dc162455dbe5318b1a12fa85306dc6fa7758c301; 55 líneas de aplicación y 96 de checks. Build/tipos/lint exit 0 con warning Orb preexistente. Check tools/seo-task002.mjs exit 0: JSON-LD server parseable, IDs/referencias, escape adversarial, metadata distinta ES/EN, labels y teclado/foco/salto al contenido; activos sociales/favicon publicados 200. Reviewer APPROVED sin findings. Commit local pendiente.
 
 ### TASK-003 — Entrega del logo y calendario diferido
 
@@ -80,7 +80,7 @@ Revisar cookie, cabeceras y dependencias reales. Aplicar Referrer-Policy y Permi
 
 Preparar y revisar contenido propio para software a medida, automatización, seguimiento/trazabilidad y datos/integraciones en ES/EN. Rutas propuestas /es/servicios/{software-a-medida,automatizacion-de-procesos,trazabilidad,integracion-de-sistemas} y equivalentes /en/services/{custom-software,process-automation,traceability,system-integration}. Confirmar slugs y estructura editorial antes de publicación; conservar el sistema visual. Agregar enlaces útiles desde cards/pie y navegación que funcione fuera de portada. Casos/perfiles solo cuando se aporten datos verificables.
 
-- **Depends on:** TASK-004; aprobación de contenido/estructura cuando exista propuesta concreta y datos factuales requeridos. Si aparece diseño material, aprobación editable Pencil antes de ese cambio.
+- **Depends on:** TASK-004. Usuario aprobó explícitamente la propuesta editorial y rutas de spec.md el 12 de octubre: Apruebo la estructura y las rutas propuestas. Si aparece diseño material, aprobación editable Pencil antes de ese cambio.
 - **Allowed files:** datos/SEO en lib/seo.ts y lib/services.ts; rutas localizadas de servicio dentro de app/[locale]; components/service-page.tsx, features.tsx, navbar.tsx y footer.tsx; traducciones ES/EN, app/sitemap.ts. Sin nuevos estilos globales materiales ni imágenes.
 - **Done when:** cuatro pares de páginas útiles con HTML, enlaces y metadata propios, equivalencia de selector por slug localizado, sitemap correcto y 404 para servicios desconocidos; contenido real revisado, checks/Reviewer y commits aceptados.
 - **Checks:** comunes; rastrear todas las rutas, un H1, títulos/canonical únicos, JSON-LD de página/servicio, selector ES↔EN, CTA de vuelta a contacto, navegación a secciones existentes y viewport sin scroll.
@@ -103,9 +103,9 @@ Reutilizar checks aceptados sin repetir suites idénticas. Comprobar integració
 ## Siguiente paso
 
 - **Feature state:** IMPLEMENTING.
-- **Next task:** TASK-001.
+- **Next task:** TASK-002.
 - **Continuation:** COVERED_BY_CONTINUOUS_PLAN.
 - **User decision:** PLAN-1/SPEC-1 y CONTINUOUS con rama y commits locales aprobados explícitamente el 12 de octubre.
-- **Consumed by:** no consumido.
+- **Consumed by:** TASK-001 entregada en dc162455dbe5318b1a12fa85306dc6fa7758c301; TASK-002 cubierta por CONTINUOUS.
 
 

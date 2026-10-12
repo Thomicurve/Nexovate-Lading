@@ -139,7 +139,7 @@ export default function Navbar() {
           </Link>
           <nav className="ml-auto hidden items-center gap-2 lg:flex" aria-label={a11y("mainNavigation")}>
             {navigation.map(({ id, label, description }) => (
-              <a key={id} href={`#${id}`} aria-label={description}
+              <a key={id} href={`#${id}`} aria-label={id === "process" ? `${label}: ${description}` : description}
                 aria-current={activeSection === id ? "location" : undefined}
                 className={`rounded-full px-3 py-2 text-sm font-semibold transition-colors duration-300 ease-landing hover:bg-secondary ${activeSection === id ? "bg-secondary text-foreground" : "text-muted-foreground"}`}>
                 {label}
@@ -177,7 +177,7 @@ export default function Navbar() {
           <nav className="my-auto flex flex-col gap-4 py-12" aria-label={a11y("mobileNavigation")}>
             {navigation.map(({ id, label, description }) => (
               <a key={id} href={`#${id}`} onClick={(event) => { event.preventDefault(); closeMenu(id) }}
-                aria-label={description} aria-current={activeSection === id ? "location" : undefined}
+                aria-label={id === "process" ? `${label}: ${description}` : description} aria-current={activeSection === id ? "location" : undefined}
                 className="menu-link rounded-lg py-2 text-3xl font-semibold tracking-tight hover:text-muted-foreground">
                 {label}
               </a>

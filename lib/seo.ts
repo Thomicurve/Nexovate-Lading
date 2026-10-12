@@ -22,3 +22,30 @@ export function languageAlternates(
 }
 
 export const homeUrls = locales.map((locale) => localizedUrl(locale));
+
+export function homeStructuredData(locale: Locale, title: string, description: string) {
+  const organizationId = absoluteUrl('/#organization');
+  const websiteId = absoluteUrl('/#website');
+  const url = localizedUrl(locale);
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization', '@id': organizationId,
+        name: 'Nexovate', url: absoluteUrl('/'),
+        logo: absoluteUrl('/images/brand/nexovate-logo.png'),
+      },
+      {
+        '@type': 'WebSite', '@id': websiteId,
+        name: 'Nexovate', url: absoluteUrl('/'), inLanguage: [...locales],
+        publisher: { '@id': organizationId },
+      },
+      {
+        '@type': 'WebPage', '@id': `${url}#webpage`,
+        url, name: title, description, inLanguage: locale,
+        isPartOf: { '@id': websiteId }, about: { '@id': organizationId },
+      },
+    ],
+  };
+}
