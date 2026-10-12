@@ -233,6 +233,7 @@
     "success": "¡Mensaje enviado correctamente!",
     "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
     "calendar": {
+      "idle": "Consultá horarios para hablar de tu proceso.",
       "title": "Agendá una llamada",
       "description": "Seleccioná un horario disponible en el calendario.",
       "loading": "Cargando los horarios disponibles…",

@@ -2,21 +2,46 @@
 
 import Cal, { getCalApi } from "@calcom/embed-react"
 import { ArrowUpRightIcon, CalendarBlankIcon } from "@phosphor-icons/react"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useTranslations } from "next-intl"
 import { buttonVariants } from "@/components/ui/button"
 
-type CalendarState = "loading" | "ready" | "error" | "timeout"
+type CalendarState = "idle" | "loading" | "ready" | "error" | "timeout"
 const calLink = "nexovate-o7uzwd/15min"
 const namespace = "15min"
 const embedScript = "https://app.cal.com/embed/embed.js"
 
 export default function Calendar() {
   const t = useTranslations("contact.calendar")
-  const [state, setState] = useState<CalendarState>("loading")
+  const [state, setState] = useState<CalendarState>("idle")
+  const [started, setStarted] = useState(false)
   const [apiReady, setApiReady] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const hasStarted = useRef(false)
 
   useEffect(() => {
+    const start = () => {
+      if (hasStarted.current) return
+      hasStarted.current = true
+      setState("loading")
+      setStarted(true)
+    }
+    if (!("IntersectionObserver" in window)) {
+      start()
+      return
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        observer.disconnect()
+        start()
+      }
+    }, { rootMargin: "400px 0px" })
+    if (containerRef.current) observer.observe(containerRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!started) return
     let active = true
     let unsubscribe: (() => void) | undefined
     const timeout = window.setTimeout(() => {
@@ -58,10 +83,10 @@ export default function Calendar() {
       window.removeEventListener("error", scriptError, true)
       unsubscribe?.()
     }
-  }, [])
+  }, [started])
 
   return (
-    <div data-calendar-state={state}>
+    <div ref={containerRef} data-calendar-state={state}>
       <div className="space-y-4 p-4 md:p-6">
         <div id="calendar-status" role="status" aria-live="polite" className="flex items-start gap-3">
           <CalendarBlankIcon size={24} aria-hidden="true" className="shrink-0 text-muted-foreground" />

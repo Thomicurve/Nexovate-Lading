@@ -233,6 +233,7 @@
     "success": "Message sent successfully!",
     "error": "An error has occurred. Please try again.",
     "calendar": {
+      "idle": "Find a time to talk about your process.",
       "title": "Schedule a call",
       "description": "Select an available time in the calendar.",
       "loading": "Loading available times…",

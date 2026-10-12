@@ -20,7 +20,7 @@ export default function BrandLogo({ placement = "navbar" }: BrandLogoProps) {
         alt="Nexovate"
         width={2172}
         height={724}
-        unoptimized
+        sizes={placement === "navbar" ? "(min-width: 768px) 192px, 170px" : "(min-width: 768px) 238px, 215px"}
         priority={placement === "navbar"}
         className="absolute max-w-none"
         style={{

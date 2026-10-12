@@ -37,7 +37,7 @@ Centralizar origen y rutas; corregir canonical, metadataBase, alternates, OG/Twi
 
 ### TASK-002 — Identidad estructurada, snippets y accesibilidad
 
-**Status:** IN_PROGRESS · **Criteria:** AC-003, AC-004.
+**Status:** DONE · **Criteria:** AC-003, AC-004.
 
 Agregar Organization/WebSite/WebPage con datos reales y escape JSON-LD; mejorar meta descriptions ES/EN y nombres accesibles. No añadir ratings, dirección ni perfiles no verificados. Mantener títulos descriptivos y ajustar metadata de páginas interiores en TASK-005.
 
@@ -46,11 +46,11 @@ Agregar Organization/WebSite/WebPage con datos reales y escape JSON-LD; mejorar 
 - **Done when:** JSON-LD parseable, IDs/URLs correctos, atributos y nombres accesibles coherentes por idioma; Reviewer y commit local aceptados.
 - **Checks:** comunes; parse JSON-LD desde HTML, escape de caracteres peligrosos, IDs estables, metadatos únicos y nombres de Proceso/Process en ambas navegaciones.
 - **Work units:** WU-002, 100–170 líneas, 4–7 archivos, confianza alta; feat(seo): describe Nexovate and improve search metadata.
-- **Result reference:** WU-002 candidata detenida sobre dc162455dbe5318b1a12fa85306dc6fa7758c301; 55 líneas de aplicación y 96 de checks. Build/tipos/lint exit 0 con warning Orb preexistente. Check tools/seo-task002.mjs exit 0: JSON-LD server parseable, IDs/referencias, escape adversarial, metadata distinta ES/EN, labels y teclado/foco/salto al contenido; activos sociales/favicon publicados 200. Reviewer APPROVED sin findings. Commit local pendiente.
+- **Result reference:** WU-002 en commit local verificado 1b53adf199f573da8fab58d7e9c74a76f83a30a4, padre dc162455dbe5318b1a12fa85306dc6fa7758c301; 55 líneas de aplicación y 96 de checks. Build/tipos/lint exit 0 con warning Orb preexistente. Check tools/seo-task002.mjs exit 0: JSON-LD server parseable, IDs/referencias, escape adversarial, metadata distinta ES/EN, labels y teclado/foco/salto al contenido; activos sociales/favicon publicados 200. Reviewer APPROVED sin findings. Staging vacío y baseline ajena preservada.
 
 ### TASK-003 — Entrega del logo y calendario diferido
 
-**Status:** TODO · **Criteria:** AC-005, AC-006.
+**Status:** IN_PROGRESS · **Criteria:** AC-005, AC-006.
 
 Optimizar la entrega del PNG existente mediante Next Image con sizes adecuados y conservar recorte. Iniciar calendario al aproximarse al contacto. Mantener enlace directo, respaldo sin JS y errores. Ajustar caché solo para recursos versionados/controlados.
 
@@ -59,7 +59,7 @@ Optimizar la entrega del PNG existente mediante Next Image con sizes adecuados y
 - **Done when:** solicitudes/peso y formato registrados, logo sin overflow ni cambio de proporción; calendario se inicia una vez al acercarse y responde a fallos; Reviewer y commit local aceptados.
 - **Checks:** comunes; medir transferencias desde build producción; geometría en 320/360/390/768/1280; interceptar tráfico Cal.com antes/después del scroll; simular fallo de script/timeout; verificar teclado/enlace sin enviar reservas.
 - **Work units:** WU-003, 100–180 líneas, 3–6 archivos, confianza media; perf(landing): defer calendar and size brand image delivery.
-- **Result reference:** pendiente.
+- **Result reference:** WU-003 candidata sobre 1b53adf199f573da8fab58d7e9c74a76f83a30a4; 41 líneas aplicación +147 checks. Build/tipos/lint y tools/seo-task003.mjs exit 0; warning Orb preexistente. Sin overflow en cinco anchos, recorte preservado. Original 373654 bytes; AVIF 192/256/384/480 px: 2762/3772/5332/6740 bytes, WebP: 3148/4478/7232/9372. Cal emulado y real: cero solicitudes iniciales, una al acercarse, ready real; fallo script/link y timeout comprobados, foco/enlace/respaldo sin JS, limpieza real de observer/listeners/timer. Reviewer APPROVED sin findings. Commit pendiente.
 
 ### TASK-004 — Seguridad compatible e inventario de privacidad
 
@@ -103,9 +103,9 @@ Reutilizar checks aceptados sin repetir suites idénticas. Comprobar integració
 ## Siguiente paso
 
 - **Feature state:** IMPLEMENTING.
-- **Next task:** TASK-002.
+- **Next task:** TASK-003.
 - **Continuation:** COVERED_BY_CONTINUOUS_PLAN.
 - **User decision:** PLAN-1/SPEC-1 y CONTINUOUS con rama y commits locales aprobados explícitamente el 12 de octubre.
-- **Consumed by:** TASK-001 entregada en dc162455dbe5318b1a12fa85306dc6fa7758c301; TASK-002 cubierta por CONTINUOUS.
+- **Consumed by:** TASK-002 entregada en 1b53adf199f573da8fab58d7e9c74a76f83a30a4; TASK-003 cubierta por CONTINUOUS.
 
 
