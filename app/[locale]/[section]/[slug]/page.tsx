@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   const id = selectedService(params);
   const t = await getTranslations({ locale: params.locale });
   return serviceMetadata(id, params.locale, t(`solutions.features.${id}.seoTitle`),
-    t(`solutions.features.${id}.description`), t('metadata.imageAlt'));
+    t(`servicePages.services.${id}.intro`), t('metadata.imageAlt'));
 }
 
 export default function Page({ params }: { params: Params }) {

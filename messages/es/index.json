@@ -284,6 +284,101 @@
     "home": "Inicio",
     "breadcrumb": "Ruta de navegación",
     "contact": "Hablemos de tu proceso",
-    "related": "Otros servicios"
+    "related": "Otros servicios",
+    "exampleNote": "Ejemplo hipotético; no describe un trabajo realizado para un cliente.",
+    "services": {
+      "customSoftware": {
+        "intro": "Software a medida para empresas y pymes de Argentina: sistemas internos y plataformas con formularios, permisos y estados según tu operación.",
+        "problem": {
+          "heading": "Cuando las herramientas no acompañan tu forma de trabajar",
+          "body": "Una solicitud puede pasar por un formulario, una planilla y varios mensajes antes de llegar a quien la resuelve. Si cada equipo registra datos distintos, cuesta saber qué falta y quién debe actuar. El punto de partida es entender ese recorrido, los usuarios y las decisiones que hoy quedan fuera del sistema."
+        },
+        "solution": {
+          "heading": "Un sistema para los pasos y usuarios de tu operación",
+          "body": "Podemos diseñar una aplicación interna o una plataforma para tus clientes con formularios, permisos por rol y estados de trabajo. Cada función se vincula con una necesidad concreta: registrar una solicitud, asignarla, consultar pendientes o revisar información. Las conexiones con otras herramientas se evalúan según los accesos disponibles."
+        },
+        "example": {
+          "heading": "Ejemplo ilustrativo: una solicitud interna",
+          "body": "Una persona carga una solicitud con los datos necesarios. El sistema la asigna a un responsable y permite consultar si está pendiente, en revisión o resuelta. Quien la recibe puede pedir información adicional; los permisos definen quién ve y modifica cada dato. Este recorrido muestra una posibilidad, no una solución cerrada para todas las empresas."
+        },
+        "scope": {
+          "heading": "Cómo definir qué construir primero",
+          "body": "Revisamos los pasos actuales y elegimos un flujo inicial con sus usuarios, reglas y límites. Acordamos qué datos necesita, qué acciones permite cada rol y cómo comprobar que funciona. Migraciones, integraciones y funciones adicionales se consideran por separado, según su necesidad y viabilidad."
+        },
+        "preparation": {
+          "heading": "Qué traer a la primera conversación",
+          "body": "Contanos quiénes usarían el sistema, qué pasos siguen hoy y dónde aparecen las dificultades. Ayudan un formulario vacío, un esquema del proceso o una planilla sin información sensible. También sirve identificar qué herramientas deben seguir en uso y quién puede explicar sus permisos y funcionamiento."
+        }
+      },
+      "automation": {
+        "intro": "Automatización de tareas repetidas entre tus herramientas, con reglas claras, manejo de excepciones y revisión humana donde haga falta.",
+        "problem": {
+          "heading": "Cuando copiar datos se vuelve parte del proceso",
+          "body": "En una pyme, un pedido puede exigir volver a cargar la misma información y avisar manualmente a otro equipo. Antes de automatizar, conviene distinguir las tareas repetibles de las decisiones que requieren criterio. La frecuencia, los errores habituales y las excepciones ayudan a elegir por dónde empezar."
+        },
+        "solution": {
+          "heading": "Reglas que conectan tareas sin perder el control",
+          "body": "Podemos conectar eventos y acciones entre herramientas: detectar un registro nuevo, validar datos, crear una tarea o enviar un aviso. Las reglas deben indicar qué sucede si faltan datos, hay duplicados o una herramienta no responde. Los casos que necesitan una decisión pueden quedar pendientes de revisión por una persona."
+        },
+        "example": {
+          "heading": "Ejemplo ilustrativo: de un pedido a una tarea",
+          "body": "Cuando entra un pedido completo, una regla crea una tarea para el equipo correspondiente sin copiar los datos a mano. Si el pedido no cumple las condiciones acordadas, se envía a revisión en lugar de continuar automáticamente. Un identificador permite reconocerlo si llega de nuevo y evitar que se creen tareas duplicadas."
+        },
+        "scope": {
+          "heading": "Cómo acordar reglas y excepciones",
+          "body": "Definimos el evento que inicia el flujo, los datos mínimos, las acciones y los puntos de intervención humana. Revisamos acceso a las herramientas y comportamiento ante fallos antes de acordar el alcance. La validación incluye tanto el recorrido esperado como pedidos incompletos, repeticiones y acciones que no deben ejecutarse."
+        },
+        "preparation": {
+          "heading": "Qué necesitamos conocer del trabajo repetido",
+          "body": "Compartí la frecuencia de la tarea, las herramientas involucradas y las reglas que usa tu equipo para resolverla. Indicá qué excepciones aparecen y quién debe revisarlas. Un ejemplo sin datos sensibles y una explicación del recorrido actual ayudan a evaluar qué pasos se pueden automatizar."
+        }
+      },
+      "traceability": {
+        "intro": "Seguimiento de solicitudes y procesos con estados, responsables e historial de cambios para consultar qué ocurrió y qué queda pendiente.",
+        "problem": {
+          "heading": "Cuando el estado de un trabajo depende de preguntar",
+          "body": "Si las novedades quedan repartidas entre mensajes y planillas, reconstruir una solicitud exige consultar a varias personas. Un estado sin responsable o sin fecha tampoco explica qué falta. Para una empresa con varios pasos de atención, conviene acordar qué información debe acompañar cada cambio y quién la mantiene."
+        },
+        "solution": {
+          "heading": "Estados y cambios que cuentan el recorrido",
+          "body": "Podemos construir una vista de solicitudes con estado actual, responsable y tareas pendientes, junto con un historial de cambios. Los permisos delimitan quién puede consultar o actualizar la información. Los filtros y vistas se definen según las preguntas del equipo, como qué requiere atención o en qué etapa está una solicitud."
+        },
+        "example": {
+          "heading": "Ejemplo ilustrativo: de recepción a resolución",
+          "body": "Una solicitud ingresa, se asigna a una persona y pasa a revisión. Cada cambio registra cuándo ocurrió y quién lo hizo; si necesita información adicional, queda visible ese motivo. Al resolverla, el equipo puede consultar su recorrido y distinguir el estado actual de las acciones anteriores."
+        },
+        "scope": {
+          "heading": "Cómo definir un historial útil",
+          "body": "Acordamos estados, transiciones permitidas, responsables y datos obligatorios en cada paso. También revisamos qué cambios guardar, quién puede verlos y durante cuánto tiempo se necesitan. Si el equipo requiere consultas o reportes específicos, definimos los campos y el historial necesarios para responderlos."
+        },
+        "preparation": {
+          "heading": "Qué información ayuda a reconstruir el proceso",
+          "body": "Traé la lista de estados actuales, los roles que intervienen y los datos necesarios para avanzar. Contanos qué preguntas cuesta responder hoy y si existe un historial que haya que conservar. Un recorrido de ejemplo sin información personal permite discutir los cambios y permisos con claridad."
+        }
+      },
+      "dataIntegration": {
+        "intro": "Integración de planillas y sistemas para relacionar datos en una vista compartida, según los identificadores, permisos y acceso disponibles.",
+        "problem": {
+          "heading": "Cuando cada herramienta muestra una parte distinta",
+          "body": "Una planilla puede contener el seguimiento comercial mientras otro sistema registra la operación. Si los nombres o códigos no coinciden, relacionar los datos requiere interpretación manual. Antes de unir fuentes, hay que reconocer qué representa cada registro, cuál es la fuente de referencia y quién puede acceder a ella."
+        },
+        "solution": {
+          "heading": "Datos relacionados con criterios compartidos",
+          "body": "Podemos evaluar conexiones entre fuentes y preparar una vista común de la información que necesita el equipo. La integración puede ser de consulta o incluir actualizaciones, según lo acordado y las capacidades de cada sistema. Los identificadores, formatos y permisos determinan cómo relacionar registros y tratar datos incompletos o inconsistentes."
+        },
+        "example": {
+          "heading": "Ejemplo ilustrativo: una planilla y un sistema",
+          "body": "Una planilla y un sistema comparten un código de pedido. Una vista relaciona ambos registros para mostrar su información en conjunto, sin asumir que un nombre parecido identifica el mismo pedido. La actualización sigue una frecuencia acordada; si falta un código o hay un conflicto, se señala para revisión."
+        },
+        "scope": {
+          "heading": "Cómo evaluar una conexión viable",
+          "body": "Revisamos las fuentes, los accesos permitidos, la documentación disponible y la frecuencia necesaria de actualización. Definimos qué datos consultar o modificar, qué sistema conserva la referencia y cómo manejar fallos. La compatibilidad con una herramienta concreta se confirma después de revisar sus posibilidades de integración."
+        },
+        "preparation": {
+          "heading": "Qué llevar sobre tus fuentes de datos",
+          "body": "Enumerá las herramientas y planillas, qué datos querés relacionar y qué identificadores comparten. Indicá quién administra los accesos y con qué frecuencia necesitás información actualizada. Una muestra anonimizada y la documentación disponible permiten conversar sobre la conexión sin compartir credenciales."
+        }
+      }
+    }
   }
 }

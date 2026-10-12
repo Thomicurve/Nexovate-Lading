@@ -284,6 +284,101 @@
     "home": "Home",
     "breadcrumb": "Breadcrumb",
     "contact": "Let’s talk about your process",
-    "related": "Other services"
+    "related": "Other services",
+    "exampleNote": "Hypothetical example; this does not describe work delivered for a client.",
+    "services": {
+      "customSoftware": {
+        "intro": "Custom software for businesses in Argentina: internal systems and customer platforms with forms, roles and workflow states.",
+        "problem": {
+          "heading": "When your tools do not fit the way you work",
+          "body": "A request may pass through a form, a spreadsheet and several messages before reaching the person who can resolve it. When teams record different details, it is hard to tell what is missing and who should act. The starting point is understanding that journey, its users and the decisions that happen outside the system."
+        },
+        "solution": {
+          "heading": "A system built around your steps and users",
+          "body": "We can design an internal application or a customer platform with forms, role permissions and workflow states. Each function addresses a specific need: recording a request, assigning it, checking pending work or reviewing information. Connections to other tools are assessed against the access available."
+        },
+        "example": {
+          "heading": "Illustrative example: an internal request",
+          "body": "Someone submits a request with the required details. The system assigns an owner and lets users check whether it is pending, under review or resolved. The recipient can ask for more information; permissions define who can view and change each field. This journey illustrates one possibility rather than a fixed solution for every business."
+        },
+        "scope": {
+          "heading": "How to decide what to build first",
+          "body": "We review the current steps and select an initial workflow, including its users, rules and boundaries. We agree on the data it needs, the actions each role can take and how to check that it works. Migration, integrations and additional functions are considered separately according to need and feasibility."
+        },
+        "preparation": {
+          "heading": "What to bring to the first conversation",
+          "body": "Tell us who would use the system, the steps they follow today and where difficulties arise. A blank form, a process diagram or a spreadsheet without sensitive information can help. It is also useful to identify which tools must remain in use and who can explain their permissions and behaviour."
+        }
+      },
+      "automation": {
+        "intro": "Automate repeated tasks between your tools with clear rules, exception handling and human review where it is needed.",
+        "problem": {
+          "heading": "When copying data becomes part of the workflow",
+          "body": "In an SME, an order may require entering the same information again and manually notifying another team. Before automating, it helps to separate repeatable tasks from decisions that need judgement. Task frequency, common errors and exceptions help identify a useful starting point."
+        },
+        "solution": {
+          "heading": "Rules that connect tasks while keeping people in control",
+          "body": "We can connect events and actions between tools: detect a new record, validate data, create a task or send a notification. Rules need to cover missing details, duplicates and tools that fail to respond. Cases that require a decision can remain pending for a person to review."
+        },
+        "example": {
+          "heading": "Illustrative example: from an order to a task",
+          "body": "When a complete order arrives, a rule creates a task for the relevant team without copying the details by hand. If the order does not meet the agreed conditions, it goes to review instead of continuing automatically. An identifier makes it possible to recognise a repeated order and avoid creating duplicate tasks."
+        },
+        "scope": {
+          "heading": "How to agree on rules and exceptions",
+          "body": "We define the event that starts the workflow, the minimum data, the actions and the points for human intervention. Tool access and failure behaviour are reviewed before agreeing on scope. Validation covers the expected journey as well as incomplete orders, repeated events and actions that must not run."
+        },
+        "preparation": {
+          "heading": "What we need to know about repeated work",
+          "body": "Share how often the task occurs, which tools are involved and the rules your team uses to handle it. Explain which exceptions arise and who should review them. An example without sensitive details and a description of the current journey help assess which steps could be automated."
+        }
+      },
+      "traceability": {
+        "intro": "Track requests and processes with states, owners and a history of changes so your team can see what happened and what is still pending.",
+        "problem": {
+          "heading": "When finding a work status means asking around",
+          "body": "When updates are scattered across messages and spreadsheets, reconstructing a request means asking several people. A status without an owner or a date also leaves questions unanswered. For a business with several handling steps, it helps to agree on the information each change needs and who maintains it."
+        },
+        "solution": {
+          "heading": "States and changes that explain the journey",
+          "body": "We can build a request view with current status, owner and pending tasks, alongside a history of changes. Permissions define who can consult or update the information. Filters and views follow the team's questions, such as what needs attention or which stage a request has reached."
+        },
+        "example": {
+          "heading": "Illustrative example: from receipt to resolution",
+          "body": "A request arrives, is assigned to a person and moves to review. Each change records when it happened and who made it; if more information is needed, that reason stays visible. Once it is resolved, the team can consult its journey and distinguish the current status from earlier actions."
+        },
+        "scope": {
+          "heading": "How to define a useful history",
+          "body": "We agree on states, permitted transitions, owners and the required data at each step. We also review which changes to keep, who can see them and how long they are needed. If the team needs specific queries or reports, we define the fields and history required to answer them."
+        },
+        "preparation": {
+          "heading": "What helps reconstruct your process",
+          "body": "Bring the current states, the roles involved and the information required to move forward. Tell us which questions are hard to answer today and whether an existing history needs to be retained. An example journey without personal information helps make the discussion of changes and permissions concrete."
+        }
+      },
+      "dataIntegration": {
+        "intro": "Connect spreadsheets and systems in a shared data view, based on the identifiers, permissions and access available.",
+        "problem": {
+          "heading": "When each tool shows a different part of the picture",
+          "body": "A spreadsheet may contain sales follow-up while another system records operations. If names or codes do not match, relating the data takes manual interpretation. Before joining sources, it is necessary to understand what each record represents, which source is authoritative and who can access it."
+        },
+        "solution": {
+          "heading": "Related data with shared criteria",
+          "body": "We can assess connections between sources and prepare a common view of the information the team needs. An integration may be read-only or include updates, depending on the agreement and each system's capabilities. Identifiers, formats and permissions determine how records can be related and incomplete or inconsistent data handled."
+        },
+        "example": {
+          "heading": "Illustrative example: a spreadsheet and a system",
+          "body": "A spreadsheet and a system share an order code. A view relates both records to show their information together, without assuming that a similar name identifies the same order. Updates follow an agreed frequency; a missing code or a conflict is flagged for review."
+        },
+        "scope": {
+          "heading": "How to assess a viable connection",
+          "body": "We review sources, permitted access, available documentation and the required update frequency. We define which data to read or change, which system holds the reference and how failures should be handled. Compatibility with a particular tool is confirmed after reviewing its integration options."
+        },
+        "preparation": {
+          "heading": "What to bring about your data sources",
+          "body": "List your tools and spreadsheets, the data you want to relate and the identifiers they share. Explain who manages access and how frequently you need updated information. An anonymised sample and available documentation support a discussion of the connection without sharing credentials."
+        }
+      }
+    }
   }
 }
