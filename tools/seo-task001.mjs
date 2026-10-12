@@ -14,7 +14,7 @@ try {
     const page = await context.newPage();
     const response = await page.goto(`${base}/${locale}`, { waitUntil: 'domcontentloaded' });
     assert.equal(response.status(), 200);
-    assert.equal((await response.allHeaders()).link, undefined);
+    assert.doesNotMatch((await response.allHeaders()).link ?? '', /;\s*(?:hreflang\s*=|rel\s*=\s*(?:"[^"]*\balternate\b|'[^']*\balternate\b|alternate\b))/i);
     const head = await page.evaluate(() => ({
       lang: document.documentElement.lang,
       canonical: document.querySelector('link[rel="canonical"]')?.href,

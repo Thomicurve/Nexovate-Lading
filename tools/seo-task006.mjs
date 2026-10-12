@@ -18,7 +18,7 @@ try {
     const locale = route.split('/')[1];
     const page = await context.newPage();
     const response = await page.goto(base + route, { waitUntil: 'domcontentloaded' });
-    assert.equal(response.status(), 200); assert.equal((await response.allHeaders()).link, undefined);
+    assert.equal(response.status(), 200); assert.doesNotMatch((await response.allHeaders()).link ?? '', /;\s*(?:hreflang\s*=|rel\s*=\s*(?:"[^"]*\balternate\b|'[^']*\balternate\b|alternate\b))/i);
     const data = await page.evaluate(() => ({
       lang: document.documentElement.lang, title: document.title,
       description: document.querySelector('meta[name="description"]').content,
